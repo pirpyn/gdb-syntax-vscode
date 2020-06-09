@@ -1,0 +1,91 @@
+{
+	"$schema": "https://raw.githubusercontent.com/martinring/tmlanguage/master/tmlanguage.json",
+	"name": "GDB command",
+	"patterns": [{ "include": "#expression"}],
+	"repository": {
+		"expression": {
+			"patterns": [
+				{	"include": "#command"	},
+				{	"include": "#variable"	},
+				{	"include": "#comment"	},
+				{   "include": "#strings"	}
+			]
+		},
+		"command": {
+			"patterns": [
+				{
+					"name": "keyword.control.command.gdb",
+					"match": "^\\s*\\b(r|run|s|start|set|show|i|info|e|echo|p|print)\\b"
+				},
+				{	"include" : "#command-break" },
+				{	"include" : "#command-continue" },
+				{	"include" : "#command-next" }
+			]
+		},
+		"command-break": {
+			"patterns": [
+				{
+					"name": "meta.break.gdb",
+					"match": "^\\s*(b(?:r(?:e(?:a(?:k)?)?)?)?)\\b(?:\\s+(\\w+)(?::(\\d+))?)?\\b(?:\\s+(if)\\s+(.+))?\\s*$",
+					"captures": {
+						"1": { "name": "keyword.control.command.gdb" },
+						"2": { "name": "variable.other.location.gdb" },
+						"3": { "name": "constant.numeric.breakpoint.line.gdb" },
+						"4": { "name": "keyword.control.condition.gdb" },
+						"5": { "name": "meta.break.condition.gdb" }
+					}
+				}
+			]
+		},
+		"command-continue": {
+			"patterns": [
+				{
+					"name": "meta.continue.gdb",
+					"match": "^\\s*(c(?:o(?:n(?:t(?:i(?:n(?:u(?:(?:e)?)?)?)?)?)?))?)\\b(?:\\s+(\\d+)?)\\s*$",
+					"captures": {
+						"1": { "name": "keyword.control.command.gdb" },
+						"2": { "name": "constant.numeric.count.ignore.gdb" }
+					}
+				}
+			]
+		},
+		"command-next": {
+			"patterns": [
+				{
+					"name": "meta.next.gdb",
+					"match": "^\\s*(n(?:ext)?)\\b(?:\\s+(\\d+)?)\\s*$",
+					"captures": {
+						"1": { "name": "keyword.control.command.gdb" },
+						"2": { "name": "constant.numeric.count.repeat.gdb" }
+					}
+				}
+			]
+		},
+		"variable": {
+			"patterns": [
+				{
+					"name": "variable.other.convenience.gdb",
+					"match": "\\b(\\$\\b\\w+)\\b"
+				}
+			]
+		},
+		"comment": {
+			"patterns": [{
+				"name": "comment.line.number-sign.gdb",
+				"match": "#.*$"
+			}]
+		},
+		"strings": {
+			"name": "string.quoted.double",
+			"begin": "\"",
+			"end": "\"",
+			"patterns": [
+				{
+					"name": "constant.character.escape",
+					"match": "\\\\."
+				}
+			]
+		}
+	},
+	"scopeName": "source.gdb"
+}

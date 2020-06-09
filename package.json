@@ -1,0 +1,25 @@
+{
+    "name": "gdb-syntax",
+    "displayName": "gdb-syntax",
+    "description": "Syntax color for GDB command",
+    "version": "0.0.1",
+    "engines": {
+        "vscode": "^1.45.0"
+    },
+    "categories": [
+        "Programming Languages"
+    ],
+    "contributes": {
+        "languages": [{
+            "id": "gdb",
+            "aliases": ["GDB command", "gdb"],
+            "extensions": [".gdb"],
+            "configuration": "./language-configuration.json"
+        }],
+        "grammars": [{
+            "language": "gdb",
+            "scopeName": "source.gdb",
+            "path": "./syntaxes/gdb.tmLanguage.json"
+        }]
+    }
+}
