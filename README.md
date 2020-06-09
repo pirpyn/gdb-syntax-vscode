@@ -6,7 +6,7 @@ VSCode grammar file to color higlight commands file for gdb
 
 This extention provides a grammar file to parse and color GDB command files.
 
-\!\[Color highlight\]\(images/basic.png\)
+![Color highlight](images/basic.png)
 
 ## Requirements
 
