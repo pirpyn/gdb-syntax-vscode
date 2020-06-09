@@ -1,2 +1,4 @@
 .vscode/**
+.git/**
+.gitignore
 test.gdb
