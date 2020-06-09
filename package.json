@@ -1,7 +1,10 @@
 {
     "name": "gdb-syntax",
+    "publisher": "pierre-payen",
     "displayName": "gdb-syntax",
     "description": "Syntax color for GDB command",
+    "repository": "gdb-syntax-vscode",
+    "icon" : "images/archer.png",
     "version": "0.0.1",
     "engines": {
         "vscode": "^1.45.0"
