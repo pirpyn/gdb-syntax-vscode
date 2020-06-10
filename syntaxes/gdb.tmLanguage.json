@@ -30,10 +30,8 @@
 				{	"include" : "#command-next" },
 				{	"include" : "#command-set" },
 				{	"include" : "#command-block" },
-				{
-					"name": "keyword.control.command.gdb",
-					"match": "^\\s*(show|i|info|e|echo|p|print)\\b"
-				}
+				{	"include" : "#command-printf" },
+				{	"include" : "#command-print" }
 			]
 		},
 		"command-file": {
@@ -208,11 +206,37 @@
 			"patterns": [
 				{
 					"name": "meta.command.watch.gdb",
-					"match": "^\\s*((?:a|r)?wa(?:t(?:c(?:h)?)?)?)\\s+(?:-l(?:ocation)?\\s+)?(?:([^\\s]+)|\\*\\s*\\([^*]+\\s*\\*\\s*\\)\\s*(0x[0-9a-f]+))\\s*$",
+					"match": "^\\s*((?:a|r)?wa(?:t(?:c(?:h)?)?)?)\\s+(-l(?:ocation)?\\s+)?(?:([^\\s]+)|\\*\\s*\\([^*]+\\s*\\*\\s*\\)\\s*(0x[0-9a-f]+))\\s*$",
 					"captures": {
 						"1": { "name": "keyword.control.command.gdb" },
-						"2": { "name": "variable.other.variable.gdb" },
-						"3": { "name": "variable.other.adress.gdb"}
+						"2": { "name": "support.function.option.gdb" },
+						"3": { "name": "variable.other.variable.gdb" },
+						"4": { "name": "variable.other.adress.gdb"}
+					}
+				}
+			]
+		},
+		"command-printf": {
+			"patterns": [
+				{
+					"name": "meta.command.printf.gdb",
+					"match": "^\\s*(printf)",
+					"captures": {
+						"1": { "name": "keyword.control.command.gdb" }
+					}
+				}
+			]
+		},
+		"command-print": {
+			"patterns": [
+				{
+					"name": "meta.command.print.gdb",
+					"match": "^\\s*(p(?:rint)?)\\b\\s*((?:--.*\\s+)+--)?(\\s*\\/[xdutacfszr])?\\s+(.*)$",
+					"captures": {
+						"1": { "name": "keyword.control.command.gdb"	},
+						"2": { "name": "support.function.print.option.gdb"	},
+						"3": { "name": "constant.character.escape.format.gdb"	},
+						"4": { "name": "meta.print.expression.gdb"	}
 					}
 				}
 			]
@@ -227,7 +251,10 @@
 			"end": "^\\s*(end)\\s*$",
 			"endCaptures": {
 				"1": { "name": "keyword.control.end.gdb"}
-			}
+			},
+			"patterns": [
+				{ "include": "#expression" }
+			]
 		},
 		"variable": {
 			"patterns": [
@@ -261,7 +288,7 @@
 					"match": "\\\\."
 				},				
 				{
-					"name": "constant.character.escape.formater.gdb",
+					"name": "constant.character.escape.format.gdb",
 					"match": "(\\%\\d*\\.?\\d*[cdeEfgGilopsuxXn%]?(?:h[iu]|l[difu]]|LF|ll[idu])?){1}"
 				}
 			]

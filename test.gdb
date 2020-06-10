@@ -60,72 +60,10 @@ command 1 2
     printf "format %s\e", Param[EN_THRESHOLD]
 end
 
+print a
 
-comment
-comment.line
-comment.line.double-slash
-comment.line.number-sign
-comment.line.percentage
-comment.line.character
-comment.block
-comment.block.documentation
-constant
-constant.numeric
-constant.numeric.
-constant.character
-constant.character.escape
-constant.language
-constant.other
-entity
-entity.name
-entity.name.function
-entity.name.type
-entity.name.tag
-entity.name.section
-entity.other
-entity.other.inherited-class
-entity.other.attribute-name
-invalid
-invalid.illegal
-invalid.deprecated
-keyword
-keyword.control
-keyword.operator
-keyword.other
-markup
-markup.underline
-markup.underline.link
-markup.bold
-markup.heading
-markup.italic
-markup.list
-markup.list.numbered
-markup.list.unnumbered
-markup.quote
-markup.raw
-markup.other
-meta
-storage
-storage.type
-storage.modifier
-string
-string.quoted
-string.quoted.single
-string.quoted.double
-string.quoted.triple
-string.quoted.other
-string.unquoted
-string.interpolated
-string.regexp
-string.other
-support
-support.function
-support.class
-support.type
-support.constant
-support.variable
-support.other
-variable
-variable.parameter
-variable.language
-variable.other
+print --a -- a
+print --a a
+print /x a
+
+p a

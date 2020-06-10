@@ -5,7 +5,7 @@
     "description": "Syntax color for GDB command",
     "repository": "https://github.com/pirpyn/gdb-syntax-vscode",
     "icon" : "images/archer.png",
-    "version": "0.0.3",
+    "version": "0.0.4",
     "engines": {
         "vscode": "^1.45.0"
     },
