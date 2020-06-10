@@ -9,6 +9,10 @@ Check [Keep a Changelog](http://keepachangelog.com/) for recommendations on how 
 - delete, command, printf ...
 - And other in [GDB commands, variable and function](https://sourceware.org/gdb/current/onlinedocs/gdb/Command-and-Variable-Index.html#Command-and-Variable-Index).
 
+## [0.0.3] 2020-06-10
+
+Update README.md
+
 ## [0.0.2] 2020-06-10
 
 ## Added

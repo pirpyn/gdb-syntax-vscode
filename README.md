@@ -16,7 +16,7 @@ Example
 
 ## Release Notes
 
-### 0.0.2
+### 0.0.3
 
 #### Added
 
