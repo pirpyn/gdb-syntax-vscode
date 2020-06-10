@@ -1,13 +1,10 @@
 # https://macromates.com/manual/en/language_grammars#naming_conventions
 # Comment
 file path/to/program_to_debug.ext
-
 run arg1 args2
-
-start args1 args2 
+continue
 
 c
-continue
 cont 1
 
 n 1
