@@ -5,19 +5,12 @@
 	"repository": {
 		"expression": {
 			"patterns": [
-				{
-					"name": "sot",
-					"match": "\\bsot\\b"
-				},
-				{
-					"name": "vur",
-					"match": "\\bvur\\b"
-				},
 				{	"include": "#command"	},
 				{	"include": "#variable"	},
 				{	"include": "#comment"	},
 				{   "include": "#strings"	},
-				{   "include": "#char"	}
+				{   "include": "#char"	},
+				{   "include": "#numeric"	}
 			]
 		},
 		"command": {
@@ -26,13 +19,16 @@
 				{	"include" : "#command-run" },
 				{	"include" : "#command-start" },
 				{	"include" : "#command-break" },
+				{	"include" : "#command-condition" },
+				{	"include" : "#command-ena-disable" },
 				{	"include" : "#command-continue" },
+				{	"include" : "#command-handle" },
 				{	"include" : "#command-step" },
 				{	"include" : "#command-next" },
 				{	"include" : "#command-set" },
 				{
 					"name": "keyword.control.command.gdb",
-					"match": "^\\s*\\b(show|i|info|e|echo|p|print)\\b"
+					"match": "^\\s*(show|i|info|e|echo|p|print)\\b"
 				}
 			]
 		},
@@ -43,7 +39,7 @@
 					"match": "^\\s*(fil(?:e)?)\\b(?:\\s+([^\\s]+)?)\\s*$",
 					"captures": {
 						"1": { "name": "keyword.control.command.gdb" },
-						"2": { "name": "variable.other.filename.gdb" }
+						"2": { "name": "markup.underline.link.filename.gdb" }
 					}
 				}
 			]
@@ -76,13 +72,39 @@
 			"patterns": [
 				{
 					"name": "meta.break.gdb",
-					"match": "^\\s*(b(?:r(?:e(?:a(?:k)?)?)?)?)\\b(?:\\s+([^\\s]+)(?::(\\d+))?)?\\b(?:\\s+(if)\\s+(.+))?\\s*$",
+					"match": "^\\s*(b(?:r(?:e(?:a(?:k)?)?)?)?)\\b(?:\\s+([^\\s]+)\\s*(?:\\s+(if)\\s+(.+))?)?\\s*$",
 					"captures": {
 						"1": { "name": "keyword.control.command.gdb" },
-						"2": { "name": "variable.other.location.gdb" },
-						"3": { "name": "constant.numeric.breakpoint.line.gdb" },
-						"4": { "name": "keyword.control.condition.gdb" },
-						"5": { "name": "meta.break.condition.gdb" }
+						"2": { "name": "markup.underline.link.location.gdb" },
+						"3": { "name": "keyword.control.condition.gdb" },
+						"4": { "name": "markup.italic.expression.gdb" }
+					}
+				}
+			]
+		},
+		"command-ena-disable": {
+			"patterns": [
+				{
+					"name": "meta.dis-enable.gdb",
+					"match" : "^\\s*((?:en|dis)(?:a(?:b(?:l(?:e)?)?)?)?)\\s+(?:(\\d+)|\\B(\\$[^\\s]+)\\b)?\\s*$",
+					"captures": {
+						"1" : { "name" : "keyword.control.command.gdb"	},
+						"2" : {	"name" : "support.constant.breakpoint.gdb"	},
+						"3" : { "name" : "entity.name.tag.convenience.gdb" }
+					}
+				}
+			]
+		},
+		"command-condition": {
+			"patterns": [
+				{
+					"name": "meta.condition.gdb",
+					"match" : "^\\s*(cond(?:i(?:t(?:i(?:o(?:n)?)?)?)?)?)\\s+(?:(\\d+)|\\B(\\$[^\\s]+)\\b(\\s+.*)?)?\\s*$",
+					"captures": {
+						"1" : { "name": "keyword.control.command.gdb"	},
+						"2" : {	"name": "support.constant.breakpoint.gdb"	},
+						"3" : { "name": "entity.name.tag.convenience.gdb" },
+						"4" : { "name": "markup.italic.expression.gdb" }
 					}
 				}
 			]
@@ -91,10 +113,23 @@
 			"patterns": [
 				{
 					"name": "meta.continue.gdb",
-					"match": "^\\s*(c(?:o(?:n(?:t(?:i(?:n(?:u(?:(?:e)?)?)?)?)?)?))?)\\b(?:\\s+(\\d+)?)\\s*$",
+					"match": "^\\s*(c(?:o(?:n(?:t(?:i(?:n(?:u(?:(?:e)?)?)?)?)?)?)?)?)\\b(?:\\s+(\\d+))?\\s*$",
 					"captures": {
 						"1": { "name": "keyword.control.command.gdb" },
 						"2": { "name": "constant.numeric.count.ignore.gdb" }
+					}
+				}
+			]
+		},
+		"command-handle": {
+			"patterns": [
+				{
+					"name": "meta.handle.gdb",
+					"match": "^\\s*(ha(?:n(?:d(?:l(?:e)?)?)?)?)\\s*(?:((?:\\d+\\s*)+|\\d+-\\d+|all|(?:SIG[A-Z]+\\s*)+)\\s*((?:(?:no)?(?:s(?:t(?:o(?:p)?)?)?|pr(?:i(?:n(?:t)?)?)?|pa(?:s)*|i(?:g(?:n(?:o(?:r(?:e)?)?)?)?)?)\\s*)+)?)?\\s*$",
+					"captures": {
+						"1": { "name": "keyword.control.command.gdb" },
+						"2": { "name": "constant.language.signals.gdb" },
+						"3": { "name": "keyword.control.handle.keyword.gdb" }
 					}
 				}
 			]
@@ -131,30 +166,24 @@
 		},
 		"command-set-variable": {
 			"patterns": [
-				{ "include": "#command-set-variable-constant" }
+				{
+					"name": "meta.set.assignment.gdb",
+					"match": "^\\s*(set)\\s+var\\s+([^\\s]+)\\s*=",
+					"captures": {
+						"1": { "name": "keyword.control.command.gdb" },
+						"2": { "name": "variable.other.variable.gdb" }
+					}
+				}
 			]
 		},
 		"command-set-convenience": {
 			"patterns": [
-				{ "include": "#command-set-convenience-numeric" }
-			]
-		},
-		"command-set-variable-constant": {
-			"patterns": [
-				{ "include": "#command-set-variable-constant-numeric" }
-			]
-		},
-		"command-set-variable-constant-numeric": {
-			"patterns": [
 				{
-					"name": "meta.set.assignment.constant.numeric.gdb",
-					"match": "^\\s*(set)\\s+var\\s+([^\\s]+)\\s*=\\s*(?:(\\d+)|(0x[0-9a-z]+)|('.')|())\\s*$",
+					"name": "meta.set.assignment.gdb",
+					"match": "^\\s*(set)\\s+\\B(\\$[^\\s]+)\\b\\s*=",
 					"captures": {
 						"1": { "name": "keyword.control.command.gdb" },
-						"2": { "name": "variable.other.variable.gdb" },
-						"3": { "name": "constant.numeric.decimal.gdb" },
-						"4": { "name": "constant.numeric.hexadecimal.gdb" }
-
+						"2": { "name": "entity.name.tag.convenience.gdb" }
 					}
 				}
 			]
@@ -162,16 +191,24 @@
 		"variable": {
 			"patterns": [
 				{
-					"name": "variable.other.convenience.gdb",
-					"match": "\\B(\\$[^\\s]+)\b"
+					"name": "entity.name.tag.convenience.gdb",
+					"match": "\\B(\\$[^\\s]+)\\b"
 				}
 			]
 		},
 		"comment": {
-			"patterns": [{
-				"name": "comment.line.number-sign.gdb",
-				"match": "#.*$"
-			}]
+			"patterns": [
+				{
+					"name": "comment.line.number-sign.gdb",
+					"match": "^\\s*#.*$"
+				},
+				{
+					"match": "[^\\s][^#]*(#.*)$",
+					"captures": {
+						"1" : {	"name": "invalid.comment.gdb" }
+					}
+				}
+			]
 		},
 		"strings": {
 			"name": "string.quoted.double",
@@ -187,9 +224,29 @@
 		"char": {
 			"patterns": [
 				{
-					"name": "string.quoted.single",
+					"name": "constant.numeric.character",
 					"match": "'.'"
 				}
+			]
+		},
+		"numeric": {
+			"patterns": [
+				{
+					"name": "constant.numeric.decimal.gdb",
+					"match": "(\\b[1-9]\\d*\\b|\\d*\\.\\d*(?:[eE][+-]?\\d+)?|\\d+[eE][+-]?\\d+)"
+				},
+				{
+					"name": "constant.numeric.hexadecimal.gdb",
+					"match": "\\b(0x[0-9a-f]+)\\b"
+				},
+				{
+					"name": "constant.numeric.binary.gdb",
+					"match": "\\b(0b[01]+)\\b"
+				},
+				{
+					"name": "constant.numeric.octal.gdb",
+					"match": "\\b(0[0-7]*)\\b"
+				}				
 			]
 		}
 	},
