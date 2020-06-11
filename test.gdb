@@ -45,7 +45,7 @@ condition 12 expression
 ha
 handle
 handle 10
-handle 10 12 13
+handle 10 12 13 $mybreak
 handle all pass ignore
 handle 10-13
 handle 10 pass ignore 
@@ -54,9 +54,16 @@ handle SIGNAL SIGTERM
 
 watch a
 watch *(int *) 0x12345
+watch *(int *) $my_adr
+awatch c
+rwatch b
 watch -location a
 
 command 1 2
+    printf "format %s\e", Param[EN_THRESHOLD]
+end
+
+command 1 2 $mybreak
     printf "format %s\e", Param[EN_THRESHOLD]
 end
 
@@ -67,3 +74,9 @@ print --a a
 print /x a
 
 p a
+
+source -v /path/to/location
+
+if condition
+else
+end

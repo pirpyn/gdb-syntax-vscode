@@ -8,6 +8,7 @@
 		"expression": {
 			"patterns": [
 				{	"include": "#command"	},
+				{	"include": "#block"	},
 				{	"include": "#variable"	},
 				{	"include": "#comment"	},
 				{   "include": "#strings"	},
@@ -17,25 +18,6 @@
 		},
 		"command": {
 			"patterns": [
-				{	"include" : "#command-file" },
-				{	"include" : "#command-run" },
-				{	"include" : "#command-start" },
-				{	"include" : "#command-break" },
-				{	"include" : "#command-condition" },
-				{	"include" : "#command-ena-disable" },
-				{	"include" : "#command-continue" },
-				{	"include" : "#command-handle" },
-				{	"include" : "#command-watch" },
-				{	"include" : "#command-step" },
-				{	"include" : "#command-next" },
-				{	"include" : "#command-set" },
-				{	"include" : "#command-block" },
-				{	"include" : "#command-printf" },
-				{	"include" : "#command-print" }
-			]
-		},
-		"command-file": {
-			"patterns": [
 				{
 					"name": "meta.file.gdb",
 					"match": "^\\s*(fil(?:e)?)\\b(?:\\s+([^\\s]+)?)\\s*$",
@@ -43,11 +25,7 @@
 						"1": { "name": "keyword.control.command.gdb" },
 						"2": { "name": "markup.underline.link.filename.gdb" }
 					}
-				}
-			]
-		},
-		"command-run": {
-			"patterns": [
+				},
 				{
 					"name": "meta.run.gdb",
 					"match": "^\\s*(r(?:u(?:n)?)?)\\b(?:\\s+(.+)?)\\s*$",
@@ -55,11 +33,7 @@
 						"1": { "name": "keyword.control.command.gdb" },
 						"2": { "name": "variable.other.arguments.gdb" }
 					}
-				}
-			]
-		},
-		"command-start": {
-			"patterns": [
+				},
 				{
 					"name": "meta.start.gdb",
 					"match": "^\\s*(start)\\b(?:\\s+(.+)?)\\s*$",
@@ -67,11 +41,7 @@
 						"1": { "name": "keyword.control.command.gdb" },
 						"2": { "name": "variable.other.arguments.gdb" }
 					}
-				}
-			]
-		},
-		"command-break": {
-			"patterns": [
+				},
 				{
 					"name": "meta.break.gdb",
 					"match": "^\\s*(b(?:r(?:e(?:a(?:k)?)?)?)?)\\b(?:\\s+([^\\s]+)\\s*(?:\\s+(if)\\s*(.*))?)?\\s*$",
@@ -82,11 +52,7 @@
 						"4": { "name": "markup.italic.expression.gdb" }
 
 					}
-				}
-			]
-		},
-		"command-ena-disable": {
-			"patterns": [
+				},
 				{
 					"name": "meta.dis-enable.gdb",
 					"match" : "^\\s*((?:en|dis)(?:a(?:b(?:l(?:e)?)?)?)?)(?:\\s+(\\d+|\\B\\$[^\\s]+)\\b(\\s+.*)?)?\\s*$",
@@ -94,11 +60,7 @@
 						"1" : { "name" : "keyword.control.command.gdb"	},
 						"2" : {	"name" : "entity.name.tag.breakpoint.gdb"	}
 					}
-				}
-			]
-		},
-		"command-condition": {
-			"patterns": [
+				},
 				{
 					"name": "meta.condition.gdb",
 					"match" : "^\\s*(cond(?:i(?:t(?:i(?:o(?:n)?)?)?)?)?)(?:\\s+(\\d+|\\B\\$[^\\s]+)\\b(\\s+.*)?)?\\s*$",
@@ -107,11 +69,7 @@
 						"2" : {	"name": "entity.name.tag.breakpoint.gdb"	},
 						"3" : { "name": "markup.italic.expression.gdb" }
 					}
-				}
-			]
-		},
-		"command-continue": {
-			"patterns": [
+				},
 				{
 					"name": "meta.continue.gdb",
 					"match": "^\\s*(c(?:o(?:n(?:t(?:i(?:n(?:u(?:(?:e)?)?)?)?)?)?)?)?)\\b(?:\\s+(\\d+))?\\s*$",
@@ -119,24 +77,16 @@
 						"1": { "name": "keyword.control.command.gdb" },
 						"2": { "name": "constant.numeric.count.ignore.gdb" }
 					}
-				}
-			]
-		},
-		"command-handle": {
-			"patterns": [
+				},
 				{
 					"name": "meta.handle.gdb",
-					"match": "^\\s*(ha(?:n(?:d(?:l(?:e)?)?)?)?)\\s*(?:((?:\\d+\\s*)+|\\d+-\\d+|all|(?:SIG[A-Z]+\\s*)+)\\s*((?:(?:no)?(?:s(?:t(?:o(?:p)?)?)?|pr(?:i(?:n(?:t)?)?)?|pa(?:s)*|i(?:g(?:n(?:o(?:r(?:e)?)?)?)?)?)\\s*)+)?)?\\s*$",
+					"match": "^\\s*(ha(?:n(?:d(?:l(?:e)?)?)?)?)\\s*(?:((?:\\d+[^-]\\s*|\\$\\w+\\s*|\\d+-\\d+|all|SIG[A-Z]+\\s*)+)+\\s*((?:(?:no)?(?:s(?:t(?:o(?:p)?)?)?|pr(?:i(?:n(?:t)?)?)?|pa(?:s)*|i(?:g(?:n(?:o(?:r(?:e)?)?)?)?)?)\\s*)+)?)?\\s*$",
 					"captures": {
 						"1": { "name": "keyword.control.command.gdb" },
 						"2": { "name": "support.class.signals.gdb" },
 						"3": { "name": "support.function.handle.keyword.gdb" }
 					}
-				}
-			]
-		},
-		"command-next": {
-			"patterns": [
+				},
 				{
 					"name": "meta.next.gdb",
 					"match": "^\\s*(n(?:ext)?)\\b(?:\\s+(\\d+)?)\\s*$",
@@ -144,11 +94,7 @@
 						"1": { "name": "keyword.control.command.gdb" },
 						"2": { "name": "constant.numeric.count.repeat.gdb" }
 					}
-				}
-			]
-		},
-		"command-step": {
-			"patterns": [
+				},
 				{
 					"name": "meta.step.gdb",
 					"match": "^\\s*(s(?:tep)?)\\b(?:\\s+(\\d+)?)\\s*$",
@@ -156,18 +102,7 @@
 						"1": { "name": "keyword.control.command.gdb" },
 						"2": { "name": "constant.numeric.count.repeat.gdb" }
 					}
-				}
-			]
-		},
-		"command-set": {
-			"patterns": [
-				{ "include": "#command-set-environment" },
-				{ "include": "#command-set-variable" },
-				{ "include": "#command-set-convenience" }
-			]
-		},
-		"command-set-environment": {
-			"patterns": [
+				},
 				{
 					"name": "meta.set.assignment.gdb",
 					"match": "^\\s*(set)\\s+(?!var\\s+|\\$)([^\\s]+)\\s*",
@@ -175,11 +110,7 @@
 						"1": { "name": "keyword.control.command.gdb" },
 						"2": { "name": "support.class.environment.gdb" }
 					}
-				}
-			]
-		},
-		"command-set-variable": {
-			"patterns": [
+				},
 				{
 					"name": "meta.set.assignment.gdb",
 					"match": "^\\s*(set)\\s+var\\s+([^\\s]+)\\s*=",
@@ -187,11 +118,7 @@
 						"1": { "name": "keyword.control.command.gdb" },
 						"2": { "name": "variable.other.variable.gdb" }
 					}
-				}
-			]
-		},
-		"command-set-convenience": {
-			"patterns": [
+				},
 				{
 					"name": "meta.set.assignment.gdb",
 					"match": "^\\s*(set)\\s+\\B(\\$[^\\s]+)\\b\\s*=",
@@ -199,36 +126,33 @@
 						"1": { "name": "keyword.control.command.gdb" },
 						"2": { "name": "entity.name.tag.convenience.gdb" }
 					}
-				}
-			]
-		},
-		"command-watch": {
-			"patterns": [
+				},
 				{
 					"name": "meta.command.watch.gdb",
-					"match": "^\\s*((?:a|r)?wa(?:t(?:c(?:h)?)?)?)\\s+(-l(?:ocation)?\\s+)?(?:([^\\s]+)|\\*\\s*\\([^*]+\\s*\\*\\s*\\)\\s*(0x[0-9a-f]+))\\s*$",
+					"match": "^\\s*((?:a|r)?wa(?:t(?:c(?:h)?)?)?)\\s+(-l(?:ocation)?\\s+)?(?:([^\\s]+)|\\*\\s*\\([^*]+\\s*\\*\\s*\\)\\s*(0x[0-9a-f]+|\\$\\w+))\\s*$",
 					"captures": {
 						"1": { "name": "keyword.control.command.gdb" },
 						"2": { "name": "support.function.option.gdb" },
 						"3": { "name": "variable.other.variable.gdb" },
 						"4": { "name": "variable.other.adress.gdb"}
 					}
-				}
-			]
-		},
-		"command-printf": {
-			"patterns": [
+				},
+				{
+					"name": "meta.command.source.gdb",
+					"match": "^\\s*(so(?:u(?:r(?:c(?:e)?)?)?)?)\\s+((?:-(?:s|v)\\s+)+)?(.*)\\s*$",
+					"captures": {
+						"1": { "name": "keyword.control.command.gdb" },
+						"2": { "name": "support.function.option.gdb" },
+						"3": { "name": "markup.underline.link.filename.gdb" }
+					}
+				},
 				{
 					"name": "meta.command.printf.gdb",
 					"match": "^\\s*(printf)",
 					"captures": {
 						"1": { "name": "keyword.control.command.gdb" }
 					}
-				}
-			]
-		},
-		"command-print": {
-			"patterns": [
+				},
 				{
 					"name": "meta.command.print.gdb",
 					"match": "^\\s*(p(?:rint)?)\\b\\s*((?:--.*\\s+)+--)?(\\s*\\/[xdutacfszr])?\\s+(.*)$",
@@ -241,19 +165,45 @@
 				}
 			]
 		},
-		"command-block": {
-			"name": "meta.block.command.gdb",
-			"begin": "^\\s*(comm(?:a(?:n(?:d)?)?)?)\\s*((?:(?:\\d+|\\B\\$[^\\s]+\b)\\s*)+)?\\s*$",
-			"beginCaptures": {
-				"1": { "name": "keyword.control.command.gdb"	},
-				"2": { "name" : "entity.name.tag.breakpoint.gdb"	}
-			},
-			"end": "^\\s*(end)\\s*$",
-			"endCaptures": {
-				"1": { "name": "keyword.control.end.gdb"}
-			},
-			"patterns": [
-				{ "include": "#expression" }
+		"block": {
+			"patterns" : [
+				{
+					"name": "meta.block.command.gdb",
+					"begin": "^\\s*(comm(?:a(?:n(?:d)?)?)?)\\s*((?:(?:\\d+|\\$\\w+)\\s*)+)+\\s*$",
+					"beginCaptures": {
+						"1": { "name": "keyword.control.command.gdb"	},
+						"2": { "name" : "entity.name.tag.breakpoint.gdb"	}
+					},
+					"end": "^\\s*(end)\\s*$",
+					"endCaptures": {
+						"1": { "name": "keyword.control.end.gdb"}
+					},
+					"patterns": [
+						{ "include": "#expression" }
+					]
+				},
+				{
+					"name": "meta.block.conditional.gdb",
+					"begin": "^\\s*(if)\\s+(.+)\\s*$",
+					"beginCaptures": {
+						"1": { "name": "keyword.control.command.gdb"	},
+						"2": { "name" :	"markup.italic.expression.gdb" }
+					},
+					"end": "^\\s*(end)\\s*$",
+					"endCaptures": {
+						"1": { "name": "keyword.control.end.gdb"}
+					},
+					"patterns": [
+						{ "include": "#expression" },
+						{ 
+							"match": "^\\s*(else)\\s*$",
+							"captures": {
+								"1": { "name": "keyword.control.command.gdb"	},
+								"2": { "name" :	"markup.italic.expression.gdb" }
+							}
+						}
+					]
+				}
 			]
 		},
 		"variable": {
