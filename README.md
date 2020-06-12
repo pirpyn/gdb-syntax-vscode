@@ -11,7 +11,7 @@ This extention provides a grammar file to parse and color GDB command files.
 Disclaimer: for the moment, all the commands that I use are rendered.
 Commits will slow down. May not update at all.
 
-## [0.0.5] 2020-06-11
+## [0.0.6] 2020-06-12
 #### Added
 * commands: source, delete, set args
 * block: conditional (if/else)
