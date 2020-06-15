@@ -122,6 +122,43 @@
 					}
 				},
 				{
+					"name": "meta.set.history.save.gdb",
+					"match": "^\\s*(set)\\s+(history)\\s+(save(?:\\s+(?:on|off))?)\\s*$",
+					"captures": {
+						"1": { "name": "keyword.control.command.gdb" },
+						"2": { "name": "support.function.option.gdb" },
+						"3": { "name": "variable.other.variable.gdb" }
+					}
+				},
+				{
+					"name": "meta.set.auto-load.safe-path.gdb",
+					"match": "^\\s*(set)\\s+(auto-load)\\s+(safe-path)(?:\\s+(.*))?\\s*$",
+					"captures": {
+						"1": { "name": "keyword.control.command.gdb" },
+						"2": { "name": "support.function.option.gdb" },
+						"3": { "name": "variable.other.variable.gdb" },
+						"4": { "name": "markup.underline.link.directories.gdb" }
+					}
+				},
+				{
+					"name": "meta.set.auto-load.gdbinit.gdb",
+					"match": "^\\s*(set)\\s+(auto-load)\\s+(local-gdbinit(?:\\s+(?:on|off))?)\\s*$",
+					"captures": {
+						"1": { "name": "keyword.control.command.gdb" },
+						"2": { "name": "support.function.option.gdb" },
+						"3": { "name": "variable.other.variable.gdb" }
+					}
+				},
+				{
+					"name": "meta.set.auto-load.python.gdb",
+					"match": "^\\s*(set)\\s+(auto-load)\\s+(python-scripts(?:\\s+(?:on|off|.*))?)\\s*$",
+					"captures": {
+						"1": { "name": "keyword.control.command.gdb" },
+						"2": { "name": "support.function.option.gdb" },
+						"3": { "name": "variable.other.variable.gdb" }
+					}
+				},
+				{
 					"name": "meta.set.assignment.program.gdb",
 					"match": "^\\s*(set)\\s+(var(?:i(?:a(?:b(?:l(?:e)?)?)?)?)?)\\s+([^\\s]+)\\s*=",
 					"captures": {
@@ -224,9 +261,23 @@
 						{ 
 							"match": "^\\s*(else)\\s*$",
 							"captures": {
-								"1": { "name": "keyword.control.command.gdb" },
-								"2": { "name":	"markup.italic.expression.gdb" }
-							}
+								"1": { "name": "keyword.control.command.gdb" }							}
+						}
+					]
+				},
+				{
+					"name": "meta.embedded.python.gdb",
+					"begin": "^\\s*(py(?:thon)?)\\s*$",
+					"beginCaptures": {
+						"1": { "name": "keyword.control.command.gdb" }
+					},
+					"end": "^\\s*(end)\\s*$",
+					"endCaptures": {
+						"1": { "name": "keyword.control.end.gdb"}
+					},
+					"patterns": [
+						{
+							"include": "source.python"
 						}
 					]
 				}

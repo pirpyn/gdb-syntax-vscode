@@ -23,6 +23,19 @@ condition 2 (argc > 0)
 watch argc
 watch *(int*) 0x12345
 
+# Python command block uses python textMate Grammar
+python
+import os
+# this if condition isn't emphasized, because it's parsed as a source.python line
+if 'this' in os.environ:
+    python_scripts_path = os.environ['this'] + '/that'
+    gdb.execute('add-auto-load-safe-path ' + python_scripts_path)
+    gdb.execute('directory ' + python_scripts_path)
+else:
+    if this is None:
+        sys.path.insert(0, 'path')
+end
+
 ## End of example
 
 # Testing more variants below
@@ -92,6 +105,9 @@ p a
 source -v /path/to/location
 
 if condition
+
+inside if
+
 else
 end
 
@@ -100,3 +116,12 @@ echo "this quotes will be displayed"
 echo "this %d char also"
 
 printf "this is a format specifier %d", value
+
+set auto-load python-scripts on
+set auto-load local-gdbinit
+set auto-load safe-path /
+set history save on
+
+
+# skip function in std namespace
+skip -rfu ^std::
