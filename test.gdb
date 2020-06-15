@@ -86,6 +86,7 @@ print --a -- a
 print --a a
 print /x a
 
+print /f a " this %"
 p a
 
 source -v /path/to/location
@@ -93,3 +94,9 @@ source -v /path/to/location
 if condition
 else
 end
+
+echo \ this sentense
+echo "this quotes will be displayed"
+echo "this %d char also"
+
+printf "this is a format specifier %d", value

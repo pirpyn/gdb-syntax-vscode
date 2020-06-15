@@ -10,6 +10,9 @@ Commits will slow down. May not update at all.
 
 - Other in [GDB commands, variable and function](https://sourceware.org/gdb/current/onlinedocs/gdb/Command-and-Variable-Index.html#Command-and-Variable-Index).
 
+## [0.0.7] 2020-06-15
+Added echo command.
+
 ## [0.0.6] 2020-06-12
 Manually removed and uploaded basic.png again.
 

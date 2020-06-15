@@ -174,12 +174,19 @@
 				},
 				{
 					"name": "meta.command.print.gdb",
-					"match": "^\\s*(p(?:rint)?)\\b\\s*((?:--.*\\s+)+--)?(\\s*\\/[xdutacfszr])?\\s+(.*)$",
+					"match": "^\\s*(p(?:rint)?)\\b\\s*((?:--.*\\s+)+--)?(\\s*\\/[xdutacfszr])?\\s+",
 					"captures": {
 						"1": { "name": "keyword.control.command.gdb" },
 						"2": { "name": "support.function.print.option.gdb" },
-						"3": { "name": "constant.character.escape.format.gdb" },
-						"4": { "name": "meta.print.expression.gdb" }
+						"3": { "name": "constant.character.escape.format.gdb" }
+					}
+				},
+				{
+					"name": "meta.command.echo.gdb",
+					"match": "^\\s*(ec(?:h(?:o)?)?)\\s*(.*)\\s*$",
+					"captures": {
+						"1": { "name": "keyword.control.command.gdb" },
+						"2": { "name": "string.quoted.double" }
 					}
 				}
 			]
@@ -258,7 +265,7 @@
 				},				
 				{
 					"name": "constant.character.escape.format.gdb",
-					"match": "(\\%\\d*\\.?\\d*[cdeEfgGilopsuxXn%]?(?:h[iu]|l[difu]]|LF|ll[idu])?){1}"
+					"match": "(\\%\\d*\\.?\\d*(?:[cdeEfgGilopsuxXn%]?|(?:h[iu]|l[difu]]|LF|ll[idu])?)){1}"
 				}
 			]
 		},
