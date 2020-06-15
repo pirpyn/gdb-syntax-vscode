@@ -16,7 +16,7 @@
         "languages": [{
             "id": "gdb",
             "aliases": ["syntax", "gdb", "color-higlight"],
-            "extensions": [".gdb"],
+            "extensions": [".gdb",".gdbinit"],
             "configuration": "./language-configuration.json"
         }],
         "grammars": [{
