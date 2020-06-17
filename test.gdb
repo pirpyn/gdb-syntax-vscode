@@ -128,6 +128,7 @@ set history save on
 
 # skip function in std namespace
 skip -rfu ^std::
+skip -rfu ^std:: -file bbabor.c
 
 set logging file /dev/stderr
 set logging of

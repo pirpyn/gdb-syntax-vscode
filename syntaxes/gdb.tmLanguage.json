@@ -19,6 +19,30 @@
 		"command": {
 			"patterns": [
 				{
+					"name": "meta.skip.basic.gdb",
+					"begin": "^\\s*(sk(?:i(?:p)?)?)",
+					"end": "$",
+					"beginCaptures": {
+						"1": { "name": "keyword.control.command.gdb" }
+					},
+					"patterns": [
+						{
+							"match": "(-rfu(?:nction)?)\\s+([^\\s]+)",
+							"captures": {
+								"1": { "name": "support.function.option.gdb" },
+								"2": { "name": "support.other.regexp.gdb" }
+							}
+						},
+						{
+							"match": "(-fi(?:le)?)\\s+([^\\s]+)",
+							"captures": {
+								"1": { "name": "support.function.option.gdb" },
+								"2": { "name": "markup.underline.link.file.gdb" }
+							}
+						}
+					]
+				},
+				{
 					"name": "meta.file.gdb",
 					"match": "^\\s*(fil(?:e)?)\\b(?:\\s+([^\\s]+)?)\\s*$",
 					"captures": {
