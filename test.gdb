@@ -1,11 +1,14 @@
 # An exemple of the color higlight ( basic VSCode theme )
 # All command keyword are purple/pink
-# Path usually are underlined
+# Path are underlined
 file path/to/program_to_debug.ext
 break main.c:123
 source commands.gdb
+set logging on gdb.txt
 # Command options are yellow, and argument list blue
+set logging overwrite on
 set args arg1 args2
+set pagination off
 # Convenience variable are in a darker blue
 set $br_main = $bpnum
 # Things related to the system like signals number are green
@@ -17,12 +20,14 @@ command $br_main
 end
 # At the moment, break on function render the same as for path
 # but conditionals are emphasized
-break main if (argc > 0)
+tbreak main if (argc > 0)
+# When command as breakpoint number as arhument, it's rendered in a darker blue
 condition 2 (argc > 0)
 # watch understand when looking at memory location
 watch argc
 watch *(int*) 0x12345
-
+# counter render has numeric constant, light green
+ignore $bpnum 10
 # Python command block uses python textMate Grammar
 python
 import os
@@ -106,8 +111,6 @@ source -v /path/to/location
 
 if condition
 
-inside if
-
 else
 end
 
@@ -125,3 +128,16 @@ set history save on
 
 # skip function in std namespace
 skip -rfu ^std::
+
+set logging file /dev/stderr
+set logging of
+set loggi on filename
+set loggi ov of
+set lo overwrite on
+
+set pagination off
+
+tbreak file:666
+
+ignore 12 59
+ignore $bpnum 10

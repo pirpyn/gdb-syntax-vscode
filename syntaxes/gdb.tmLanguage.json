@@ -43,8 +43,17 @@
 					}
 				},
 				{
+					"name": "meta.ignore.gdb",
+					"match": "^\\s*(ig(?:n(?:o(?:r(?:e)?)?)?)?)\\b\\s+(\\d+|\\$\\w+)\\s+(\\d+)$",
+					"captures": {
+						"1": { "name": "keyword.control.command.gdb" },
+						"2": { "name": "entity.name.tag.breakpoint.gdb" },
+						"3": { "name": "constant.numeric.count.ignore.gdb" }
+					}
+				},
+				{
 					"name": "meta.break.gdb",
-					"match": "^\\s*(b(?:r(?:e(?:a(?:k)?)?)?)?)\\b(?:\\s+([^\\s]+)\\s*(?:\\s+(if)\\s*(.*))?)?\\s*$",
+					"match": "^\\s*(t?b(?:r(?:e(?:a(?:k)?)?)?)?)\\b(?:\\s+([^\\s]+)\\s*(?:\\s+(if)\\s*(.*))?)?\\s*$",
 					"captures": {
 						"1": { "name": "keyword.control.command.gdb" },
 						"2": { "name": "markup.underline.link.location.gdb" },
@@ -151,7 +160,45 @@
 				},
 				{
 					"name": "meta.set.auto-load.python.gdb",
-					"match": "^\\s*(set)\\s+(auto-load)\\s+(python-scripts(?:\\s+(?:on|off|.*))?)\\s*$",
+					"match": "^\\s*(set)\\s+(auto-load)\\s+(python-scripts(?:\\s+(?:on|of(?:f)?|.*))?)\\s*$",
+					"captures": {
+						"1": { "name": "keyword.control.command.gdb" },
+						"2": { "name": "support.function.option.gdb" },
+						"3": { "name": "variable.other.variable.gdb" }
+					}
+				},
+				{
+					"name": "meta.set.logging.gdb",
+					"match": "^\\s*(set)\\s+(lo(?:g(?:g(?:i(?:n(?:g)?)?)?)?)?)(?:\\s+(on|of(?:f)?)(?:\\s+(.*))?)?\\s*$",
+					"captures": {
+						"1": { "name": "keyword.control.command.gdb" },
+						"2": { "name": "support.function.option.gdb" },
+						"3": { "name": "variable.other.variable.gdb" },
+						"4": { "name": "markup.underline.link.filename.gdb" }
+					}
+				},
+				{
+					"name": "meta.set.logging.file.gdb",
+					"match": "^\\s*(set)\\s+(lo(?:g(?:g(?:i(?:n(?:g)?)?)?)?)?)\\s+(f(?:i(?:l(?:e)?)?)?)\\s+(.*)\\s*$",
+					"captures": {
+						"1": { "name": "keyword.control.command.gdb" },
+						"2": { "name": "support.function.option.gdb" },
+						"3": { "name": "variable.other.variable.gdb" },
+						"4": { "name": "markup.underline.link.filename.gdb" }
+					}
+				},
+				{
+					"name": "meta.set.logging.overwrite.gdb",
+					"match": "^\\s*(set)\\s+(lo(?:g(?:g(?:i(?:n(?:g)?)?)?)?)?)\\s+(ov(?:e(?:r(?:w(?:r(?:i(?:t(?:e)?)?)?)?)?)?)?(?:\\s+(on|of(?:f)?))?)\\s*$",
+					"captures": {
+						"1": { "name": "keyword.control.command.gdb" },
+						"2": { "name": "support.function.option.gdb" },
+						"3": { "name": "variable.other.variable.gdb" }
+					}
+				},
+				{
+					"name": "meta.set.pagination.gdb",
+					"match": "^\\s*(set)\\s+(pa(?:g(?:i(?:n(?:a(?:t(?:i(?:o(?:n)?)?)?)?)?)?)?)?)(?:\\s+(on|of(?:f)?))?\\s*$",
 					"captures": {
 						"1": { "name": "keyword.control.command.gdb" },
 						"2": { "name": "support.function.option.gdb" },
