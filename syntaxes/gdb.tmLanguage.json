@@ -303,7 +303,7 @@
 			"patterns": [
 				{
 					"name": "meta.block.command.gdb",
-					"begin": "^\\s*(comm(?:a(?:n(?:d)?)?)?)\\s*(?:\\s+((?:(?:\\d+|\\$\\w+)\\s*)+))+\\s*$",
+					"begin": "^\\s*(comm(?:a(?:n(?:d)?)?)?)\\s*(?:\\s+((?:(?:\\d+|\\$\\w+)\\s*)+))?\\s*$",
 					"beginCaptures": {
 						"1": { "name": "keyword.control.command.gdb" },
 						"2": { "name": "entity.name.tag.breakpoint.gdb" }

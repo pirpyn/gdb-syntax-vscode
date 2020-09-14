@@ -89,6 +89,9 @@ watch *(int *) $my_adr
 awatch c
 rwatch b
 watch -location a
+command
+    continue
+en
 
 command 1 2
     printf "format %s\e", Param[EN_THRESHOLD]
