@@ -17,14 +17,9 @@ To have a consistant color hilight each command has it's own regexp.
 Disclaimer: for the moment, all the commands that I use are rendered.
 Commits will slow down. May not update at all.
 
-## [0.1.1] 2020-06-17
-### Added
-* set logging
-* set logging file/overwrite
-* tbreak
-* set pagination
-* ignore
-
+## [0.1.2] 2020-09-14
+### Modified
+* command block without break specifier
 
 ## Roadmap
 * skip command
