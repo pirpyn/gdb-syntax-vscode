@@ -145,3 +145,7 @@ tbreak file:666
 
 ignore 12 59
 ignore $bpnum 10
+
+set print pretty on
+set print pretty off
+set p prett of
