@@ -17,9 +17,9 @@ To have a consistant color hilight each command has it's own regexp.
 Disclaimer: for the moment, all the commands that I use are rendered.
 Commits will slow down. May not update at all.
 
-## [0.1.2] 2020-09-14
-### Modified
-* command block without break specifier
+## [0.1.3] 2020-09-16
+### Added
+* set pretty print command
 
 ## Roadmap
 * skip command

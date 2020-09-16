@@ -10,6 +10,10 @@ Commits will slow down. May not update at all.
 
 - Other in [GDB commands, variable and function](https://sourceware.org/gdb/current/onlinedocs/gdb/Command-and-Variable-Index.html#Command-and-Variable-Index).
 
+## [0.1.3] 2020-09-16
+### Added
+* set pretty print command
+
 ## [0.1.2] 2020-09-14
 ### Modified
 * command block without break specifier
