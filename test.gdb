@@ -148,4 +148,10 @@ ignore $bpnum 10
 
 set print pretty on
 set print pretty off
-set p prett of
+set p prett on
+show p pr
+
+set print vtbl on
+set print vtbl of
+show print vtbl
+sho pr v

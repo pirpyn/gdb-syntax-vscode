@@ -10,6 +10,15 @@ Commits will slow down. May not update at all.
 
 - Other in [GDB commands, variable and function](https://sourceware.org/gdb/current/onlinedocs/gdb/Command-and-Variable-Index.html#Command-and-Variable-Index).
 
+## [0.1.4] 2021-05-19
+### Added
+ * set print vtbl command
+ * show print vtbl command
+ * show print pretty command
+### Modified
+ * set print pretty command
+ * license field in package.json
+
 ## [0.1.3] 2020-09-16
 ### Added
 * set pretty print command

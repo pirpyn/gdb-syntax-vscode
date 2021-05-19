@@ -248,7 +248,34 @@
 				},
 				{
 					"name": "meta.set.print.pretty.gdb",
-					"match": "^\\s*(set)\\s+(p(?:r(?:i(?:n(?:t)?)?)?)?)\\s+(pr(?:e(?:t(?:(?:t(?:y)?)?)?)?)?(?:\\s+(?:on|of(?:f)?)))\\s*$",
+					"match": "^\\s*(set)\\s+(p(?:r(?:i(?:n(?:t)?)?)?)?)\\s+(pr(?:e(?:t(?:t(?:y)?)?)?)?(?:\\s+(?:on|of(?:f)?))?)\\s*$",
+					"captures": {
+						"1": { "name": "keyword.control.command.gdb" },
+						"2": { "name": "support.function.option.gdb" },
+						"3": { "name": "variable.other.variable.gdb" }
+					}
+				},
+				{
+					"name": "meta.show.print.pretty.gdb",
+					"match": "^\\s*(sho(?:w)?)\\s+(p(?:r(?:i(?:n(?:t)?)?)?)?)\\s+(pr(?:e(?:t(?:t(?:y)?)?)?)?)\\s*$",
+					"captures": {
+						"1": { "name": "keyword.control.command.gdb" },
+						"2": { "name": "support.function.option.gdb" },
+						"3": { "name": "variable.other.variable.gdb" }
+					}
+				},
+				{
+					"name": "meta.set.print.vtbl.gdb",
+					"match": "^\\s*(set)\\s+(p(?:r(?:i(?:n(?:t)?)?)?)?)\\s+(v(?:t(?:b(?:l)?)?)?(?:\\s+(?:on|of(?:f)?))?)\\s*$",
+					"captures": {
+						"1": { "name": "keyword.control.command.gdb" },
+						"2": { "name": "support.function.option.gdb" },
+						"3": { "name": "variable.other.variable.gdb" }
+					}
+				},
+				{
+					"name": "meta.show.print.vtbl.gdb",
+					"match": "^\\s*(sho(?:w)?)\\s+(p(?:r(?:i(?:n(?:t)?)?)?)?)\\s+(v(?:t(?:b(?:l)?)?)?)\\s*$",
 					"captures": {
 						"1": { "name": "keyword.control.command.gdb" },
 						"2": { "name": "support.function.option.gdb" },

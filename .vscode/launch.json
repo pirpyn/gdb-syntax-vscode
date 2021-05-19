@@ -13,7 +13,8 @@
             "args": [
                 "--disable-extension",
                 "pierre-payen.gdb-syntax",
-                "--extensionDevelopmentPath=${workspaceFolder}"
+                "--extensionDevelopmentPath=${workspaceFolder}",
+                "${workspaceFolder}/test.gdb"
             ]
         }
     ]
