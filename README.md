@@ -1,6 +1,6 @@
 # gdb-syntax README
 
-VSCode grammar file to color higlight commands file for gdb
+VSCode grammar file to color higlight command files for GDB
 
 ## Features
 
@@ -29,5 +29,4 @@ Commits will slow down. May not update at all.
 ## Roadmap
 * skip command
 * set subcommands
-* and more from [GDB commands, variable and function index](https://sourceware.org/gdb/current/onlinedocs/gdb/Command-and-Variable-Index.html#Command-and-Variable-Index).
-
+* and more from [GDB commands, variable and function index](https://sourceware.org/gdb/onlinedocs/gdb/Command-and-Variable-Index.html).
