@@ -332,6 +332,32 @@
 						"1": { "name": "keyword.control.command.gdb" },
 						"2": { "name": "string.quoted.double" }
 					}
+				},
+				{
+					"name": "meta.command.python.gdb",
+					"begin": "^\\s*(py(?:thon)?)\\s+(?:.+)\\s+",
+					"beginCaptures": {
+						"1": { "name": "keyword.control.command.gdb" }
+					},
+					"end": "\\s*$",
+					"patterns": [
+						{
+							"include": "source.python"
+						}
+					]
+				},
+				{
+					"name": "meta.command.python-interactive.gdb",
+					"begin": "^\\s*(pi|python-interactive)\\s+",
+					"beginCaptures": {
+						"1": { "name": "keyword.control.command.gdb" }
+					},
+					"end": "\\s*$",
+					"patterns": [
+						{
+							"include": "source.python"
+						}
+					]
 				}
 			]
 		},
@@ -382,19 +408,6 @@
 					"endCaptures": {
 						"1": { "name": "keyword.control.end.gdb"}
 					},
-					"patterns": [
-						{
-							"include": "source.python"
-						}
-					]
-				},
-				{
-					"name": "meta.line.python.gdb",
-					"begin": "^\\s*(py(?:thon)?)\\s+",
-					"beginCaptures": {
-						"1": { "name": "keyword.control.command.gdb" }
-					},
-					"end": "\\s*$",
 					"patterns": [
 						{
 							"include": "source.python"

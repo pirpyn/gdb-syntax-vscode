@@ -10,6 +10,12 @@ Commits will slow down. May not update at all.
 
 - Other in [GDB commands, variable and function](https://sourceware.org/gdb/current/onlinedocs/gdb/Command-and-Variable-Index.html#Command-and-Variable-Index).
 
+## [0.1.5] 2023-02-04
+### Merged
+ * python oneliner command
+### Added 
+ * python-interactive command
+
 ## [0.1.4] 2021-05-19
 ### Added
  * set print vtbl command

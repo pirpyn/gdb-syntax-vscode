@@ -28,6 +28,8 @@ watch argc
 watch *(int*) 0x12345
 # counter render has numeric constant, light green
 ignore $bpnum 10
+
+## Python integration
 # Python command block uses python textMate Grammar
 python
 import os
@@ -40,6 +42,12 @@ else:
     if this is None:
         sys.path.insert(0, 'path')
 end
+# Oneliner also render with python color scheme
+py some.value = int(some.validate(some.value))
+
+# Altough less likely to be used in scripts, the interactive python command is rendered
+python-interactive
+pi 2 + 3
 
 ## End of example
 
