@@ -387,6 +387,19 @@
 							"include": "source.python"
 						}
 					]
+				},
+				{
+					"name": "meta.line.python.gdb",
+					"begin": "^\\s*(py(?:thon)?)\\s+",
+					"beginCaptures": {
+						"1": { "name": "keyword.control.command.gdb" }
+					},
+					"end": "\\s*$",
+					"patterns": [
+						{
+							"include": "source.python"
+						}
+					]
 				}
 			]
 		},

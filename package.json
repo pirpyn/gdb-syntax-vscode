@@ -26,7 +26,8 @@
                 "scopeName": "source.gdb",
                 "path": "./syntaxes/gdb.tmLanguage.json",
                 "embeddedLanguages": {
-                    "meta.embedded.python.gdb": "python"
+                    "meta.embedded.python.gdb": "python",
+                    "meta.line.python.gdb": "python"
                 }
             }
         ]
