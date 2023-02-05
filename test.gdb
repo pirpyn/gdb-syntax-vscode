@@ -13,8 +13,8 @@ set pagination off
 set $br_main = $bpnum
 # Things related to the system like signals number are green
 handle SIGFPE nostop noprint pass
-# Command block are implemented
-command $br_main
+# Command block - for specified or last breakoint
+commands $br_main
     # The string uses C format specifier
     printf "argc = %d\n", argc
 end
@@ -161,5 +161,38 @@ show p pr
 
 set print vtbl on
 set print vtbl of
+
+set print elements 250
+set print repeats 20
+set print frame-arguments all
+
+# python scripts can add their own sub-settings, as example:
+set print cprint-pretty-display on
+
+# or "plain settings":
+set auto-speed unlimited
+
+define hook-exit
+   echo exit time!
+end
+
+define command my-command
+   break function exit
+   set $i = 0
+   while $i <= 1
+      echo $i
+      $i = $i + 1
+   end
+end
+
+document my-command
+  This command does something
+  very special
+end
+
+
 show print vtbl
 sho pr v
+
+set substitute-path a b
+directory folder1 folder2
