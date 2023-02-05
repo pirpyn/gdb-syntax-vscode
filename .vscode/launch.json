@@ -14,7 +14,8 @@
                 "--disable-extension",
                 "pierre-payen.gdb-syntax",
                 "--extensionDevelopmentPath=${workspaceFolder}",
-                "${workspaceFolder}/test.gdb"
+                "-d","${workspaceFolder}/tests",
+                "${workspaceFolder}/tests/readme-example.gdb"
             ]
         }
     ]

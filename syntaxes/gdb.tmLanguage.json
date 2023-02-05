@@ -117,11 +117,11 @@
 				},
 				{
 					"name": "meta.ignore.gdb",
-					"match": "^\\s*(ig(?:n(?:o(?:r(?:e)?)?)?)?)\\b\\s+(\\d+|\\$\\w+)\\s+(\\d+)$",
+					"match": "^\\s*(ig(?:n(?:o(?:r(?:e)?)?)?)?)\\b\\s+(\\d+|\\$\\w+)\\s+(\\d+|\\$\\w+)$",
 					"captures": {
 						"1": { "name": "keyword.control.command.gdb" },
 						"2": { "name": "entity.name.tag.breakpoint.gdb" },
-						"3": { "name": "constant.numeric.count.ignore.gdb" }
+						"3": { "name": "constant.numeric.count.gdb" }
 					}
 				},
 				{
