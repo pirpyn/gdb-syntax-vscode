@@ -1,11 +1,11 @@
 {
     "name": "gdb-syntax",
     "publisher": "pierre-payen",
-    "displayName": "gdb-syntax",
+    "displayName": "GDB syntax",
     "description": "Syntax color for GDB command",
     "repository": "https://github.com/pirpyn/gdb-syntax-vscode",
     "icon" : "images/archer.png",
-    "version": "0.2.1",
+    "version": "0.2.2",
     "engines": {
         "vscode": "^1.45.0"
     },

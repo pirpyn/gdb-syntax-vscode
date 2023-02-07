@@ -10,6 +10,16 @@ Commits will slow down. May not update at all.
 
 - Other in [GDB commands, variable and function](https://sourceware.org/gdb/onlinedocs/gdb/Command-and-Variable-Index.html).
 
+## [0.2.2] 2023-02-08
+### Added
+ * command: show: print, logging, history... Partial implementation, same as set.
+### Modified
+ * command: condition, now accepts no expr to make unconditional
+ * block: python, python-interactive, fix when no expression is supplied
+### Misc
+ * fix task.json
+ * blank refactor
+
 ## [0.2.1] 2023-02-07
 ### Modified
  * set breakpints pending: fixed type

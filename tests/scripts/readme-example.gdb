@@ -25,7 +25,9 @@ tbreak main if (argc > 0)
 condition 2 (argc > 0)
 # watch understand when looking at memory location
 watch argc
-watch *(int*) 0x12345
+watch *((int*) 0x12345)
+# but convenience var stays different
+watch $mybp
 # counter render has numeric constant, light green
 ignore $bpnum 10
 

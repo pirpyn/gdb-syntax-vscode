@@ -21,14 +21,15 @@ Commits will slow down. May not update at all.
 
 ## Changelog
 
-### [0.2.1] 2023-02-07
-#### Modified
- * set breakpints pending: fixed type
- * disable, enable, delete: fixed color of `breakpoint` optional
-#### Misc
- * added shell script to concatenate all unit tests into one
- * created associated task.json
- * modified launch.json to prelaunch task and open merged tests.
+## [0.2.2] 2023-02-08
+### Added
+ * command: show: print, logging, history... Partial implementation, same as set.
+### Modified
+ * command: condition, now accepts no expr to make unconditional
+ * block: python, python-interactive, fix when no expression is supplied
+### Misc
+ * fix task.json
+ * blank refactor
 
 ## Roadmap
  * Nothing. on standby

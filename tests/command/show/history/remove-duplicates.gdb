@@ -1,0 +1,17 @@
+show history r
+show history re
+show history rem
+show history remo
+show history remov
+show history remove
+show history remove-
+show history remove-d
+show history remove-du
+show history remove-dup
+show history remove-dupl
+show history remove-dupli
+show history remove-duplic
+show history remove-duplica
+show history remove-duplicat
+show history remove-duplicate
+show history remove-duplicates

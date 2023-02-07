@@ -1,0 +1,9 @@
+show print frame-a
+show print frame-ar
+show print frame-arg
+show print frame-argu
+show print frame-argum
+show print frame-argume
+show print frame-argumen
+show print frame-argument
+show print frame-arguments

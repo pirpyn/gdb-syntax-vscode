@@ -1,0 +1,12 @@
+show auto-load py
+show auto-load pyt
+show auto-load pyth
+show auto-load pytho
+show auto-load python
+show auto-load python-
+show auto-load python-sc
+show auto-load python-scr
+show auto-load python-scri
+show auto-load python-scrip
+show auto-load python-script
+show auto-load python-scripts
