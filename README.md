@@ -1,9 +1,6 @@
-![Visual Studio Marketplace Version](https://img.shields.io/visual-studio-marketplace/v/pierre-payen.gdb-syntax?label=VS%20Marketplace)
-![Visual Studio Marketplace Installs](https://img.shields.io/visual-studio-marketplace/i/pierre-payen.gdb-syntax)
-![Visual Studio Marketplace Downloads](https://img.shields.io/visual-studio-marketplace/d/pierre-payen.gdb-syntax)
+[![Visual Studio Marketplace Version](https://img.shields.io/visual-studio-marketplace/v/pierre-payen.gdb-syntax?label=VS%20Marketplace) ![Visual Studio Marketplace Installs](https://img.shields.io/visual-studio-marketplace/i/pierre-payen.gdb-syntax) ![Visual Studio Marketplace Downloads](https://img.shields.io/visual-studio-marketplace/d/pierre-payen.gdb-syntax)](https://marketplace.visualstudio.com/items?itemName=pierre-payen.gdb-syntax)
 
-![Open VSX Version](https://img.shields.io/open-vsx/v/pierre-payen/gdb-syntax?label=Open%20VSX)
-![Open VSX Downloads](https://img.shields.io/open-vsx/dt/pierre-payen/gdb-syntax)
+[![Open VSX Version](https://img.shields.io/open-vsx/v/pierre-payen/gdb-syntax?label=Open%20VSX) ![Open VSX Downloads](https://img.shields.io/open-vsx/dt/pierre-payen/gdb-syntax)](https://open-vsx.org/extension/pierre-payen/gdb-syntax)
 
 VSCode grammar file to color higlight command files for GDB
 
