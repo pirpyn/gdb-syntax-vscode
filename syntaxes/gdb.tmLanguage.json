@@ -13,7 +13,8 @@
 				{ "include": "#comment" },
 				{ "include": "#strings" },
 				{ "include": "#char" },
-				{ "include": "#numeric" }
+				{ "include": "#numeric" },
+				{ "inlcude": "#on_off_unlimited" }
 			]
 		},
 		"command": {
@@ -166,27 +167,9 @@
 						"4": { "name": "markup.italic.expression.gdb" }
 					}
 				},
-
 				{
 					"name": "meta.command.delete.gdb",
-					"begin": "^[ \t]*(d(?:el(?:e(?:t(?:e)?)?)?)?)\\b(?:[ \t]+b(?:r(?:e(?:a(?:k(?:p(?:o(?:i(?:n(?:t(?:s)?)?)?)?)?)?)?)?)?)?)?\\b[ \t]*",
-					"beginCaptures": {
-						"1": { "name": "keyword.control.command.gdb" }
-					},
-					"patterns": [
-						{
-							"name": "breakpoints.gdb",
-							"match": "(\\d+|\\$\\w+)\\b[ \t]*",
-							"captures": {
-								"1": { "name": "entity.name.tag.breakpoint.gdb" }
-							}
-						}
-					],
-					"end": "$"
-				},
-				{
-					"name": "meta.command.enable.gdb",
-					"begin": "^[ \t]*(en(?:a(?:b(?:l(?:e)?)?)?)?)\\b(?:[ \t]+b(?:r(?:e(?:a(?:k(?:p(?:o(?:i(?:n(?:t(?:s)?)?)?)?)?)?)?)?)?)?)?\\b([ \t]+(?:o(?:n(?:c(?:e)?)?)?|c(?:o(?:u(?:n(?:t)?)?)?)?[ \t]+\\d+|de(?:l(?:e(?:t(?:e)?)?)?)?)?)?\\b[ \t]*",
+					"begin": "^[ \t]*(d(?:el(?:e(?:t(?:e)?)?)?)?)\\b(?:[ \t]+(b(?:r(?:e(?:a(?:k(?:p(?:o(?:i(?:n(?:t(?:s)?)?)?)?)?)?)?)?)?)?))?\\b[ \t]*",
 					"beginCaptures": {
 						"1": { "name": "keyword.control.command.gdb" },
 						"2": { "name": "support.function.option.gdb" }
@@ -203,11 +186,31 @@
 					"end": "$"
 				},
 				{
-					"name": "meta.command.disable.gdb",
-					"begin": "^[ \t]*(dis(?:a(?:b(?:l(?:e)?)?)?)?)\\b(?:[ \t]+b(?:r(?:e(?:a(?:k(?:p(?:o(?:i(?:n(?:t(?:s)?)?)?)?)?)?)?)?)?)?)?\\b[ \t]*",
+					"name": "meta.command.enable.gdb",
+					"begin": "^[ \t]*(en(?:a(?:b(?:l(?:e)?)?)?)?)\\b(?:[ \t]+(b(?:r(?:e(?:a(?:k(?:p(?:o(?:i(?:n(?:t(?:s)?)?)?)?)?)?)?)?)?)?))?\\b([ \t]+(?:o(?:n(?:c(?:e)?)?)?|c(?:o(?:u(?:n(?:t)?)?)?)?[ \t]+\\d+|de(?:l(?:e(?:t(?:e)?)?)?)?)?)?\\b[ \t]*",
 					"beginCaptures": {
 						"1": { "name": "keyword.control.command.gdb" },
-						"2": { "name": "entity.name.tag.breakpoint.gdb" }
+						"2": { "name": "support.function.option.gdb" },
+						"3": { "name": "variable.other.suboption.gdb" }
+					},
+					"patterns": [
+						{
+							"name": "breakpoints.gdb",
+							"match": "(\\d+|\\$\\w+)\\b[ \t]*",
+							"captures": {
+								"1": { "name": "entity.name.tag.breakpoint.gdb" }
+							}
+						}
+					],
+					"end": "$"
+				},
+				{
+					"name": "meta.command.disable.gdb",
+					"begin": "^[ \t]*(dis(?:a(?:b(?:l(?:e)?)?)?)?)\\b(?:[ \t]+(b(?:r(?:e(?:a(?:k(?:p(?:o(?:i(?:n(?:t(?:s)?)?)?)?)?)?)?)?)?)?))?\\b[ \t]*",
+					"beginCaptures": {
+						"1": { "name": "keyword.control.command.gdb" },
+						"2": { "name": "support.function.option.gdb" },
+						"3": { "name": "entity.name.tag.breakpoint.gdb" }
 					},
 					"patterns": [
 						{
@@ -308,7 +311,7 @@
 							"patterns": [
 								{
 									"name": "meta.command.set.breakpoint.pending.gdb",
-									"match": "(p(?:e(?:n(?:d(?:i(?:n(?:g)?)?)?)?)?)?)\\b[ \t]*(on|of*|a(?:u(?:t(?:o)?)?)?)?[ \t]*$*",
+									"match": "(p(?:e(?:n(?:d(?:i(?:n(?:g)?)?)?)?)?)?)\\b[ \t]*(on|of*|a(?:u(?:t(?:o)?)?)?)?[ \t]*$",
 									"captures":{
 										"1": { "name": "variable.other.suboption.gdb" },
 										"2": { "name": "markup.bold.argument.gdb" }
@@ -366,7 +369,7 @@
 								},
 								{
 									"name": "meta.command.set.history.remove-duplicates.gdb",
-									"match": "(r(?:e(?:m(?:o(?:v(?:e(?:-(?:d(?:u(?:p(?:l(?:i(?:c(?:a(?:t(?:e(?:s)?)?)?)?)?)?)?)?)?)?)?)?)?)?)?)?)\\b[ \t]+(u(?:n(?:l(?:i(?:m(?:i(?:t(?:e(?:d)?)?)?)?)?)?)?)?|\\d+)[ \t]*$",
+									"match": "(r(?:e(?:m(?:o(?:v(?:e(?:-(?:d(?:u(?:p(?:l(?:i(?:c(?:a(?:t(?:e(?:s)?)?)?)?)?)?)?)?)?)?)?)?)?)?)?)?)[ \t]+(u(?:n(?:l(?:i(?:m(?:i(?:t(?:e(?:d)?)?)?)?)?)?)?)?|\\d+)[ \t]*$",
 									"captures": {
 										"1": { "name": "variable.other.suboption.gdb" },
 										"2": { "name": "markup.bold.argument.gdb" }
@@ -377,7 +380,7 @@
 						},
 						{
 							"name": "meta.command.set.substitute-path.gdb",
-							"match": "(su(?:b(?:s(?:t(?:i(?:t(?:u(?:t(?:e(?:-(?:p(?:a(?:t(?:h)?)?)?)?)?)?)?)?)?)?)?)?)?)\\b[ \t]+([^[ \t]]+)[ \t]+(.*)[ \t]*$",
+							"match": "(su(?:b(?:s(?:t(?:i(?:t(?:u(?:t(?:e(?:-(?:p(?:a(?:t(?:h)?)?)?)?)?)?)?)?)?)?)?)?)?)[ \t]+([^[ \t]]+)[ \t]+(.*)[ \t]*$",
 							"captures":{
 								"1": { "name": "support.function.option.gdb" },
 								"2": { "name": "markup.underline.link.directory.gdb" },
@@ -399,7 +402,7 @@
 								},
 								{
 									"name": "meta.command.set.auto-load.safe-path.gdb",
-									"begin": "(sa(?:f(?:e(?:-(?:p(?:a(?:t(?:h)?)?)?)?)?)?)?)\\b[ \t]*",
+									"begin": "(sa(?:f(?:e(?:-(?:p(?:a(?:t(?:h)?)?)?)?)?)?)?)[ \t]*",
 									"beginCaptures":{
 										"1": { "name": "variable.other.suboption.gdb" }
 									},
@@ -415,7 +418,7 @@
 								},
 								{
 									"name": "meta.command.set.auto-load.local-gdbinit.gdb",
-									"match": "(lo(?:c(?:a(?:l(?:-(?:g(?:d(?:b(?:i(?:n(?:i(?:t)?)?)?)?)?)?)?)?)?)?)?)\\b(?:[ \t]+(on|of*))?[ \t]*$",
+									"match": "(lo(?:c(?:a(?:l(?:-(?:g(?:d(?:b(?:i(?:n(?:i(?:t)?)?)?)?)?)?)?)?)?)?)?)(?:[ \t]+(on|of*))?[ \t]*$",
 									"captures": {
 										"1": { "name": "variable.other.suboption.gdb" },
 										"2": { "name": "markup.bold.argument.gdb" }
@@ -423,7 +426,7 @@
 								},
 								{
 									"name": "meta.command.set.auto-load.python-scripts.gdb",
-									"match": "(p(?:y(?:t(?:h(?:o(?:n(?:-(?:s(?:c(?:r(?:i(?:p(?:t(?:s)?)?)?)?)?)?)?)?)?)?)?)?)?)\\b(?:[ \t]+(on|of*))?[ \t]*$",
+									"match": "(p(?:y(?:t(?:h(?:o(?:n(?:-(?:s(?:c(?:r(?:i(?:p(?:t(?:s)?)?)?)?)?)?)?)?)?)?)?)?)?)(?:[ \t]+(on|of*))?[ \t]*$",
 									"captures": {
 										"1": { "name": "variable.other.suboption.gdb" },
 										"2": { "name": "markup.bold.argument.gdb" }
@@ -732,7 +735,10 @@
 						"1": { "name": "keyword.control.end.document.gdb"}
 					},
 					"patterns": [
-						{ "include": "#strings" }
+						{ 
+							"match": ".+",
+							"name" : "markup.italic.document.gdb"
+						}
 					]
 				},
 				{
@@ -808,6 +814,17 @@
 				{
 					"name": "constant.numeric.character",
 					"match": "'.'"
+				}
+			]
+		},
+		"on_off_unlimited": {
+			"patterns": [
+				{
+					"name": "meta.on_off_unlimited.gdb",
+					"match": "(u(?:n(?:l(?:i(?:m(?:i(?:t(?:e(?:d)?)?)?)?)?)?)?)|on|of+)",
+					"captures": {
+						"1" : { "name": "markup.bold.argument.gdb" }
+					}
 				}
 			]
 		},

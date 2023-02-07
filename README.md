@@ -24,21 +24,14 @@ Commits will slow down. May not update at all.
 
 ## Changelog
 
-## [0.2.0] 2023-02-07
-### Merged
- * block:
-    * define
-    * document
-    * hook
-    * commands (regexp fixed)
-    * while
-    * python
- * command
-    * directory
-    * skip: -file, -gfile, -function, function, delete, enable, disable
-    * set: size, filename, removedups, substitute-path
-## Modified
- * command: set print
+### [0.2.1] 2023-02-07
+#### Modified
+ * set breakpints pending: fixed type
+ * disable, enable, delete: fixed color of `breakpoint` optional
+#### Misc
+ * added shell script to concatenate all unit tests into one
+ * created associated task.json
+ * modified launch.json to prelaunch task and open merged tests.
 
 ## Roadmap
  * Nothing. on standby

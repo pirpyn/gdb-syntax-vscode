@@ -1,1 +1,2 @@
 *.vsix
+concat_tests.gdb

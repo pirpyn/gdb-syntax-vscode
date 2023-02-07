@@ -4,19 +4,20 @@
 // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
 {
 	"version": "0.2.0",
-    "configurations": [
-        {
-            "name": "Extension",
-            "type": "extensionHost",
-            "request": "launch",
-            "runtimeExecutable": "${execPath}",
-            "args": [
-                "--disable-extension",
-                "pierre-payen.gdb-syntax",
-                "--extensionDevelopmentPath=${workspaceFolder}",
-                "-d","${workspaceFolder}/tests",
-                "${file}"
-            ]
-        }
-    ]
+	"configurations": [
+		{
+			"name": "Extension",
+			"type": "extensionHost",
+			"request": "launch",
+			"runtimeExecutable": "${execPath}",
+			"args": [
+				"--disable-extension",
+				"pierre-payen.gdb-syntax",
+				"--extensionDevelopmentPath=${workspaceFolder}",
+				"-d","${workspaceFolder}/tests",
+				"${workspaceFolder}/concat_tests.gdb"
+			],
+			"preLaunchTask": "Concat tests",
+		}
+	]
 }

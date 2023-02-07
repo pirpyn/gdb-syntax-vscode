@@ -10,6 +10,15 @@ Commits will slow down. May not update at all.
 
 - Other in [GDB commands, variable and function](https://sourceware.org/gdb/onlinedocs/gdb/Command-and-Variable-Index.html).
 
+## [0.2.1] 2023-02-07
+### Modified
+ * set breakpints pending: fixed type
+ * disable, enable, delete: fixed color of `breakpoint` optional
+### Misc
+ * added shell script to concatenate all unit tests into one
+ * created associated task.json
+ * modified launch.json to prelaunch task and open merged tests.
+
 ## [0.2.0] 2023-02-07
 ### Merged
  * block:
@@ -92,9 +101,9 @@ Update README.md
 
 ## [0.0.2] 2020-06-10
 ### Added
-* wrong comment (i.e # is not the first non seperator char on the line)
+* wrong comment (i.e # is not the first non separator char on the line)
 * commands: file, start, run, condition, enable, disable, handle, step, set
-* constant: numeric ( dec, hex, bin, oct), C character ('a')
+* constant: numeric (dec, hex, bin, oct), C character ('a')
 
 ## [0.0.1] 2020-06-09
 Initial release of gdb-syntax.
