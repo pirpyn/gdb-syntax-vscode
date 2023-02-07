@@ -8,7 +8,23 @@ Check [Keep a Changelog](http://keepachangelog.com/) for recommendations on how 
 Disclaimer: for the moment, all the commands that I use are rendered.
 Commits will slow down. May not update at all.
 
-- Other in [GDB commands, variable and function](https://sourceware.org/gdb/current/onlinedocs/gdb/Command-and-Variable-Index.html#Command-and-Variable-Index).
+- Other in [GDB commands, variable and function](https://sourceware.org/gdb/onlinedocs/gdb/Command-and-Variable-Index.html).
+
+## [0.2.0] 2023-02-07
+### Merged
+ * block:
+    * define
+    * document
+    * hook
+    * commands (regexp fixed)
+    * while
+    * python
+ * command
+    * directory
+    * skip: -file, -gfile, -function, function, delete, enable, disable
+    * set: size, filename, removedups, substitute-path
+## Modified
+ * command: set print
 
 ## [0.1.5] 2023-02-04
 ### Merged

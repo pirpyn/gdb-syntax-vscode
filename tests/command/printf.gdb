@@ -1,0 +1,1 @@
+printf "format %s", foo

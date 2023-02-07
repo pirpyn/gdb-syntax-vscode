@@ -15,7 +15,7 @@
                 "pierre-payen.gdb-syntax",
                 "--extensionDevelopmentPath=${workspaceFolder}",
                 "-d","${workspaceFolder}/tests",
-                "${workspaceFolder}/tests/readme-example.gdb"
+                "${file}"
             ]
         }
     ]
