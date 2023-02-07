@@ -6,7 +6,7 @@
 		{
 			"label": "Concat tests",
 			"type": "shell",
-			"command": "/home/ppayen/gdb-syntax-vscode/scripts/concat_tests.sh",
+			"command": "${workspaceFolder}/scripts/concat_tests.sh",
 		}
 	]
 }
