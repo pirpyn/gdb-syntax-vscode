@@ -869,7 +869,7 @@
 			"patterns": [
 				{
 					"name": "meta.on_off_unlimited.gdb",
-					"match": "(u(?:n(?:l(?:i(?:m(?:i(?:t(?:e(?:d)?)?)?)?)?)?)?)|on|of+)",
+					"match": "(u(?:n(?:l(?:i(?:m(?:i(?:t(?:e(?:d)?)?)?)?)?)?)?)|on|off?)",
 					"captures": {
 						"1" : { "name": "markup.bold.argument.gdb" }
 					}
