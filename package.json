@@ -16,7 +16,6 @@
     "contributes": {
         "languages": [{
             "id": "gdb",
-            "aliases": ["syntax", "gdb", "color-higlight"],
             "extensions": [".gdb",".gdbinit"],
             "configuration": "./language-configuration.json"
         }],
