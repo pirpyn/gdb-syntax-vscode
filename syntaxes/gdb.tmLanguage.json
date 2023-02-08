@@ -215,6 +215,13 @@
 					}
 				},
 				{
+					"name": "meta.command.dont.gdb",
+					"match": "^[ \t]*(don(?:t(?:-(?:r(?:e(?:p(?:e(?:a(?:t?)?)?)?)?)?)?)?)?)[ \t]*$",
+					"captures": {
+						"1": { "name": "keyword.control.command.gdb" }
+					}
+				},
+				{
 					"name": "meta.command.handle.gdb",
 					"begin": "^[ \t]*(ha(?:n(?:d(?:l(?:e)?)?)?)?)\\b[ \t]*",
 					"beginCaptures": { "1": { "name": "keyword.control.command.gdb" } },
@@ -774,7 +781,7 @@
 				},
 				{
 					"name": "meta.block.define-command.gdb",
-					"begin": "^[ \t]*(define(?:-prefix)?\\b[ \t]+comm(?:a(?:n(?:d)?)?)?)[ \t]+([^[ \t]]+)[ \t]*$",
+					"begin": "^[ \t]*(define(?:-prefix)?)[ \t]+([^[ \t]]+)[ \t]*$",
 					"beginCaptures": {
 						"1": { "name": "keyword.control.command.gdb" },
 						"2": { "name": "variable.other.variable.gdb" }
