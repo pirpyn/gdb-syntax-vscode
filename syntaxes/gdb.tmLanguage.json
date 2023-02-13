@@ -232,7 +232,7 @@
 				},
 				{
 					"name": "meta.command.next.gdb",
-					"match": "^[ \t]*(n(?:ext)?)\\b[ \t]*(?:(\\d+)?)[ \t]*$",
+					"match": "^[ \t]*(n(?:exti?)?)\\b[ \t]*(?:(\\d+)?)[ \t]*$",
 					"captures": {
 						"1": { "name": "keyword.control.command.gdb" },
 						"2": { "name": "constant.numeric.count.repeat.gdb" }
@@ -240,7 +240,7 @@
 				},
 				{
 					"name": "meta.command.step.gdb",
-					"match": "^[ \t]*(s(?:tep)?)\\b[ \t]*(?:(\\d+)?)[ \t]*$",
+					"match": "^[ \t]*(s(?:tepi?)?)\\b[ \t]*(?:(\\d+)?)[ \t]*$",
 					"captures": {
 						"1": { "name": "keyword.control.command.gdb" },
 						"2": { "name": "constant.numeric.count.repeat.gdb" }
