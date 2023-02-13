@@ -1,8 +1,11 @@
+![The GDB logo/gish is Archer](images/archer.png)
+# GDB syntax color
+
 [![Visual Studio Marketplace Version](https://img.shields.io/visual-studio-marketplace/v/pierre-payen.gdb-syntax?label=VS%20Marketplace) ![Visual Studio Marketplace Installs](https://img.shields.io/visual-studio-marketplace/i/pierre-payen.gdb-syntax) ![Visual Studio Marketplace Downloads](https://img.shields.io/visual-studio-marketplace/d/pierre-payen.gdb-syntax)](https://marketplace.visualstudio.com/items?itemName=pierre-payen.gdb-syntax)
 
 [![Open VSX Version](https://img.shields.io/open-vsx/v/pierre-payen/gdb-syntax?label=Open%20VSX) ![Open VSX Downloads](https://img.shields.io/open-vsx/dt/pierre-payen/gdb-syntax)](https://open-vsx.org/extension/pierre-payen/gdb-syntax)
 
-VSCode grammar file to color higlight command files for GDB
+VSCode grammar extension to color higlight scripts for GDB
 
 ## Features
 
@@ -21,19 +24,17 @@ Commits will slow down. May not update at all.
 
 ## Changelog
 
-## [0.2.2] 2023-02-08
+## [0.2.3] 2023-02-13
 ### Added
- * command: show: print, logging, history... Partial implementation, same as set.
-### Modified
- * command: condition, now accepts no expr to make unconditional
- * block: python, python-interactive, fix when no expression is supplied
+ * command: nexti, stepi, x
 ### Misc
- * fix task.json
- * blank refactor
+ * Added references in README
+ * Proper hexa class selector in regex
 
-## Roadmap
- * Nothing. on standby
- * more from [GDB commands, variable and function index](https://sourceware.org/gdb/onlinedocs/gdb/Command-and-Variable-Index.html).
+## References
+ * [GDB commands, variable and function index](https://sourceware.org/gdb/onlinedocs/gdb/Command-and-Variable-Index.html)
+ * [TextMate languages grammars](https://macromates.com/manual/en/language_grammars)
+ * [Oniguruma regex](https://macromates.com/manual/en/regular_expressions#syntax_oniguruma)
 
 ## Contributors
 ### Rules

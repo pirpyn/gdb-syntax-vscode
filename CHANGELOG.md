@@ -8,7 +8,13 @@ Check [Keep a Changelog](http://keepachangelog.com/) for recommendations on how 
 Disclaimer: for the moment, all the commands that I use are rendered.
 Commits will slow down. May not update at all.
 
-- Other in [GDB commands, variable and function](https://sourceware.org/gdb/onlinedocs/gdb/Command-and-Variable-Index.html).
+## [0.2.3] 2023-02-13
+### Added
+ * command: nexti, stepi, x
+### Misc
+ * fix offff... arguments
+ * Added references in README
+ * Proper hexa class selector in regex
 
 ## [0.2.2] 2023-02-08
 ### Added
