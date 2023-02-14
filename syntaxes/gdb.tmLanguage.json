@@ -731,7 +731,18 @@
 					"captures": {
 						"1": { "name": "keyword.control.command.gdb" },
 						"2": { "name": "support.function.option.gdb" },
-						"3": { "name": "constant.character.escape" }
+						"3": { "name": "constant.character.escape.gdb" }
+					}
+				},
+				{
+					"name": "meta.command.symbol-file.gdb",
+					"match": "^[ \t]*(sy(?:m(?:b(?:o(?:l(?:-(?:f(?:i(?:l(?:e)?)?)?)?)?)?)?)?)?)(?:[ \t]+(-read(?:now|never)))?(?:[ \t]+([^ \t]+)(?:[ \t]+(-o)[ \t]+(0x\\h+))?)?",
+					"captures": {
+						"1": { "name": "keyword.control.command.gdb" },
+						"2": { "name": "support.function.option.gdb" },
+						"3": { "name": "markup.underline.link.filename.gdb" },
+						"4": { "name": "support.function.option.gdb" },
+						"5": { "name": "constant.character.escape.gdb" }
 					}
 				}
 			]
@@ -890,18 +901,18 @@
 				{
 					"name": "constant.numeric.base2.gdb",
 					"match": "\\b(0b[01]+)\\b",
-					"captures": { "1": { "name": "constant.character.escape" } }
+					"captures": { "1": { "name": "constant.character.escape.gdb" } }
 
 				},
 				{
 					"name": "constant.numeric.base8.gdb",
 					"match": "\\b(0[0-7]*)\\b",
-					"captures": { "1": { "name": "constant.character.escape" } }
+					"captures": { "1": { "name": "constant.character.escape.gdb" } }
 				},
 				{
 					"name": "constant.numeric.base16.gdb",
 					"match": "\\b(0x\\h+)\\b",
-					"captures": { "1": { "name": "constant.character.escape" } }
+					"captures": { "1": { "name": "constant.character.escape.gdb" } }
 
 				},
 				{
