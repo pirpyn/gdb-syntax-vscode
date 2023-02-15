@@ -844,11 +844,17 @@
 					"begin": "^[ \t]*(while)\\b[ \t]+(.*)[ \t]*$",
 					"beginCaptures": {
 						"1": { "name": "keyword.control.command.gdb" },
-						"2": { "name": "keyword.control.condition.gdb" }
+						"2": { "name": "markup.italic.conditional.gdb" }
 					},
+					"patterns": [
+						{ "include": "#expression" },
+						{
+							"match": "^[ \t]*(loop_(break|continue))[ \t]*$",
+							"captures": { "1": { "name": "keyword.control.command.gdb" } }
+						}
+					],
 					"end": "^[ \t]*(end)\\b[ \t]*$",
-					"endCaptures": { "1": { "name": "keyword.control.end.while.gdb" } },
-					"patterns": [ { "include": "#expression" } ]
+					"endCaptures": { "1": { "name": "keyword.control.end.while.gdb" } }
 				},
 				{
 					"name": "meta.block.define-command.gdb",
