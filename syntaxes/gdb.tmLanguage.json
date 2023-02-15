@@ -744,6 +744,14 @@
 						"4": { "name": "support.function.option.gdb" },
 						"5": { "name": "constant.character.escape.gdb" }
 					}
+				},
+				{
+					"name": "meta.command.exec-file.gdb",
+					"match": "^[ \t]*(exe(?:c(?:-(?:f(?:i(?:l(?:e)?)?)?)?)?)?)(?:[ \t]+([^ \t]+))?",
+					"captures": {
+						"1": { "name": "keyword.control.command.gdb" },
+						"2": { "name": "markup.underline.link.filename.gdb" }
+					}
 				}
 			]
 		},
