@@ -8,6 +8,10 @@ Check [Keep a Changelog](http://keepachangelog.com/) for recommendations on how 
 Disclaimer: for the moment, all the commands that I use are rendered.
 Commits will slow down. May not update at all.
 
+## [0.3.0] 2023-02-15
+### Added
+ * command: exec-file, symbol-file, add-symbol-file, inferior, add-inferior
+
 ## [0.2.3] 2023-02-13
 ### Added
  * command: nexti, stepi, x

@@ -24,12 +24,9 @@ Commits will slow down. May not update at all.
 
 ## Changelog
 
-## [0.2.3] 2023-02-13
+## [0.3.0] 2023-02-15
 ### Added
- * command: nexti, stepi, x
-### Misc
- * Added references in README
- * Proper hexa class selector in regex
+ * command: exec-file, symbol-file, add-symbol-file, inferior, add-inferior
 
 ## References
  * [GDB commands, variable and function index](https://sourceware.org/gdb/onlinedocs/gdb/Command-and-Variable-Index.html)
