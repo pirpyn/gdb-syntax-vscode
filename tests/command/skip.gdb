@@ -1,4 +1,3 @@
-# skip function in std namespace
 skip
 skip -rfu ^std::
 skip -rfunction ^std:: -file foo

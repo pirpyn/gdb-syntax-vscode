@@ -767,6 +767,40 @@
 						"8": { "name": "variable.other.section.gdb" },
 						"9": { "name": "constant.character.escape.adress.gdb" }
 					}
+				},
+				{
+					"name": "meta.command.inferior.gdb",
+					"match": "^[ \t]*(infe(?:r(?:i(?:o(?:r)?)?)?)?)\\b(?:[ \t]+(\\d+))?[ \t]*$",
+					"captures": {
+						"1": { "name": "keyword.control.command.gdb" },
+						"2": { "name": "variable.other.gdb" }
+					}
+				},
+				{
+					"name": "meta.command.add-inferior.gdb",
+					"begin": "^[ \t]*(add-i(?:n(?:f(?:e(?:r(?:i(?:o(?:r)?)?)?)?)?)?)?)\\b",
+					"beginCaptures": { "1": { "name": "keyword.control.command.gdb" } },
+					"patterns": [
+						{
+							"match": "(-copies)\\b[ \t]+(\\d+)",
+							"captures": {
+								"1": { "name": "support.function.copies.gdb" },
+								"2": { "name": "variable.other.gdb" }
+							}
+						},
+						{
+							"match": "(-exec)\\b[ \t]+(\\w+)",
+							"captures": {
+								"1": { "name": "support.function.copies.gdb" },
+								"2": { "name": "markup.underline.link.gdb" }
+							}
+						},
+						{
+							"match": "(-no-connection)\\b",
+							"captures": { "1": { "name": "support.function.copies.gdb" } }
+						}
+					],
+					"end": "$"
 				}
 			]
 		},
