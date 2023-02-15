@@ -12,7 +12,8 @@
 				{ "include": "#strings" },
 				{ "include": "#char" },
 				{ "include": "#numeric" },
-				{ "inlcude": "#on_off_unlimited" }
+				{ "include": "#on_off_unlimited" },
+				{ "include": "#operator" }
 			]
 		},
 		"command": {
@@ -920,17 +921,28 @@
 			]
 		},
 		"strings": {
-			"name": "string.quoted.double",
-			"begin": "\"",
-			"end": "\"",
 			"patterns": [
 				{
-					"name": "constant.character.escape.gdb",
-					"match": "\\\\."
+					"name": "string.quoted.double",
+					"begin": "\"",
+					"end": "\"",
+					"patterns": [
+						{
+							"name": "constant.character.escape.gdb",
+							"match": "\\\\."
+						},
+						{
+							"name": "constant.character.escape.format.gdb",
+							"match": "(\\%\\d*\\.?\\d*(?:[cdeEfgGilopsuxXn%]?|(?:h[iu]|l[difu]]|LF|ll[idu])?)){1}"
+						},
+						{ "include": "#strings" },
+						{ "include": "#operator" }
+					]
 				},
 				{
-					"name": "constant.character.escape.format.gdb",
-					"match": "(\\%\\d*\\.?\\d*(?:[cdeEfgGilopsuxXn%]?|(?:h[iu]|l[difu]]|LF|ll[idu])?)){1}"
+					"name": "string.quoted.simple",
+					"begin": "'",
+					"end": "'"
 				}
 			]
 		},
@@ -975,6 +987,25 @@
 				{
 					"name": "constant.numeric.base10.gdb",
 					"match": "(\\d+\\.\\d*|\\d*\\.\\d+|\\d+)[eE][+-]\\d+|\\d+\\.\\d*|\\d*\\.\\d+|\\d+"
+				}
+			]
+		},
+		"operator": {
+			"patterns": [
+				{
+					"name": "meta.operator.shell.gdb",
+					"begin": "^(!|she(?:ll?)?)",
+					"beginCaptures": { "1": { "name": "support.class.shell.gdb" } },
+					"patterns": [
+						{
+							"match": "(\\|)",
+							"captures": { "1": { "name": "support.class.pipe.gdb" } }
+						},
+						{
+							"include": "#strings"
+						}
+					],
+					"end":"$"
 				}
 			]
 		}
