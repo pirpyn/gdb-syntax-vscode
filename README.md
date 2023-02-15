@@ -24,10 +24,10 @@ Commits will slow down. May not update at all.
 
 ## Changelog
 
-## [0.3.0] 2023-02-15
+## [0.3.1] 2023-02-15
 ### Added
- * command: exec-file, symbol-file, add-symbol-file, inferior, add-inferior
-
+ * operator: ! (shell), | (pipe)
+ 
 ## References
  * [GDB commands, variable and function index](https://sourceware.org/gdb/onlinedocs/gdb/Command-and-Variable-Index.html)
  * [TextMate languages grammars](https://macromates.com/manual/en/language_grammars)
