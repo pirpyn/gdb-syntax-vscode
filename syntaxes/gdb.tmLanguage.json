@@ -802,6 +802,28 @@
 						}
 					],
 					"end": "$"
+				},
+				{
+					"name": "meta.command.target.gdb",
+					"begin": "^[ \t]*(tar(?:g(?:et?)?)?)\\b[ \t]+",
+					"beginCaptures": { "1" : {  "name": "keyword.control.command.gdb" } },
+					"patterns": [
+						{
+							"match": "(co(?:re?)?)[ \r]+([^\t]+)[ \t]*$",
+							"captures": {
+								"1": { "name": "support.function.option.gdb" },
+								"2": { "name": "markup.underline.link.corefile.gdb" }
+							}
+						},
+						{
+							"match": "(exec?)[ \r]+([^\t]+)[ \t]*$",
+							"captures": {
+								"1": { "name": "support.function.option.gdb" },
+								"2": { "name": "markup.underline.link.execfile.gdb" }
+							}
+						}
+					],
+					"end": "$"
 				}
 			]
 		},
