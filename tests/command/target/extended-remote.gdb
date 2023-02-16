@@ -1,0 +1,13 @@
+target ext /dev/tty1
+target exte /dev/tty1
+target exten /dev/tty1
+target extend /dev/tty1
+target extende /dev/tty1
+target extended /dev/tty1
+target extended- /dev/tty1
+target extended-r /dev/tty1
+target extended-re /dev/tty1
+target extended-rem /dev/tty1
+target extended-remo /dev/tty1
+target extended-remot /dev/tty1
+target extended-remote /dev/tty1

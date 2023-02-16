@@ -73,7 +73,7 @@
 							}
 						},
 						{
-							"begin": "(e(?:n(?:a(?:b(?:l(?:e)?)?)?)?)?)\\b[ \t]*",
+							"begin": "(e(?:n(?:a(?:b(?:le?)?)?)?)?)\\b[ \t]*",
 							"beginCaptures": { "1": { "name": "keyword.control.command.gdb" } },
 							"patterns": [
 								{
@@ -820,6 +820,20 @@
 							"captures": {
 								"1": { "name": "support.function.option.gdb" },
 								"2": { "name": "markup.underline.link.execfile.gdb" }
+							}
+						},
+						{
+							"match": "(rem(?:o(?:te?)?)?)[ \r]+([^\t]+)[ \t]*$",
+							"captures": {
+								"1": { "name": "support.function.option.gdb" },
+								"2": { "name": "support.class.medium.gdb" }
+							}
+						},
+						{
+							"match": "(ext(?:e(?:n(?:d(?:e(?:d(?:-(?:r(?:e(?:m(?:o(?:te?)?)?)?)?)?)?)?)?)?)?)?)[ \r]+([^\t]+)[ \t]*$",
+							"captures": {
+								"1": { "name": "support.function.option.gdb" },
+								"2": { "name": "support.class.medium.gdb" }
 							}
 						}
 					],
