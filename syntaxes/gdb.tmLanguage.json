@@ -809,18 +809,20 @@
 			"patterns": [
 				{
 					"name": "meta.block.commands.gdb",
-					"begin": "^[ \t]*(comm(?:a(?:n(?:d(?:s)?)?)?)?)\\b[ \t]*(.*)?[ \t]*$",
+					"begin": "^[ \t]*(comm(?:a(?:n(?:d(?:s)?)?)?)?)\\b(?:[ \t]+([^ \t]+))?[ \t]*$",
 					"beginCaptures": {
 						"1": { "name": "keyword.control.command.gdb" },
 						"2": { "name": "entity.name.tag.breakpoint.gdb" }
 					},
 					"end": "^[ \t]*(end)[ \t]*$",
-					"endCaptures": {
-						"1": { "name": "keyword.control.end.commands.gdb" }
-					},
 					"patterns": [
+						{
+							"match": "^[ \t]*(silent)[ \t]*$",
+							"captures": { "1": { "name": "keyword.control.command.gdb" } }
+						},
 						{ "include": "#expression" }
-					]
+					],
+					"endCaptures": { "1": { "name": "keyword.control.end.commands.gdb" } }
 				},
 				{
 					"name": "meta.block.conditional.gdb",
