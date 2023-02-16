@@ -835,6 +835,17 @@
 								"1": { "name": "support.function.option.gdb" },
 								"2": { "name": "support.class.medium.gdb" }
 							}
+						},
+						{
+							"match": "(record-f(?:u(?:ll?)?)?)[ \t]*$",
+							"captures": { "1": { "name": "support.function.option.gdb" } }
+						},
+						{
+							"match": "(record-b(?:t(?:r(?:a(?:ce?)?)?)?)?)[ \t]+(bts|pt)[ \t]*$",
+							"captures": {
+								"1": { "name": "support.function.option.gdb" },
+								"2": { "name": "variable.other.arg.gdb" }
+							}
 						}
 					],
 					"end": "$"
