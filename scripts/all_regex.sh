@@ -18,10 +18,11 @@ regex()
 	# taken a word foo, prints (?:f(?:o(?:o)?)?)?
 	# recursive strategy
 	local word="${1}"
-	if [[ ${#word} -le 0 ]]; then
+	if [[ ${#word} -le 1 ]]; then
+		printf "%s?" "${word}"
 		return
 	else
-		printf "(?:${word:0:1}"
+		printf "(?:%s" "${word:0:1}"
 		regex "${word:1}"
 		printf ")?"
 	fi
