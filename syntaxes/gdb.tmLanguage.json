@@ -846,6 +846,10 @@
 								"1": { "name": "support.function.option.gdb" },
 								"2": { "name": "variable.other.arg.gdb" }
 							}
+						},
+						{
+							"match": "(n(?:a(?:t(?:i(?:ve?)?)?)?)?)\\b[ \t]*$",
+							"captures": { "1": { "name": "support.function.option.gdb" } }
 						}
 					],
 					"end": "$"
