@@ -24,9 +24,12 @@ Commits will slow down. May not update at all.
 
 ## Changelog
 
-## [0.3.1] 2023-02-15
+## [0.3.2] 2023-02-20
 ### Added
- * operator: ! (shell), | (pipe)
+ * command:
+    * target (exec|core|native|remote|extended-remote|record)
+    * silent (in commands)
+    * loop_break, loop_continue
  
 ## References
  * [GDB commands, variable and function index](https://sourceware.org/gdb/onlinedocs/gdb/Command-and-Variable-Index.html)

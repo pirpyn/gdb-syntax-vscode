@@ -8,6 +8,13 @@ Check [Keep a Changelog](http://keepachangelog.com/) for recommendations on how 
 Disclaimer: for the moment, all the commands that I use are rendered.
 Commits will slow down. May not update at all.
 
+## [0.3.2] 2023-02-20
+### Added
+ * command:
+    * target (exec|core|native|remote|extended-remote|record)
+    * silent (in commands)
+    * loop_break, loop_continue
+
 ## [0.3.1] 2023-02-15
 ### Added
  * operator: ! (shell), | (pipe)
