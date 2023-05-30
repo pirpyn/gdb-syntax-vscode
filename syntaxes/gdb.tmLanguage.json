@@ -865,12 +865,57 @@
 				},
 				{
 					"name": "meta.command.whatis.gdb",
-					"match": "^[ \t]*(wha(?:t(?:is?)?)?)\\b[ \t]*(/[rmMtToxd]+)?\\b[ \t]*([^ \t]+)$",
+					"match": "^[ \t]*(wha(?:t(?:is?)?)?)\\b[ \t]*(/[rmMtToxd]+)?\\b[ \t]+([^ \t]+)$",
 					"captures": {
 						"1": { "name": "keyword.control.command.gdb" },
 						"2": { "name": "support.function.option.gdb" },
 						"3": { "name": "support.variable.gdb" }
 					}
+				},
+				{
+					"name": "meta.command.info.gdb",
+					"begin": "^[ \t]*(i(?:n(?:fo?)?)?)\\b[ \t]+",
+					"beginCaptures": {
+						"1": { "name": "keyword.control.command.gdb" }
+					},
+					"patterns": [
+						{
+							"match": "(lo(?:c(?:a(?:ls?)?)?)?)\\b[ \t]*$",
+							"captures": {
+								"1": { "name": "support.function.option.gdb" }
+							}
+						},
+						{
+							"match": "(sc(?:o(?:pe?)?)?)\\b[ \t]+([^ \t]+)$",
+							"captures": {
+								"1": { "name": "support.function.option.gdb" },
+								"2": { "name": "markup.underline.link.location.gdb" }
+							}
+						},
+						{
+							"match": "(sy(?:m(?:b(?:ol?)?)?)?)\\b[ \t]+([^ \t]+)$",
+							"captures": {
+								"1": { "name": "support.function.option.gdb" },
+								"2": { "name": "constant.character.escape.adress.gdb" }
+							}
+						},
+						{
+							"match": "(ad(?:d(?:r(?:e(?:ss?)?)?)?)?)\\b[ \t]+([^ \t]+)$",
+							"captures": {
+								"1": { "name": "support.function.option.gdb" },
+								"2": { "name": "support.variable.symbol.gdb" }
+							}
+						},
+						{
+							"match": "(types)\\b[ \t]+(?:(-q)[ \t]+)?([^ \t]+)$",
+							"captures": {
+								"1": { "name": "support.function.option.gdb" },
+								"2": { "name": "variable.other.arg.gdb" },
+								"3": { "name": "string.regexp.gdb" }
+							}
+						}
+					],
+					"end": "$"
 				}
 			]
 		},
