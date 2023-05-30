@@ -853,6 +853,24 @@
 						}
 					],
 					"end": "$"
+				},
+				{
+					"name": "meta.command.ptype.gdb",
+					"match": "^[ \t]*(pt(?:y(?:pe?)?)?)\\b[ \t]*(/[rmMtToxd]+)?\\b[ \t]*([^ \t]+)$",
+					"captures": {
+						"1": { "name": "keyword.control.command.gdb" },
+						"2": { "name": "support.function.option.gdb" },
+						"3": { "name": "support.variable.gdb" }
+					}
+				},
+				{
+					"name": "meta.command.whatis.gdb",
+					"match": "^[ \t]*(wha(?:t(?:is?)?)?)\\b[ \t]*(/[rmMtToxd]+)?\\b[ \t]*([^ \t]+)$",
+					"captures": {
+						"1": { "name": "keyword.control.command.gdb" },
+						"2": { "name": "support.function.option.gdb" },
+						"3": { "name": "support.variable.gdb" }
+					}
 				}
 			]
 		},
