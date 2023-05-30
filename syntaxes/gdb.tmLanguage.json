@@ -923,7 +923,7 @@
 			"patterns": [
 				{
 					"name": "meta.block.commands.gdb",
-					"begin": "^[ \t]*(comm(?:a(?:n(?:ds?)?)?)?)\\b(?:[ \t]+([^ \t]+))?[ \t]*$",
+					"begin": "^[ \t]*(comm(?:a(?:n(?:ds?)?)?)?)\\b(?:[ \t]+(.+))?[ \t]*$",
 					"beginCaptures": {
 						"1": { "name": "keyword.control.command.gdb" },
 						"2": { "name": "entity.name.tag.breakpoint.gdb" }
