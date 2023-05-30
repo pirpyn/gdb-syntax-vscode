@@ -24,16 +24,10 @@ Commits will slow down. May not update at all.
 
 ## Changelog
 
-## [0.3.3] 2023-05-30
+## [0.3.4] 2023-05-30
 ## Added
- * command:
-    * info (scope|symbol|address|locals|types)
-## Modified
- * block
-    * commands: fixed breakpoints not parsed properly
-## Misc
- * Added a C code to test gdb on, along with the makefile to compile & launch it
- 
+ * catch command fully supported
+
 ## References
  * [GDB commands, variable and function index](https://sourceware.org/gdb/onlinedocs/gdb/Command-and-Variable-Index.html)
  * [TextMate languages grammars](https://macromates.com/manual/en/language_grammars)

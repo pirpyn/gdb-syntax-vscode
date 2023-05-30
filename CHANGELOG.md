@@ -8,6 +8,11 @@ Check [Keep a Changelog](http://keepachangelog.com/) for recommendations on how 
 Disclaimer: for the moment, all the commands that I use are rendered.
 Commits will slow down. May not update at all.
 
+## [0.3.4] 2023-05-30
+## Added
+ * command:
+    * catch fully supported
+
 ## [0.3.3] 2023-05-30
 ## Added
  * command:
