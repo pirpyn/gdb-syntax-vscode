@@ -3,7 +3,7 @@ EXE:=$(PROG).exe
 
 .PHONY: run
 run: exe
-	gdb $(EXE)
+	gdb -x command.gdb $(EXE)
 
 .PHONY: exe
 exe : $(EXE)
