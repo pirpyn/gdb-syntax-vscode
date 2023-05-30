@@ -24,12 +24,15 @@ Commits will slow down. May not update at all.
 
 ## Changelog
 
-## [0.3.2] 2023-02-20
-### Added
+## [0.3.3] 2023-05-30
+## Added
  * command:
-    * target (exec|core|native|remote|extended-remote|record)
-    * silent (in commands)
-    * loop_break, loop_continue
+    * info (scope|symbol|address|locals|types)
+## Modified
+ * block
+    * commands: fixed breakpoints not parsed properly
+## Misc
+ * Added a C code to test gdb on, along with the makefile to compile & launch it
  
 ## References
  * [GDB commands, variable and function index](https://sourceware.org/gdb/onlinedocs/gdb/Command-and-Variable-Index.html)

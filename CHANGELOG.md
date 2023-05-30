@@ -8,6 +8,16 @@ Check [Keep a Changelog](http://keepachangelog.com/) for recommendations on how 
 Disclaimer: for the moment, all the commands that I use are rendered.
 Commits will slow down. May not update at all.
 
+## [0.3.3] 2023-05-30
+## Added
+ * command:
+    * info (scope|symbol|address|locals|types)
+## Modified
+ * block
+    * commands: fixed breakpoints not parsed properly
+## Misc
+ * Added a C code to test gdb on, along with the makefile to compile & launch it
+
 ## [0.3.2] 2023-02-20
 ### Added
  * command:
