@@ -875,9 +875,7 @@
 				{
 					"name": "meta.command.info.gdb",
 					"begin": "^[ \t]*(i(?:n(?:fo?)?)?)\\b[ \t]+",
-					"beginCaptures": {
-						"1": { "name": "keyword.control.command.gdb" }
-					},
+					"beginCaptures": { "1": { "name": "keyword.control.command.gdb" } },
 					"patterns": [
 						{
 							"match": "(lo(?:c(?:a(?:ls?)?)?)?)\\b[ \t]*$",
@@ -912,6 +910,68 @@
 								"1": { "name": "support.function.option.gdb" },
 								"2": { "name": "variable.other.arg.gdb" },
 								"3": { "name": "string.regexp.gdb" }
+							}
+						}
+					],
+					"end": "$"
+				},
+				{
+					"name": "meta.command.catch.gdb",
+					"begin": "^[ \t]*(t?cat(?:ch?)?)\\b[ \t]+",
+					"beginCaptures": { "1": { "name": "keyword.control.command.gdb" } },
+					"patterns": [
+						{
+							"match": "(t(?:h(?:r(?:ow?)?)?)?)\\b(?:[ \t]+([^ \t]+))?[ \t]*$",
+							"captures": {
+								"1": { "name": "support.function.option.gdb" },
+								"2": { "name": "string.regexp.gdb" }
+							}
+						},
+						{
+							"match": "(exc(?:e(?:p(?:t(?:i(?:on?)?)?)?)?)?)\\b(?:[ \t]+([^ \t]+))?[ \t]*$",
+							"captures": {
+								"1": { "name": "support.function.option.gdb" },
+								"2": { "name": "support.class.exception.gdb" }
+							}
+						},
+						{
+							"match": "(h(?:a(?:n(?:d(?:l(?:e(?:rs?)?)?)?)?)?)?)\\b(?:[ \t]+([^ \t]+))?[ \t]*$",
+							"captures": {
+								"1": { "name": "support.function.option.gdb" },
+								"2": { "name": "support.class.exception.gdb" }
+							}
+						},
+						{
+							"match": "(a(?:s(?:s(?:e(?:rt?)?)?)?)?)[ \t]*$",
+							"captures": { "1": { "name": "support.function.option.gdb" } }
+						},
+						{
+							"match": "(exec?)[ \t]*$",
+							"captures": { "1": { "name": "support.function.option.gdb" } }
+						},
+						{
+							"match": "(sy(?:s(?:c(?:a(?:ll?)?)?)?)?)\\b(?:[ \t]+(.+))?[ \t]*$",
+							"captures": {
+								"1": { "name": "support.function.option.gdb" },
+								"2": { "name": "support.class.os-syscall.gdb" }
+							}
+						},
+						{
+							"match": "(v(?:f(?:o(?:rk?)?)?)?|f(?:o(?:rk?)?)?)[ \t]*$",
+							"captures": { "1": { "name": "support.function.option.gdb" } }
+						},
+						{
+							"match": "(u(?:n(?:l(?:o(?:ad?)?)?)?)?|l(?:o(?:ad?)?)?)\\b(?:[ \t]+([^\t]+))?[ \t]*$",
+							"captures": {
+								"1": { "name": "support.function.option.gdb" },
+								"2": { "name": "string.regexp.gdb" }
+							}
+						},
+						{
+							"match": "(si(?:g(?:n(?:al?)?)?)?)\\b(?:[ \t]+([^\t]+))?[ \t]*$",
+							"captures": {
+								"1": { "name": "support.function.option.gdb" },
+								"2": { "name": "support.class.signals.gdb" }
 							}
 						}
 					],
