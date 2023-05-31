@@ -216,6 +216,13 @@
 					}
 				},
 				{
+					"name": "meta.command.dont-repeat.gdb",
+					"match": "^[ \t]*(don(?:t(?:-(?:r(?:e(?:p(?:e(?:a(?:t?)?)?)?)?)?)?)?)?)[ \t]*$",
+					"captures": {
+						"1": { "name": "keyword.control.command.gdb" }
+					}
+				},
+				{
 					"name": "meta.command.handle.gdb",
 					"begin": "^[ \t]*(ha(?:n(?:d(?:le?)?)?)?)\\b[ \t]*",
 					"beginCaptures": { "1": { "name": "keyword.control.command.gdb" } },
@@ -1033,15 +1040,15 @@
 					"endCaptures": { "1": { "name": "keyword.control.end.while.gdb" } }
 				},
 				{
-					"name": "meta.block.define-command.gdb",
-					"begin": "^[ \t]*(define(?:-prefix)?\\b[ \t]+comm(?:a(?:nd?)?)?)[ \t]+([^[ \t]]+)[ \t]*$",
+					"name": "meta.block.define.gdb",
+					"begin": "^[ \t]*(define(?:-prefix)?)\\b[ \t]+([^[ \t]]+)[ \t]*$",
 					"beginCaptures": {
 						"1": { "name": "keyword.control.command.gdb" },
 						"2": { "name": "variable.other.variable.gdb" }
 					},
+					"patterns": [ { "include": "#expression" } ],
 					"end": "^[ \t]*(end)[ \t]*$",
-					"endCaptures": { "1": { "name": "keyword.control.end.define-command.gdb" } },
-					"patterns": [ { "include": "#expression" } ]
+					"endCaptures": { "1": { "name": "keyword.control.end.define.gdb" } }
 				},
 				{
 					"name": "meta.block.document.gdb",
