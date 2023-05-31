@@ -28,12 +28,25 @@ regex()
 	fi
 }
 
+test_regex()
+{
+	local word="${1}"
+	# taken a word foo, prints f, fo , foo
+	# loop strategy
+	for (( i = 1; i <= ${#word}; i++ )); do
+		echo "${word:0:$i}"
+	done
+}
+
 if [[ $# -eq 0 ]]; then
 	usage
 	exit 1
 fi
 
 for word in "${@}"; do
-	regex "${word}"
+	echo "# The following regexp"
+	regex "${word}" | sed -e 's/^(?://' -e 's/)?$//'
 	echo
+	echo "# will match"
+	test_regex "${word}"
 done
