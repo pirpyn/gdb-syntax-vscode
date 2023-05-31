@@ -983,6 +983,26 @@
 						}
 					],
 					"end": "$"
+				},
+				{
+					"name": "meta.command.help.gdb",
+					"begin": "^[ \t]*(h(?:e(?:lp?)?)?)\\b[ \t]*",
+					"beginCaptures": { "1": { "name": "keyword.control.command.gdb" } },
+					"patterns": [
+						{
+							"match": "(alias(?:es?)?)\\b[ \t]*$",
+							"captures": { "1": { "name": "support.function.option.gdb" } }
+						},
+						{
+							"match": "(b(?:r(?:e(?:a(?:k(?:p(?:o(?:i(?:n(?:ts?)?)?)?)?)?)?)?)?)?)\\b[ \t]*$",
+							"captures": { "1": { "name": "support.function.option.gdb" } }
+						},
+						{
+							"match": "([^ \t]+)\\b[ \t]*$",
+							"captures": { "1": { "name": "variable.other.variable.gdb" } }
+						}
+					],
+					"end": "$"
 				}
 			]
 		},
