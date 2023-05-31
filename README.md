@@ -7,6 +7,21 @@
 
 VSCode grammar extension to color higlight scripts for GDB
 
+## Changelog
+
+## [0.4.1] 2023-05-31
+## Modified
+ * conditionals rendering as normal
+ * set logging|pagination renders on/off better
+
+## [0.4.0] 2023-05-31
+## Added
+ * command
+    * apropos
+    * help: alias, aliases, breakpoints, user-defined
+## Merged
+ * fix define command from GitMensch
+
 ## Features
 
 This extension provides a grammar file to parse and color GDB command files.
@@ -21,16 +36,6 @@ To have a consistant color hilight each command has it's own regexp.
 
 Disclaimer: for the moment, all the commands that I use are rendered.
 Commits will slow down. May not update at all.
-
-## Changelog
-
-## [0.4.0] 2023-05-31
-## Added
- * command
-    * apropos
-    * help: alias, aliases, breakpoints, user-defined
-## Merged
- * fix define command from GitMensch
 
 ## References
  * [GDB commands, variable and function index](https://sourceware.org/gdb/onlinedocs/gdb/Command-and-Variable-Index.html)

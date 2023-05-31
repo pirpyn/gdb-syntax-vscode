@@ -8,6 +8,11 @@ Check [Keep a Changelog](http://keepachangelog.com/) for recommendations on how 
 Disclaimer: for the moment, all the commands that I use are rendered.
 Commits will slow down. May not update at all.
 
+## [0.4.1] 2023-05-31
+## Modified
+ * conditionals rendering as normal
+ * set logging|pagination renders on/off better
+
 ## [0.4.0] 2023-05-31
 ## Added
  * command
