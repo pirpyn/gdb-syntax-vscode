@@ -19,12 +19,13 @@ command $br_main
     printf "argc = %d\n", argc
 end
 # At the moment, break on function render the same as for path
-# but conditionals are emphasized
-tbreak main if (argc > 0)
-# When command as breakpoint number as arhument, it's rendered in a darker blue
+# Conditionals renders according to convenience
+tbreak main if (argc > $my_val)
+# When command as breakpoint number as argument, it's rendered in a darker blue
 condition 2 (argc > 0)
-# watch understand when looking at memory location
+# watch render accordingly depending if looking at value or address
 watch argc
+watch -l argc
 watch *((int*) 0x12345)
 # but convenience var stays different
 watch $mybp

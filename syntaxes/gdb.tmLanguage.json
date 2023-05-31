@@ -145,7 +145,7 @@
 						"1": { "name": "keyword.control.command.gdb" },
 						"2": { "name": "markup.underline.link.location.gdb" },
 						"3": { "name": "keyword.control.condition.gdb" },
-						"4": { "name": "markup.italic.expression.gdb" }
+						"4": { "patterns": [ { "include": "#expression" } ] }
 					}
 				},
 				{
@@ -204,7 +204,7 @@
 					"captures": {
 						"1": { "name": "keyword.control.command.gdb" },
 						"2": { "name": "entity.name.tag.breakpoint.gdb" },
-						"3": { "name": "markup.italic.expression.gdb" }
+						"3": { "patterns": [ { "include": "#expression" } ] }
 					}
 				},
 				{
@@ -393,14 +393,11 @@
 						},
 						{
 							"name": "meta.command.set.logging.gdb",
-							"begin": "(lo(?:g(?:g(?:i(?:ng?)?)?)?)?)\\b(?:[ \t]+(off?)\\b[ \t]*$|[ \t]+)",
-							"beginCaptures": {
-								"1": { "name": "support.function.option.gdb" },
-								"2": { "name": "variable.other.variable.gdb" }
-							},
+							"begin": "(lo(?:g(?:g(?:i(?:ng?)?)?)?)?)\\b",
+							"beginCaptures": { "1": { "name": "support.function.option.gdb" } },
 							"patterns":[
 								{
-									"match": "(f(?:i(?:le?)?)?|on)\\b(?:[ \t]+(.+))?[ \t]*$",
+									"match": "(f(?:i(?:le?)?)?)\\b(?:[ \t]+(.+))?[ \t]*$",
 									"captures": {
 										"1": { "name": "variable.other.suboption.gdb" },
 										"2": { "name": "markup.underline.link.filename.gdb" }
@@ -410,14 +407,21 @@
 									"match": "(ov(?:e(?:r(?:w(?:r(?:i(?:te?)?)?)?)?)?)?)\\b(?:[ \t]+(on|off?))?[ \t]*$",
 									"captures": {
 										"1": { "name": "variable.other.suboption.gdb" },
-										"2": { "name": "markup.bold.argument.gdb" }
+										"2": { "patterns": [ { "include": "#on_off_unlimited" } ] }
 									}
 								},
 								{
 									"match": "(r(?:e(?:d(?:i(?:r(?:e(?:ct?)?)?)?)?)?)?)\\b(?:[ \t]+(on|off?))?[ \t]*$",
 									"captures": {
 										"1": { "name": "variable.other.suboption.gdb" },
-										"2": { "name": "markup.bold.argument.gdb" }
+										"2": { "patterns": [ { "include": "#on_off_unlimited" } ] }
+									}
+								},
+								{
+									"match": "\\b(on|off?)\\b(?:[ \t]+([^ \t]+))?$",
+									"captures": {
+										"1": { "patterns": [ { "include": "#on_off_unlimited" } ] },
+										"2": { "name": "markup.underline.link" }
 									}
 								}
 							],
@@ -428,7 +432,7 @@
 							"match": "(pa(?:g(?:i(?:n(?:a(?:t(?:i(?:on?)?)?)?)?)?)?)?)\\b(?:[ \t]+(on|off?))?[ \t]*$",
 							"captures": {
 								"1": { "name": "support.function.option.gdb" },
-								"2": { "name": "markup.bold.argument.gdb" }
+								"2": { "patterns": [ { "include": "#on_off_unlimited" } ] }
 							}
 						},
 						{
@@ -1036,27 +1040,24 @@
 				},
 				{
 					"name": "meta.block.conditional.gdb",
-					"begin": "^[ \t]*(if)\\b[ \t]+(.+)[ \t]*$",
-					"beginCaptures": {
-						"1": { "name": "keyword.control.command.gdb" },
-						"2": { "name": "markup.italic.expression.gdb" }
-					},
-					"end": "^[ \t]*(end)[ \t]*$",
-					"endCaptures": { "1": { "name": "keyword.control.end.conditional.gdb" } },
+					"begin": "^[ \t]*(if)\\b[ \t]+",
+					"beginCaptures": { "1": { "name": "keyword.control.command.gdb" } },
 					"patterns": [
 						{ "include": "#expression" },
 						{
 							"match": "^[ \t]*(else)\\b[ \t]*$",
 							"captures": { "1": { "name": "keyword.control.command.gdb" } }
 						}
-					]
+					],
+					"end": "^[ \t]*(end)[ \t]*$",
+					"endCaptures": { "1": { "name": "keyword.control.end.conditional.gdb" } }
 				},
 				{
 					"name": "meta.block.while.gdb",
 					"begin": "^[ \t]*(while)\\b[ \t]+(.*)[ \t]*$",
 					"beginCaptures": {
 						"1": { "name": "keyword.control.command.gdb" },
-						"2": { "name": "markup.italic.conditional.gdb" }
+						"2": { "patterns": [ { "include": "#expression" } ] }
 					},
 					"patterns": [
 						{ "include": "#expression" },
@@ -1177,9 +1178,7 @@
 				{
 					"name": "meta.on_off_unlimited.gdb",
 					"match": "\\b(u(?:n(?:l(?:i(?:m(?:i(?:t(?:ed?)?)?)?)?)?)?)|on|off?)\\b",
-					"captures": {
-						"1" : { "name": "markup.bold.argument.gdb" }
-					}
+					"captures": { "1" : { "name": "markup.bold.argument.gdb" } }
 				}
 			]
 		},
