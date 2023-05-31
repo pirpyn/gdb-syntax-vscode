@@ -8,6 +8,14 @@ Check [Keep a Changelog](http://keepachangelog.com/) for recommendations on how 
 Disclaimer: for the moment, all the commands that I use are rendered.
 Commits will slow down. May not update at all.
 
+## [0.4.0] 2023-05-31
+## Added
+ * command
+    * apropos
+    * help: alias, aliases, breakpoints, user-defined
+## Merged
+ * fix define command from GitMensch
+
 ## [0.3.4] 2023-05-30
 ## Added
  * command:

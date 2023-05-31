@@ -24,9 +24,13 @@ Commits will slow down. May not update at all.
 
 ## Changelog
 
-## [0.3.4] 2023-05-30
+## [0.4.0] 2023-05-31
 ## Added
- * catch command fully supported
+ * command
+    * apropos
+    * help: alias, aliases, breakpoints, user-defined
+## Merged
+ * fix define command from GitMensch
 
 ## References
  * [GDB commands, variable and function index](https://sourceware.org/gdb/onlinedocs/gdb/Command-and-Variable-Index.html)
