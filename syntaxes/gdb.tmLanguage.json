@@ -1,6 +1,7 @@
 {
 	"$schema": "https://raw.githubusercontent.com/martinring/tmlanguage/master/tmlanguage.json",
 	"name": "gdb syntax",
+	"scopeName": "source.gdb",
 	"patterns": [ { "include": "#expression" } ],
 	"repository": {
 		"expression": {
@@ -1268,6 +1269,5 @@
 				}
 			]
 		}
-	},
-	"scopeName": "source.gdb"
+	}
 }

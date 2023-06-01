@@ -1,41 +1,41 @@
-#                                                                                                        
-#   STL GDB evaluators/views/utilities - 1.03
 #
-#   The new GDB commands:                                                         
-# 	    are entirely non instrumental                                             
-# 	    do not depend on any "inline"(s) - e.g. size(), [], etc
-#       are extremely tolerant to debugger settings
-#                                                                                 
-#   This file should be "included" in .gdbinit as following:
-#   source stl-views.gdb or just paste it into your .gdbinit file
+#	STL GDB evaluators/views/utilities - 1.03
 #
-#   The following STL containers are currently supported:
+#	The new GDB commands:
+#		are entirely non instrumental
+#		do not depend on any "inline"(s) - e.g. size(), [], etc
+#		are extremely tolerant to debugger settings
 #
-#       std::vector<T> -- via pvector command
-#       std::list<T> -- via plist or plist_member command
-#       std::map<T,T> -- via pmap or pmap_member command
-#       std::multimap<T,T> -- via pmap or pmap_member command
-#       std::set<T> -- via pset command
-#       std::multiset<T> -- via pset command
-#       std::deque<T> -- via pdequeue command
-#       std::stack<T> -- via pstack command
-#       std::queue<T> -- via pqueue command
-#       std::priority_queue<T> -- via ppqueue command
-#       std::bitset<n> -- via pbitset command
-#       std::string -- via pstring command
-#       std::widestring -- via pwstring command
+#	This file should be "included" in .gdbinit as following:
+#	source stl-views.gdb or just paste it into your .gdbinit file
 #
-#   The end of this file contains (optional) C++ beautifiers
-#   Make sure your debugger supports $argc
+#	The following STL containers are currently supported:
 #
-#   Simple GDB Macros writen by Dan Marinescu (H-PhD) - License GPL
-#   Inspired by intial work of Tom Malnar, 
-#     Tony Novac (PhD) / Cornell / Stanford,
-#     Gilad Mishne (PhD) and Many Many Others.
-#   Contact: dan_c_marinescu@yahoo.com (Subject: STL)
+#		std::vector<T> -- via pvector command
+#		std::list<T> -- via plist or plist_member command
+#		std::map<T,T> -- via pmap or pmap_member command
+#		std::multimap<T,T> -- via pmap or pmap_member command
+#		std::set<T> -- via pset command
+#		std::multiset<T> -- via pset command
+#		std::deque<T> -- via pdequeue command
+#		std::stack<T> -- via pstack command
+#		std::queue<T> -- via pqueue command
+#		std::priority_queue<T> -- via ppqueue command
+#		std::bitset<n> -- via pbitset command
+#		std::string -- via pstring command
+#		std::widestring -- via pwstring command
 #
-#   Modified to work with g++ 4.3 by Anders Elton
-#   Also added _member functions, that instead of printing the entire class in map, prints a member.
+#	The end of this file contains (optional) C++ beautifiers
+#	Make sure your debugger supports $argc
+#
+#	Simple GDB Macros writen by Dan Marinescu (H-PhD) - License GPL
+#	Inspired by intial work of Tom Malnar,
+#	  Tony Novac (PhD) / Cornell / Stanford,
+#	  Gilad Mishne (PhD) and Many Many Others.
+#	Contact: dan_c_marinescu@yahoo.com (Subject: STL)
+#
+#	Modified to work with g++ 4.3 by Anders Elton
+#	Also added _member functions, that instead of printing the entire class in map, prints a member.
 
 
 
@@ -72,14 +72,14 @@ define pvector
 	  set $start_idx = $arg1
 	  set $stop_idx = $arg2
 	  if $start_idx > $stop_idx
-	    set $tmp_idx = $start_idx
-	    set $start_idx = $stop_idx
-	    set $stop_idx = $tmp_idx
+		set $tmp_idx = $start_idx
+		set $start_idx = $stop_idx
+		set $stop_idx = $tmp_idx
 	  end
 	  if $start_idx < 0 || $stop_idx < 0 || $start_idx > $size_max || $stop_idx > $size_max
-	    printf "idx1, idx2 are not in acceptable range: [0..%u].\n", $size_max
+		printf "idx1, idx2 are not in acceptable range: [0..%u].\n", $size_max
 	  else
-	    set $i = $start_idx
+		set $i = $start_idx
 		while $i <= $stop_idx
 			printf "elem[%u]: ", $i
 			p *($arg0._M_impl._M_start + $i)
@@ -103,7 +103,7 @@ document pvector
 	pvector v - Prints vector content, size, capacity and T typedef
 	pvector v 0 - Prints element[idx] from vector
 	pvector v 1 2 - Prints elements in range [idx1..idx2] from vector
-end 
+end
 
 #
 # std::list<>
@@ -537,11 +537,11 @@ define pstack
 		set $start_cur = $arg0.c._M_impl._M_start._M_cur
 		set $finish_cur = $arg0.c._M_impl._M_finish._M_cur
 		set $size = $finish_cur - $start_cur
-        set $i = $size - 1
-        while $i >= 0
-            p *($start_cur + $i)
-            set $i--
-        end
+		set $i = $size - 1
+		while $i >= 0
+			p *($start_cur + $i)
+			set $i--
+		end
 		printf "Stack size = %u\n", $size
 	end
 end
@@ -567,11 +567,11 @@ define pqueue
 		set $start_cur = $arg0.c._M_impl._M_start._M_cur
 		set $finish_cur = $arg0.c._M_impl._M_finish._M_cur
 		set $size = $finish_cur - $start_cur
-        set $i = 0
-        while $i < $size
-            p *($start_cur + $i)
-            set $i++
-        end
+		set $i = 0
+		while $i < $size
+			p *($start_cur + $i)
+			set $i++
+		end
 		printf "Queue size = %u\n", $size
 	end
 end
@@ -624,7 +624,7 @@ define pbitset
 	if $argc == 0
 		help pbitset
 	else
-        p /t $arg0._M_w
+		p /t $arg0._M_w
 	end
 end
 
@@ -657,7 +657,7 @@ document pstring
 	Syntax: pstring <string>
 	Example:
 	pstring s - Prints content, size/length, capacity and ref-count of string s
-end 
+end
 
 #
 # std::wstring
@@ -679,7 +679,7 @@ document pwstring
 	Syntax: pwstring <wstring>
 	Example:
 	pwstring s - Prints content, size/length, capacity and ref-count of wstring s
-end 
+end
 
 #
 # C++ related beautifiers (optional)
