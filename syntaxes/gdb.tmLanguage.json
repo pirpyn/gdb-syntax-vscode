@@ -557,6 +557,14 @@
 								"2": { "patterns": [ { "include": "#numeric" }, { "include": "#unlimited" } ] }
 							}
 						},
+						{
+							"name": "meta.command.set.listsize.gdb",
+							"match": "\\b(lis(?:t(?:s(?:i(?:ze?)?)?)?)?)\\b(?:[ \t]+(\\d+|[unlimited]+))?[ \t]*$",
+							"captures": {
+								"1": { "name": "support.function.option.gdb" },
+								"2": { "patterns": [ { "include": "#numeric" }, { "include": "#unlimited" } ] }
+							}
+						},
 						{ "include": "#expression" }
 					],
 					"end": "$"
