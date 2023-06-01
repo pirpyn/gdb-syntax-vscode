@@ -8,6 +8,18 @@ Check [Keep a Changelog](http://keepachangelog.com/) for recommendations on how 
 Disclaimer: for the moment, all the commands that I use are rendered.
 Commits will slow down. May not update at all.
 
+## [0.4.2] 2023-06-01
+## Added
+ * set input/output-radix
+ * set verbose
+ * set confirm
+ * set with/height
+ * set listsize
+## Modified
+ * Rendering of on/off/unlimited
+ * shell operator '!' or shell command not rendered correctly if not at the start of the line
+ * GDB scripts to test commands and write .gdb tests
+
 ## [0.4.1] 2023-05-31
 ## Modified
  * conditionals rendering as normal
