@@ -541,6 +541,22 @@
 								"2": { "patterns": [ { "include": "#numeric" } ] }
 							}
 						},
+						{
+							"name": "meta.command.set.height.gdb",
+							"match": "\\b(he(?:i(?:g(?:ht?)?)?)?)\\b(?:[ \t]+(\\d+|[unlimited]+))?[ \t]*$",
+							"captures": {
+								"1": { "name": "support.function.option.gdb" },
+								"2": { "patterns": [ { "include": "#numeric" }, { "include": "#unlimited" } ] }
+							}
+						},
+						{
+							"name": "meta.command.set.width.gdb",
+							"match": "\\b(wi(?:d(?:th?)?)?)\\b(?:[ \t]+(\\d+|[unlimited]+))?[ \t]*$",
+							"captures": {
+								"1": { "name": "support.function.option.gdb" },
+								"2": { "patterns": [ { "include": "#numeric" }, { "include": "#unlimited" } ] }
+							}
+						},
 						{ "include": "#expression" }
 					],
 					"end": "$"
