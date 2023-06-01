@@ -516,6 +516,14 @@
 								"2": { "patterns": [ { "include": "#on_off" } ] }
 							}
 						},
+						{
+							"name": "meta.command.set.verbose.gdb",
+							"match": "\\b(ve(?:r(?:b(?:o(?:se?)?)?)?)?)\\b(?:[ \t]+(on|off?))?[ \t]*$",
+							"captures": {
+								"1": { "name": "support.function.option.gdb" },
+								"2": { "patterns": [ { "include": "#on_off" } ] }
+							}
+						},
 						{ "include": "#expression" }
 					],
 					"end": "$"
