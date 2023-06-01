@@ -525,6 +525,22 @@
 								"2": { "patterns": [ { "include": "#on_off" } ] }
 							}
 						},
+						{
+							"name": "meta.command.set.input-radix.gdb",
+							"match": "\\b(inp(?:u(?:t(?:-(?:r(?:a(?:d(?:ix?)?)?)?)?)?)?)?)(?:[ \t]+(\\d+))?[ \t]*$",
+							"captures": {
+								"1": { "name": "support.function.option.gdb" },
+								"2": { "patterns": [ { "include": "#numeric" } ] }
+							}
+						},
+						{
+							"name": "meta.command.set.output-radix.gdb",
+							"match": "\\b(out(?:p(?:u(?:t(?:-(?:r(?:a(?:d(?:ix?)?)?)?)?)?)?)?)?)(?:[ \t]+(\\d+))?[ \t]*$",
+							"captures": {
+								"1": { "name": "support.function.option.gdb" },
+								"2": { "patterns": [ { "include": "#numeric" } ] }
+							}
+						},
 						{ "include": "#expression" }
 					],
 					"end": "$"

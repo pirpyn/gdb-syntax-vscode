@@ -1,0 +1,9 @@
+set inp 1
+set inpu 1
+set input 1
+set input- 1
+set input-r 1
+set input-ra 1
+set input-rad 1
+set input-radi 1
+set input-radix 1

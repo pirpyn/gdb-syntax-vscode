@@ -1,0 +1,10 @@
+set out 1
+set outp 1
+set outpu 1
+set output 1
+set output- 1
+set output-r 1
+set output-ra 1
+set output-rad 1
+set output-radi 1
+set output-radix 1
