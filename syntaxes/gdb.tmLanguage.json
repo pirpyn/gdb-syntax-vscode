@@ -1254,7 +1254,7 @@
 			"patterns": [
 				{
 					"name": "meta.operator.shell.gdb",
-					"begin": "^(!|she(?:ll?)?)",
+					"begin": "^[ \t]*(!|she(?:ll?)?)",
 					"beginCaptures": { "1": { "name": "support.class.shell.gdb" } },
 					"patterns": [
 						{
