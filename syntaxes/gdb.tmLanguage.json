@@ -508,6 +508,14 @@
 							],
 							"end": "$"
 						},
+						{
+							"name": "meta.command.set.confirms.gdb",
+							"match": "\\b(con(?:f(?:i(?:rm?)?)?)?)\\b(?:[ \t]+(on|off?))?[ \t]*$",
+							"captures": {
+								"1": { "name": "support.function.option.gdb" },
+								"2": { "patterns": [ { "include": "#on_off" } ] }
+							}
+						},
 						{ "include": "#expression" }
 					],
 					"end": "$"
