@@ -268,6 +268,22 @@
 					}
 				},
 				{
+					"name": "meta.command.until.gdb",
+					"match": "^[ \t]*(u(?:ntil)\\b[ \t]+([^[ \t]]+)[ \t]*$",
+					"captures": {
+						"1": { "name": "keyword.control.command.gdb" },
+						"2": { "name": "markup.underline.link.location.gdb" }
+					}
+				},
+				{
+					"name": "meta.command.jump.gdb",
+					"match": "^[ \t]*(j(?:u(?:m(?:p)))\\b(?:[ \t]+([^[ \t]]+)[ \t]*$",
+					"captures": {
+						"1": { "name": "keyword.control.command.gdb" },
+						"2": { "name": "constant.numeric.count.repeat.gdb" }
+					}
+				},
+				{
 					"name": "meta.command.directory.gdb",
 					"begin": "^[ \t]*(dir(?:e(?:c(?:t(?:o(?:ry?)?)?)?)?)?)\\b[ \t]*",
 					"beginCaptures": {
