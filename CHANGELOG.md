@@ -7,10 +7,6 @@ Check [Keep a Changelog](http://keepachangelog.com/) for recommendations on how 
 ## [Unreleased]
 Disclaimer: for the moment, all the commands that I use are rendered.
 Commits will slow down. May not update at all.
-## Added
- * command
-    * until
-    * jump
 
 ## [0.4.2] 2023-06-01
 ## Added

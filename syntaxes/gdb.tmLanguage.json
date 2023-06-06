@@ -269,7 +269,7 @@
 				},
 				{
 					"name": "meta.command.until.gdb",
-					"match": "^[ \t]*(u(?:ntil)\\b[ \t]+([^[ \t]]+)[ \t]*$",
+					"match": "^[ \t]*(u(?:nt(?:il?)?)?)\\b(?:[ \t]+([^ \t]+))?[ \t]*$",
 					"captures": {
 						"1": { "name": "keyword.control.command.gdb" },
 						"2": { "name": "markup.underline.link.location.gdb" }
@@ -277,10 +277,10 @@
 				},
 				{
 					"name": "meta.command.jump.gdb",
-					"match": "^[ \t]*(j(?:u(?:m(?:p)))\\b(?:[ \t]+([^[ \t]]+)[ \t]*$",
+					"match": "^[ \t]*(j(?:u(?:mp?)?)?)\\b[ \t]+(\\d+|0x\\h+)[ \t]*$",
 					"captures": {
 						"1": { "name": "keyword.control.command.gdb" },
-						"2": { "name": "constant.numeric.count.repeat.gdb" }
+						"2": { "patterns": [ { "include": "#numeric"} ] }
 					}
 				},
 				{
