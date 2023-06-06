@@ -1301,8 +1301,16 @@
 
 				},
 				{
+					"name": "constant.numeric.scientific.gdb",
+					"match": "\\b((?:\\d+\\.\\d*|\\d*\\.\\d+|\\d+)[eE][+-]\\d+)\\b"
+				},
+				{
+					"name": "constant.numeric.float.gdb",
+					"match": "\\b(\\d+\\.\\d*|\\d*\\.\\d+)\\b"
+				},
+				{
 					"name": "constant.numeric.base10.gdb",
-					"match": "\\b(\\d+\\.\\d*|\\d*\\.\\d+|\\d+)[eE][+-]\\d+|\\d+\\.\\d*|\\d*\\.\\d+|\\d+"
+					"match": "\\b\\d+\\b"
 				}
 			]
 		},
