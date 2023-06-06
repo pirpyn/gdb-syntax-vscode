@@ -4,7 +4,8 @@ unt 19
 unti 22
 until 42
 
-u    # goes until past the current line
+# goes until past the current line
+u
 
 until some.c:516
 until some_func
