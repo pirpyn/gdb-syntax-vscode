@@ -9,17 +9,15 @@ VSCode grammar extension to color higlight scripts for GDB
 
 ## Changelog
 
-## [0.4.2] 2023-06-01
+## [0.5.0] 2023-06-08
 ## Added
- * set input/output-radix
- * set verbose
- * set confirm
- * set with/height
- * set listsize
+ * server prefix to all command (not enabled on block)
+ * save command breakpoints|tracepoints|gdb-index
+## Merged
+ * jump command (partial)
+ * until command (partial)
 ## Modified
- * Rendering of on/off/unlimited
- * shell operator '!' or shell command not rendered correctly if not at the start of the line
- * GDB scripts to test commands and write .gdb tests
+ * scripts to create tests
 
 ## Features
 

@@ -8,6 +8,16 @@ Check [Keep a Changelog](http://keepachangelog.com/) for recommendations on how 
 Disclaimer: for the moment, all the commands that I use are rendered.
 Commits will slow down. May not update at all.
 
+## [0.5.0] 2023-06-08
+## Added
+ * server prefix to all command (not enabled on block)
+ * save command breakpoints|tracepoints|gdb-index
+## Merged
+ * jump command (partial)
+ * until command (partial)
+## Modified
+ * scripts to create tests
+
 ## [0.4.2] 2023-06-01
 ## Added
  * set input/output-radix
