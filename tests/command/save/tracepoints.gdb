@@ -1,0 +1,11 @@
+save t tr.gdb
+save tr tr.gdb
+save tra tr.gdb
+save trac tr.gdb
+save trace tr.gdb
+save tracep tr.gdb
+save tracepo tr.gdb
+save tracepoi tr.gdb
+save tracepoin tr.gdb
+save tracepoint tr.gdb
+save tracepoints tr.gdb

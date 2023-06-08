@@ -1112,6 +1112,36 @@
 						"2": { "name": "support.function.option.gdb" },
 						"3": { "name": "string.regexp.gdb" }
 					}
+				},
+				{
+					"name": "meta.command.save.gdb",
+					"begin": "(?:^|\\G)[ \t]*(save)[ \t]+",
+					"beginCaptures": { "1": { "name": "keyword.control.command.gdb" } },
+					"patterns": [
+						{
+							"match": "\\b(t(?:r(?:a(?:c(?:e(?:p(?:o(?:i(?:n(?:ts?)?)?)?)?)?)?)?)?)?)\\b[ \t]+([^ \t]+)[ \t]*$",
+							"captures": {
+								"1": { "name": "support.function.option.gdb" },
+								"2": { "name": "markup.underline.link.location.gdb" }
+							}
+						},
+						{
+							"match": "\\b(b(?:r(?:e(?:a(?:k(?:p(?:o(?:i(?:n(?:ts?)?)?)?)?)?)?)?)?)?)\\b[ \t]+([^ \t]+)[ \t]*$",
+							"captures": {
+								"1": { "name": "support.function.option.gdb" },
+								"2": { "name": "markup.underline.link.location.gdb" }
+							}
+						},
+						{
+							"match": "\\b(g(?:d(?:b(?:-(?:i(?:n(?:d(?:ex?)?)?)?)?)?)?)?)(?:[ \t]+(-dwarf-5))?[ \t]+([^ \t]+)[ \t]*$",
+							"captures": {
+								"1": { "name": "support.function.option.gdb" },
+								"2": { "name": "support.function.sub-option.gdb" },
+								"3": { "name": "markup.underline.link.location.gdb" }
+							}
+						}
+					],
+					"end": "$"
 				}
 			]
 		},
