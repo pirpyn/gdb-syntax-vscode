@@ -23,7 +23,8 @@ define create_test
 	if $argc < 4
 		help create_test
 	else
-		! ../scripts/create_test.sh $arg1 $arg2 $arg3 > $arg0
+		! mkdir -p $(dirname ../tests/$arg0)
+		! ../scripts/create_test.sh $arg1 $arg2 $arg3 > ../tests/$arg0
 		echo Test $arg0 written for regex\n
 		shell { echo $arg1; ../scripts/all_regex.sh $arg2; echo $arg3; } | tr '\n' '\0'
 		echo \n

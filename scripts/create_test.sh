@@ -20,9 +20,13 @@ test_regex()
 	local prefix="$1"
 	local word="$2"
 	local suffix="$3"
-	for (( i = 1; i <= ${#word}; i++ )); do
-		echo "${prefix}${word:0:$i}${suffix}"
-	done
+	if [[ ${#word} -eq 0 ]]; then
+		echo "${prefix}${suffix}"
+	else
+		for (( i = 1; i <= ${#word}; i++ )); do
+			echo "${prefix}${word:0:$i}${suffix}"
+		done
+	fi
 }
 
 if [[ $# -eq 0 ]]; then
