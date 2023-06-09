@@ -1,0 +1,4 @@
+fin
+fini
+finis
+finish
