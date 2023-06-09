@@ -1170,6 +1170,11 @@
 						}
 					],
 					"end": "$"
+				},
+				{
+					"name": "meta.command.quit.gdb",
+					"match": "(?:^|\\G)[ \t]*\\b(q(?:uit?)?)[ \t]*$",
+					"captures": { "1": { "name": "keyword.control.command.gdb" } }
 				}
 			]
 		},
