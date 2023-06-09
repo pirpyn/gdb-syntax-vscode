@@ -8,6 +8,12 @@ Check [Keep a Changelog](http://keepachangelog.com/) for recommendations on how 
 Disclaimer: for the moment, all the commands that I use are rendered.
 Commits will slow down. May not update at all.
 
+## [0.5.1] 2023-06-09
+## Added
+ * quit
+ * backtrace, where, info stack
+ * call, print
+
 ## [0.5.0] 2023-06-08
 ## Added
  * server prefix to all command (not enabled on block)
