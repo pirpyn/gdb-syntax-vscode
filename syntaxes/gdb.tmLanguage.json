@@ -241,6 +241,13 @@
 					}
 				},
 				{
+					"name": "meta.command.finish.gdb",
+					"match": "(?:^|\\G)[ \t]*(fin(?:i(?:s(?:h?)?)?)?)[ \t]*$",
+					"captures": {
+						"1": { "name": "keyword.control.command.gdb" }
+					}
+				},
+				{
 					"name": "meta.command.dont-repeat.gdb",
 					"match": "(?:^|\\G)[ \t]*(don(?:t(?:-(?:r(?:e(?:p(?:e(?:a(?:t?)?)?)?)?)?)?)?)?)[ \t]*$",
 					"captures": {
