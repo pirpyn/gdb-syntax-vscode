@@ -804,10 +804,19 @@
 				},
 				{
 					"name": "meta.command.print.gdb",
-					"match": "(?:^|\\G)[ \t]*(p(?:rint)?)\\b[ \t]*((?:--.*[ \t]+)+--)?([ \t]*\\/[xdutacfszr])?[ \t]+",
+					"match": "(?:^|\\G)[ \t]*(p(?:rint)?)\\b[ \t]*((?:-.*[ \t]+)+--)?([ \t]*\\/[xdutacfszr])?[ \t]+",
 					"captures": {
 						"1": { "name": "keyword.control.command.gdb" },
 						"2": { "name": "support.function.print.option.gdb" },
+						"3": { "name": "constant.character.escape.format.gdb" }
+					}
+				},
+				{
+					"name": "meta.command.call.gdb",
+					"match": "(?:^|\\G)[ \t]*(call?)\\b[ \t]*((?:-.*[ \t]+)+--)?([ \t]*\\/[xdutacfszr])?[ \t]+",
+					"captures": {
+						"1": { "name": "keyword.control.command.gdb" },
+						"2": { "name": "support.function.call.option.gdb" },
 						"3": { "name": "constant.character.escape.format.gdb" }
 					}
 				},
