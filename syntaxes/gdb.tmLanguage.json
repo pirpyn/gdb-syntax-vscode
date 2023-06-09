@@ -1335,7 +1335,7 @@
 		"on_off": {
 			"patterns": [
 				{
-					"match": "\\b(on|off?)\\b",
+					"match": "(?<!-)\\b(on|off?)\\b(?!-)",
 					"captures": { "1" : { "name": "markup.bold.argument.gdb" } }
 				}
 			]
@@ -1343,7 +1343,7 @@
 		"unlimited": {
 			"patterns": [
 				{
-					"match": "\\b(u(?:n(?:l(?:i(?:m(?:i(?:t(?:ed?)?)?)?)?)?)?)?)\\b",
+					"match": "(?<!-)\\b(u(?:n(?:l(?:i(?:m(?:i(?:t(?:ed?)?)?)?)?)?)?)?)\\b(?!-)",
 					"captures": { "1" : { "name": "markup.bold.argument.gdb" } }
 				}
 			]
@@ -1351,7 +1351,7 @@
 		"auto" : {
 			"patterns": [
 				{
-					"match": "\\b(a(?:u(?:to?)?)?)\\b",
+					"match": "(?<!-)\\b(a(?:u(?:to?)?)?)\\b(?!-)",
 					"captures": { "1" : { "name": "markup.bold.argument.gdb" } }
 				}
 			]
