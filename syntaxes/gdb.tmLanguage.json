@@ -989,6 +989,25 @@
 					}
 				},
 				{
+					"name": "meta.command.backtrace.gdb",
+					"begin": "(?:^|\\G)[ \t]*\\b(bt|ba(?:c(?:k(?:t(?:r(?:a(?:ce?)?)?)?)?)?)?|whe(?:re?)?|i(?:nfo?)?[ \t]+s(?:tack?)?)\\b",
+					"beginCaptures": { "1": { "name": "keyword.control.command.gdb" } },
+					"patterns": [
+						{
+							"match": "(-[^ \t]+)\\b",
+							"captures": { "1": { "name": "support.function.option.gdb" } }
+						},
+						{
+							"match": "\\b(f(?:u(?:ll?)?)?|n(?:o(?:-(?:f(?:i(?:l(?:t(?:e(?:rs?)?)?)?)?)?)?)?)?|h(?:i(?:de?)?)?)\\b",
+							"captures": { "1": { "name": "support.function.qualifier.gdb" } }
+						},
+						{
+							"include": "#numeric"
+						}
+					],
+					"end": "$"
+				},
+				{
 					"name": "meta.command.info.gdb",
 					"begin": "(?:^|\\G)[ \t]*(i(?:n(?:fo?)?)?)\\b[ \t]+",
 					"beginCaptures": { "1": { "name": "keyword.control.command.gdb" } },
@@ -1124,7 +1143,7 @@
 				},
 				{
 					"name": "meta.command.save.gdb",
-					"begin": "(?:^|\\G)[ \t]*(save)[ \t]+",
+					"begin": "(?:^|\\G)[ \t]*\\b(save)[ \t]+",
 					"beginCaptures": { "1": { "name": "keyword.control.command.gdb" } },
 					"patterns": [
 						{
