@@ -8,60 +8,66 @@ Check [Keep a Changelog](http://keepachangelog.com/) for recommendations on how 
 Disclaimer: for the moment, all the commands that I use are rendered.
 Commits will slow down. May not update at all.
 
+## [0.5.2] 2023-06-20
+### Added
+ * finish
+### Modified
+ * on/off/auto and other constant keyword
+
 ## [0.5.1] 2023-06-09
-## Added
+### Added
  * quit
  * backtrace, where, info stack
  * call, print
 
 ## [0.5.0] 2023-06-08
-## Added
+### Added
  * server prefix to all command (not enabled on block)
  * save command breakpoints|tracepoints|gdb-index
-## Merged
+### Merged
  * jump command (partial)
  * until command (partial)
-## Modified
+### Modified
  * scripts to create tests
 
 ## [0.4.2] 2023-06-01
-## Added
+### Added
  * set input/output-radix
  * set verbose
  * set confirm
  * set with/height
  * set listsize
-## Modified
+### Modified
  * Rendering of on/off/unlimited
  * shell operator '!' or shell command not rendered correctly if not at the start of the line
  * GDB scripts to test commands and write .gdb tests
 
 ## [0.4.1] 2023-05-31
-## Modified
+### Modified
  * conditionals rendering as normal
  * set logging|pagination renders on/off better
 
 ## [0.4.0] 2023-05-31
-## Added
+### Added
  * command
     * apropos
     * help: alias, aliases, breakpoints, user-defined
-## Merged
+### Merged
  * fix define command from GitMensch
 
 ## [0.3.4] 2023-05-30
-## Added
+### Added
  * command:
     * catch fully supported
 
 ## [0.3.3] 2023-05-30
-## Added
+### Added
  * command:
     * info (scope|symbol|address|locals|types)
-## Modified
+### Modified
  * block
     * commands: fixed breakpoints not parsed properly
-## Misc
+### Misc
  * Added a C code to test gdb on, along with the makefile to compile & launch it
 
 ## [0.3.2] 2023-02-20
@@ -119,7 +125,7 @@ Commits will slow down. May not update at all.
     * directory
     * skip: -file, -gfile, -function, function, delete, enable, disable
     * set: size, filename, removedups, substitute-path
-## Modified
+### Modified
  * command: set print
 
 ## [0.1.5] 2023-02-04

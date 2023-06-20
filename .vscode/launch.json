@@ -11,8 +11,7 @@
 			"request": "launch",
 			"runtimeExecutable": "${execPath}",
 			"args": [
-				"--disable-extension",
-				"pierre-payen.gdb-syntax",
+				"--disable-extension","pierre-payen.gdb-syntax",
 				"--extensionDevelopmentPath=${workspaceFolder}",
 				"-d","${workspaceFolder}/tests",
 				"${workspaceFolder}/concat_tests.gdb"

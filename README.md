@@ -8,21 +8,11 @@
 VSCode grammar extension to color higlight scripts for GDB
 
 ## Changelog
-## [0.5.1] 2023-06-09
-## Added
- * quit
- * backtrace, where, info stack
- * call, print
-
-## [0.5.0] 2023-06-08
-## Added
- * server prefix to all command (not enabled on block)
- * save command breakpoints|tracepoints|gdb-index
-## Merged
- * jump command (partial)
- * until command (partial)
-## Modified
- * scripts to create tests
+## [0.5.2] 2023-06-20
+### Added
+ * finish
+### Modified
+ * on/off/auto and other constant keyword
 
 ## Features
 
