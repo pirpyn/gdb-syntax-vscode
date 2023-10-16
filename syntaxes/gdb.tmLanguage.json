@@ -59,7 +59,7 @@
 							"match": "\\b(-fu(?:nction)?)\\b[ \t]+([^[ \t]]+)",
 							"captures": {
 								"1": { "name": "support.function.option.gdb" },
-								"2": { "name": "markup.underline.link.location.gdb" }
+								"2": { "patterns": [ { "include": "#location"} ] }
 							}
 						},
 						{
@@ -80,7 +80,7 @@
 							"match": "\\b(fu(?:n(?:c(?:t(?:i(?:on?)?)?)?)?)?)\\b(?:[ \t]+([^[ \t]]+))?",
 							"captures": {
 								"1": { "name": "keyword.control.command.gdb" },
-								"2": { "name": "markup.underline.link.location.gdb" }
+								"2": { "patterns": [ { "include": "#location"} ] }
 							}
 						},
 						{
@@ -165,13 +165,14 @@
 				},
 				{
 					"name": "meta.command.break.gdb",
-					"match": "(?:^|\\G)[ \t]*(t?b(?:r(?:e(?:ak?)?)?)?)\\b(?:[ \t]+([^[ \t]]+)([ \t]+-force-condition)?(?:[ \t]+(if)[ \t]+(.*))?)?[ \t]*$",
-					"captures": {
-						"1": { "name": "keyword.control.command.gdb" },
-						"2": { "name": "markup.underline.link.location.gdb" },
-						"3": { "name": "support.function.option.gdb" },
-						"4": { "name": "keyword.control.condition.gdb" },
-						"5": { "patterns": [ { "include": "#expression" } ] }
+					"begin": "(?:^|\\G)[ \t]*(t?b(?:r(?:e(?:ak?)?)?)?)\\b",
+					"beginCaptures": { "1": { "name": "keyword.control.command.gdb" } },
+					"patterns": [ { "include": "#location"} ],
+					"end": "(?:([ \t]+-force-condition)?[ \t]+(if)[ \t]+(.+))?[ \t]*$",
+					"endCaptures": {
+						"1": { "name": "support.function.option.gdb" },
+						"2": { "name": "keyword.control.condition.gdb" },
+						"3": { "patterns": [ { "include": "#expression" } ] }
 					}
 				},
 				{
@@ -292,7 +293,7 @@
 					"match": "(?:^|\\G)[ \t]*(u(?:nt(?:il?)?)?)\\b(?:[ \t]+([^ \t]+))?[ \t]*$",
 					"captures": {
 						"1": { "name": "keyword.control.command.gdb" },
-						"2": { "name": "markup.underline.link.location.gdb" }
+						"2": { "patterns": [ { "include": "#location"} ] }
 					}
 				},
 				{
@@ -1030,7 +1031,7 @@
 							"match": "\\b(sc(?:o(?:pe?)?)?)\\b[ \t]+([^ \t]+)$",
 							"captures": {
 								"1": { "name": "support.function.option.gdb" },
-								"2": { "name": "markup.underline.link.location.gdb" }
+								"2": { "patterns": [ { "include": "#location"} ] }
 							}
 						},
 						{
@@ -1158,14 +1159,14 @@
 							"match": "\\b(t(?:r(?:a(?:c(?:e(?:p(?:o(?:i(?:n(?:ts?)?)?)?)?)?)?)?)?)?)\\b[ \t]+([^ \t]+)[ \t]*$",
 							"captures": {
 								"1": { "name": "support.function.option.gdb" },
-								"2": { "name": "markup.underline.link.location.gdb" }
+								"2": { "patterns": [ { "include": "#location"} ] }
 							}
 						},
 						{
 							"match": "\\b(b(?:r(?:e(?:a(?:k(?:p(?:o(?:i(?:n(?:ts?)?)?)?)?)?)?)?)?)?)\\b[ \t]+([^ \t]+)[ \t]*$",
 							"captures": {
 								"1": { "name": "support.function.option.gdb" },
-								"2": { "name": "markup.underline.link.location.gdb" }
+								"2": { "patterns": [ { "include": "#location"} ] }
 							}
 						},
 						{
@@ -1173,7 +1174,7 @@
 							"captures": {
 								"1": { "name": "support.function.option.gdb" },
 								"2": { "name": "support.function.sub-option.gdb" },
-								"3": { "name": "markup.underline.link.location.gdb" }
+								"3": { "patterns": [ { "include": "#location"} ] }
 							}
 						}
 					],
@@ -1413,6 +1414,42 @@
 						}
 					],
 					"end":"$"
+				}
+			]
+		},
+		"location": {
+			"patterns": [
+				{
+					"name": "meta.location.explicit.gdb",
+					"comment": "https://sourceware.org/gdb/current/onlinedocs/gdb.html/Explicit-Locations.html",
+					"patterns": [
+						{
+							"match": "\\B(-s(?:o(?:u(?:r(?:ce?)?)?)?)?)\\b",
+							"captures": { "1": { "name": "support.function.option.gdb" } }
+						},
+						{
+							"match": "\\B(-f(?:u(?:n(?:c(?:t(?:i(?:on?)?)?)?)?)?)?)\\b",
+							"captures": { "1": { "name": "support.function.option.gdb" } }
+						},
+						{
+							"match": "\\B(-li(?:ne?)?)\\b",
+							"captures": { "1": { "name": "support.function.option.gdb" } }
+						},
+						{
+							"match": "\\B(-la(?:b(?:el?)?)?)\\b",
+							"captures": { "1": { "name": "support.function.option.gdb" } }
+						},
+						{
+							"match": "\\B(-q(?:u(?:a(?:l(?:i(?:f(?:i(?:ed?)?)?)?)?)?)?)?)\\b",
+							"captures": { "1": { "name": "support.function.option.gdb" } }
+						}
+					]
+				},
+				{
+					"name": "meta.location.linespec.gdb",
+					"comment": "https://sourceware.org/gdb/current/onlinedocs/gdb.html/Linespec-Locations.html",
+					"match": "\\b([^ \t]+)\\b",
+					"captures": { "1": { "name": "markup.underline.link.location.gdb" } }
 				}
 			]
 		}
