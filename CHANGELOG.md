@@ -8,6 +8,11 @@ Check [Keep a Changelog](http://keepachangelog.com/) for recommendations on how 
 Disclaimer: for the moment, all the commands that I use are rendered.
 Commits will slow down. May not update at all.
 
+
+## [0.5.3] 2023-10-16
+### Modified
+ * break: -force-condition and explicit location
+
 ## [0.5.2] 2023-06-20
 ### Added
  * finish

@@ -8,11 +8,9 @@
 VSCode grammar extension to color higlight scripts for GDB
 
 ## Changelog
-## [0.5.2] 2023-06-20
-### Added
- * finish
+## [0.5.3] 2023-10-16
 ### Modified
- * on/off/auto and other constant keyword
+ * break: -force-condition and explicit location
 
 ## Features
 
