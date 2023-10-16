@@ -165,12 +165,13 @@
 				},
 				{
 					"name": "meta.command.break.gdb",
-					"match": "(?:^|\\G)[ \t]*(t?b(?:r(?:e(?:ak?)?)?)?)\\b(?:[ \t]+([^[ \t]]+)(?:[ \t]+(if)[ \t]+(.*))?)?[ \t]*$",
+					"match": "(?:^|\\G)[ \t]*(t?b(?:r(?:e(?:ak?)?)?)?)\\b(?:[ \t]+([^[ \t]]+)([ \t]+-force-condition)?(?:[ \t]+(if)[ \t]+(.*))?)?[ \t]*$",
 					"captures": {
 						"1": { "name": "keyword.control.command.gdb" },
 						"2": { "name": "markup.underline.link.location.gdb" },
-						"3": { "name": "keyword.control.condition.gdb" },
-						"4": { "patterns": [ { "include": "#expression" } ] }
+						"3": { "name": "support.function.option.gdb" },
+						"4": { "name": "keyword.control.condition.gdb" },
+						"5": { "patterns": [ { "include": "#expression" } ] }
 					}
 				},
 				{
