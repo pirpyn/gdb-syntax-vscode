@@ -36,5 +36,18 @@ usage:
 	create_test file prefix word suffix
 end
 
+define check_test
+	if $argc < 1
+		help check_test
+	else
+		source ../tests/$arg0
+	end
+end
+document check_test
+Source file and execute command in it
+usage:
+	check_test command/break/label.gdb
+end
+
 br main
 run
