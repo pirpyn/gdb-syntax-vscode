@@ -1184,6 +1184,14 @@
 					"name": "meta.command.quit.gdb",
 					"match": "(?:^|\\G)[ \t]*\\b(q(?:uit?)?)[ \t]*$",
 					"captures": { "1": { "name": "keyword.control.command.gdb" } }
+				},
+				{
+					"name": "meta.command.cd.gdb",
+					"match": "(?:^|\\G)[ \t]*\\b(cd)\\b[ \t]+(.*)$",
+					"captures": {
+						"1": { "name": "keyword.control.command.gdb" },
+						"2": { "patterns" : [ { "include": "#location" } ] }
+					}
 				}
 			]
 		},
@@ -1448,7 +1456,7 @@
 				{
 					"name": "meta.location.linespec.gdb",
 					"comment": "https://sourceware.org/gdb/current/onlinedocs/gdb.html/Linespec-Locations.html",
-					"match": "\\b([^ \t]+)\\b",
+					"match": "([^ \t]+)\\b",
 					"captures": { "1": { "name": "markup.underline.link.location.gdb" } }
 				}
 			]
