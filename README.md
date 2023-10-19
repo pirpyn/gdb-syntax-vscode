@@ -48,5 +48,14 @@ Here, the comment was rendered as a `comment.line.number-sign.gdb`.
 
 ![scope-example](images/scope-info.png)
 
+One can use also the hello_world code lo launch GDB and check command. This can be launched with `make -C hello_world`.
+Then several commands are available to writte test files given a command ( and prefix and suffix if necessary).
+To print the list of commands
+```
+(gdb) help user-defined
+	all_regex -- Given a word foo, writes the regex to match f, fo, foo
+	check_test -- Source file and execute command in it
+	create_test -- Given a prefix, a word and a suffix, write all gdb possibilities to a file
+```
 ### Theme colors
 See [images/naming-conventions.png](images/naming-conventions.png) for particular scopes and their visual effect.
