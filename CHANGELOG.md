@@ -9,6 +9,10 @@ Disclaimer: for the moment, all the commands that I use are rendered.
 Commits will slow down. May not update at all.
 
 
+## [0.5.4] 2023-10-19
+### added
+ * cd
+
 ## [0.5.3] 2023-10-16
 ### Modified
  * break: -force-condition and explicit location

@@ -7,10 +7,9 @@
 
 VSCode grammar extension to color higlight scripts for GDB
 
-## Changelog
-## [0.5.3] 2023-10-16
-### Modified
- * break: -force-condition and explicit location
+## [0.5.4] 2023-10-19
+### added
+ * cd
 
 ## Features
 
