@@ -1,0 +1,10 @@
+set style address f none
+set style address fo none
+set style address for none
+set style address fore none
+set style address foreg none
+set style address foregr none
+set style address foregro none
+set style address foregrou none
+set style address foregroun none
+set style address foreground none

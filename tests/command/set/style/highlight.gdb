@@ -1,0 +1,9 @@
+set style h background white
+set style hi background white
+set style hig background white
+set style high background white
+set style highl background white
+set style highli background white
+set style highlig background white
+set style highligh background white
+set style highlight background white

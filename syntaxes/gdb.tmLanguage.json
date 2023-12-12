@@ -602,6 +602,76 @@
 								"2": { "patterns": [ { "include": "#numeric" }, { "include": "#unlimited" } ] }
 							}
 						},
+						{
+							"name": "meta.command.set.style.gdb",
+							"begin": "\\b(sty(?:le?)?)\\b",
+							"beginCaptures": { "1": { "name": "support.function.option.gdb" } },
+							"patterns": [
+								{
+									"name": "meta.command.set.style.enabled.gdb",
+									"match": "\\b(e(?:n(?:a(?:b(?:l(?:ed?)?)?)?)?)?)\\b",
+									"captures": { "1": { "name": "variable.other.suboption.gdb" } }
+								},
+								{
+									"name": "meta.command.set.style.sources.gdb",
+									"match": "\\b(s(?:o(?:u(?:r(?:c(?:es?)?)?)?)?)?)\\b",
+									"captures": { "1": { "name": "variable.other.suboption.gdb" } }
+								},
+								{
+									"name": "meta.command.set.style.filename.gdb",
+									"match": "\\b(fi(?:l(?:e(?:n(?:a(?:me?)?)?)?)?)?)\\b",
+									"captures": { "1": { "name": "variable.other.suboption.gdb" } }
+								},
+								{
+									"name": "meta.command.set.style.function.gdb",
+									"match": "\\b(fu(?:n(?:c(?:t(?:i(?:on?)?)?)?)?)?)\\b",
+									"captures": { "1": { "name": "variable.other.suboption.gdb" } }
+								},
+								{
+									"name": "meta.command.set.style.variable.gdb",
+									"match": "\\b(v(?:a(?:r(?:i(?:a(?:b(?:le?)?)?)?)?)?)?)\\b",
+									"captures": { "1": { "name": "variable.other.suboption.gdb" } }
+								},
+								{
+									"name": "meta.command.set.style.address.gdb",
+									"match": "\\b(a(?:d(?:d(?:r(?:e(?:ss?)?)?)?)?)?)\\b",
+									"captures": { "1": { "name": "variable.other.suboption.gdb" } }
+								},
+								{
+									"name": "meta.command.set.style.title.gdb",
+									"match": "\\b(ti(?:t(?:le?)?)?)\\b",
+									"captures": { "1": { "name": "variable.other.suboption.gdb" } }
+								},
+								{
+									"name": "meta.command.set.style.highlight.gdb",
+									"match": "\\b(h(?:i(?:g(?:h(?:l(?:i(?:g(?:ht?)?)?)?)?)?)?)?)\\b",
+									"captures": { "1": { "name": "variable.other.suboption.gdb" } }
+								},
+								{
+									"name": "meta.command.set.style.metadata.gdb",
+									"match": "\\b(m(?:e(?:t(?:a(?:d(?:a(?:ta?)?)?)?)?)?)?)\\b",
+									"captures": { "1": { "name": "variable.other.suboption.gdb" } }
+								},
+								{
+									"name": "meta.command.set.style.metadata.gdb",
+									"match": "\\b(m(?:e(?:t(?:a(?:d(?:a(?:ta?)?)?)?)?)?)?)\\b",
+									"captures": { "1": { "name": "variable.other.suboption.gdb" } }
+								},
+								{
+									"name": "meta.command.set.style.tui-border.gdb",
+									"match": "\\b(tui-b(?:o(?:r(?:d(?:er?)?)?)?)?)\\b",
+									"captures": { "1": { "name": "variable.other.suboption.gdb" } }
+								},
+								{
+									"name": "meta.command.set.style.tui-active-border.gdb",
+									"match": "\\b(tui-a(?:c(?:t(?:i(?:v(?:e(?:-(?:b(?:o(?:r(?:d(?:er?)?)?)?)?)?)?)?)?)?)?)?)\\b",
+									"captures": { "1": { "name": "variable.other.suboption.gdb" } }
+								},
+								{ "include": "#on_off" },
+								{ "include": "#color_spec" }
+							],
+							"end": "$"
+						},
 						{ "include": "#expression" }
 					],
 					"end": "$"
@@ -1458,6 +1528,87 @@
 					"comment": "https://sourceware.org/gdb/current/onlinedocs/gdb.html/Linespec-Locations.html",
 					"match": "([^ \t]+)\\b",
 					"captures": { "1": { "name": "markup.underline.link.location.gdb" } }
+				}
+			]
+		},
+		"color_spec": {
+			"patterns": [
+				{
+					"name": "meta.color-specifier.background.gdb",
+					"begin": "\\b(b(?:a(?:c(?:k(?:g(?:r(?:o(?:u(?:nd?)?)?)?)?)?)?)?)?)\\b",
+					"beginCaptures": { "1": { "name": "markup.bold.argument.gdb" } },
+					"patterns": [ { "include": "#colors" } ],
+					"end": "$"
+				},
+				{
+					"name": "meta.color-specifier.foreground.gdb",
+					"begin": "\\b(f(?:o(?:r(?:e(?:g(?:r(?:o(?:u(?:nd?)?)?)?)?)?)?)?)?)\\b",
+					"beginCaptures": { "1": { "name": "markup.bold.argument.gdb" } },
+					"patterns": [ { "include": "#colors" } ],
+					"end": "$"
+				},
+				{
+					"name": "meta.color-specifier.intensity.gdb",
+					"begin": "\\b(i(?:n(?:t(?:e(?:n(?:s(?:i(?:ty?)?)?)?)?)?)?)?)\\b",
+					"beginCaptures": { "1": { "name": "markup.bold.argument.gdb" } },
+					"patterns": [ { "include": "#intensity" } ],
+					"end": "$"
+				}
+			]
+		},
+		"intensity": {
+			"patterns": [
+				{
+					"match": "\\b(n(?:o(?:r(?:m(?:al?)?)?)?)?)\\b",
+					"captures": { "1": { "name": "markup.bold.intensity.normal.gdb" } }
+				},
+				{
+					"match": "\\b(b(?:o(?:ld?)?)?)\\b",
+					"captures": { "1": { "name": "markup.bold.intensity.bold.gdb" } }
+				},
+				{
+					"match": "\\b(d(?:im?)?)\\b",
+					"captures": { "1": { "name": "markup.bold.intensity.dim.gdb" } }
+				}
+			]
+		},
+		"colors": {
+			"patterns": [
+				{
+					"match": "\\b(n(?:o(?:ne?)?)?)\\b",
+					"captures": { "1": { "name": "markup.bold.color.none.gdb" } }
+				},
+				{
+					"match": "\\b(bla(?:ck?)?)\\b",
+					"captures": { "1": { "name": "markup.bold.color.black.gdb" } }
+				},
+				{
+					"match": "\\b(r(?:ed?)?)\\b",
+					"captures": { "1": { "name": "markup.bold.color.red.gdb" } }
+				},
+				{
+					"match": "\\b(g(?:r(?:e(?:en?)?)?)?)\\b",
+					"captures": { "1": { "name": "markup.bold.color.green.gdb" } }
+				},
+				{
+					"match": "\\b(y(?:e(?:l(?:l(?:ow?)?)?)?)?)\\b",
+					"captures": { "1": { "name": "markup.bold.color.yellow.gdb" } }
+				},
+				{
+					"match": "\\b(m(?:a(?:g(?:e(?:n(?:ta?)?)?)?)?)?)\\b",
+					"captures": { "1": { "name": "markup.bold.color.magenta.gdb" } }
+				},
+				{
+					"match": "\\b(blue?)\\b",
+					"captures": { "1": { "name": "markup.bold.color.blue.gdb" } }
+				},
+				{
+					"match": "\\b(c(?:y(?:an?)?)?)\\b",
+					"captures": { "1": { "name": "markup.bold.color.cyan.gdb" } }
+				},
+				{
+					"match": "\\b(w(?:h(?:i(?:te?)?)?)?)\\b",
+					"captures": { "1": { "name": "markup.bold.color.white.gdb" } }
 				}
 			]
 		}

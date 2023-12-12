@@ -1,0 +1,13 @@
+set style tui-a background white
+set style tui-ac background white
+set style tui-act background white
+set style tui-acti background white
+set style tui-activ background white
+set style tui-active background white
+set style tui-active- background white
+set style tui-active-b background white
+set style tui-active-bo background white
+set style tui-active-bor background white
+set style tui-active-bord background white
+set style tui-active-borde background white
+set style tui-active-border background white
