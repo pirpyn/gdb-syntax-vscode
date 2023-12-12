@@ -8,6 +8,23 @@ Check [Keep a Changelog](http://keepachangelog.com/) for recommendations on how 
 Disclaimer: for the moment, all the commands that I use are rendered.
 Commits will slow down. May not update at all.
 
+## [0.5.5] 2023-12-12
+### added
+ * set style
+   * set style filename
+   * set style function
+   * set style variable
+   * set style address
+   * set style title
+   * set style highlight
+   * set style metadata
+   * set style tui-border
+   * set style tui-active-border
+ * background color specifier
+ * foreground color specifier
+   * none, black, red, magenta, green, yellow, blue, cyan, white
+ * intensity color specifier
+   * normal, bold, dim
 
 ## [0.5.4] 2023-10-19
 ### added
