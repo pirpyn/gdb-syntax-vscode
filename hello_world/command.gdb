@@ -50,4 +50,7 @@ usage:
 end
 
 br main
+command
+	help user-defined
+end
 run
