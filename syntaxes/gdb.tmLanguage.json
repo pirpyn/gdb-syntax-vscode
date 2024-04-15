@@ -520,6 +520,14 @@
 									}
 								},
 								{
+									"name": "meta.commant.set.print.object.gdb",
+									"match": "\\b(o(?:b(?:j(?:e(?:ct?)?)?)?)?)\\b(?:[ \t]+(on|off?))?[ \t]*$",
+									"captures": {
+										"1": { "name": "variable.other.suboption.gdb" },
+										"2": { "patterns": [ { "include": "#on_off" } ] }
+									}
+								},
+								{
 									"name": "meta.command.set.print.elements.gdb",
 									"match": "\\b(el(?:e(?:m(?:e(?:n(?:ts?)?)?)?)?)?)\\b[ \t]+([unlimited]+|\\d+)[ \t]*$",
 									"captures": {
