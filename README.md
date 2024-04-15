@@ -7,23 +7,19 @@
 
 VSCode grammar extension to color higlight scripts for GDB
 
-## [0.5.5] 2023-12-12
+## [0.5.6] 2024-04-15
 ### added
- * set style
-   * set style filename
-   * set style function
-   * set style variable
-   * set style address
-   * set style title
-   * set style highlight
-   * set style metadata
-   * set style tui-border
-   * set style tui-active-border
- * background color specifier
- * foreground color specifier
-   * none, black, red, magenta, green, yellow, blue, cyan, white
- * intensity color specifier
-   * normal, bold, dim
+ * set detach-on-fork
+ * set follow-fork-mode
+ * set demangle-style
+ * set print
+   * demangle
+   * object
+   * sevenbit-strings
+   * static-members
+
+Disclaimer: for the moment, all the commands that I use are rendered.
+Commits will slow down. May not update at all.
 
 ## Features
 
@@ -37,8 +33,6 @@ so `set loggging overwrite off` is as valid as `set lo ov of`.
 That means that you just can't put every keyword in one regexp to render each keyword.
 To have a consistant color hilight each command has it's own regexp.
 
-Disclaimer: for the moment, all the commands that I use are rendered.
-Commits will slow down. May not update at all.
 
 ## References
  * [GDB commands, variable and function index](https://sourceware.org/gdb/onlinedocs/gdb/Command-and-Variable-Index.html)

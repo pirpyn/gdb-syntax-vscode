@@ -8,6 +8,17 @@ Check [Keep a Changelog](http://keepachangelog.com/) for recommendations on how 
 Disclaimer: for the moment, all the commands that I use are rendered.
 Commits will slow down. May not update at all.
 
+## [0.5.6] 2024-04-15
+### added
+ * set detach-on-fork
+ * set follow-fork-mode
+ * set demangle-style
+ * set print
+   * demangle
+   * object
+   * sevenbit-strings
+   * static-members
+
 ## [0.5.5] 2023-12-12
 ### added
  * set style
