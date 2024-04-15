@@ -1,0 +1,21 @@
+set d none
+set de none
+set dem none
+set dema none
+set deman none
+set demang none
+set demangl none
+set demangle none
+set demangle- none
+set demangle-s none
+set demangle-st none
+set demangle-sty none
+set demangle-styl none
+set demangle-style none
+set demangle-style auto
+set demangle-style gnu-v3
+set demangle-style java
+set demangle-style gnat
+set demangle-style dlang
+set demangle-style rust
+

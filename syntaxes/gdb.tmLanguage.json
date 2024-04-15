@@ -499,6 +499,14 @@
 							"end": "$"
 						},
 						{
+							"name": "meta.commant.set.demangle-style.gdb",
+							"match": "\\b(d(?:e(?:m(?:a(?:n(?:g(?:l(?:e(?:-(?:s(?:t(?:y(?:le?)?)?)?)?)?)?)?)?)?)?)?)?)[ \t]+\\b(n(?:o(?:ne?)?)?|a(?:u(?:to?)?)?|j(?:a(?:va?)?)?|d(?:l(?:a(?:ng?)?)?)?|r(?:u(?:st?)?)?|gnat?|gnu(?:-(?:v3?)?)?)\\b[ \t]*$",
+							"captures": {
+								"1": { "name": "support.function.option.gdb" },
+								"2": { "name": "markup.bold.argument.gdb" }
+							}
+						},
+						{
 							"name": "meta.commant.set.print.gdb",
 							"begin": "\\b(p(?:r(?:i(?:nt?)?)?)?)\\b[ \t]+",
 							"beginCaptures": { "1": { "name": "support.function.option.gdb" } },
@@ -538,6 +546,14 @@
 								{
 									"name": "meta.commant.set.print.sevenbit-strings.gdb",
 									"match": "\\b(se(?:v(?:e(?:n(?:b(?:i(?:t(?:-(?:s(?:t(?:r(?:i(?:n(?:gs?)?)?)?)?)?)?)?)?)?)?)?)?)?)(?:[ \t]+(on|off?))?[ \t]*$",
+									"captures": {
+										"1": { "name": "variable.other.suboption.gdb" },
+										"2": { "patterns": [ { "include": "#on_off" } ] }
+									}
+								},
+								{
+									"name": "meta.commant.set.print.demangle.gdb",
+									"match": "\\b(d(?:e(?:m(?:a(?:n(?:g(?:le?)?)?)?)?)?)?)(?:[ \t]+(on|off?))?[ \t]*$",
 									"captures": {
 										"1": { "name": "variable.other.suboption.gdb" },
 										"2": { "patterns": [ { "include": "#on_off" } ] }
