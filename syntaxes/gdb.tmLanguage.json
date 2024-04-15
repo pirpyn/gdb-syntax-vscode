@@ -507,6 +507,22 @@
 							}
 						},
 						{
+							"name": "meta.commant.set.follow-fork-mode.gdb",
+							"match": "\\b(follow-f(?:o(?:r(?:k(?:-(?:m(?:o(?:de?)?)?)?)?)?)?)?)[ \t]+\\b(c(?:h(?:i(?:ld?)?)?)?|p(?:a(?:r(?:e(?:nt?)?)?)?)?)\\b[ \t]*$",
+							"captures": {
+								"1": { "name": "support.function.option.gdb" },
+								"2": { "name": "markup.bold.argument.gdb" }
+							}
+						},
+						{
+							"name": "meta.commant.set.detach-on-fork.gdb",
+							"match": "(det(?:a(?:c(?:h(?:-(?:o(?:n(?:-(?:f(?:o(?:rk?)?)?)?)?)?)?)?)?)?)?)(?:[ \t]+(on|off?))?[ \t]*$",
+							"captures": {
+								"1": { "name": "support.function.option.gdb" },
+								"2": { "patterns": [ { "include": "#on_off" } ] }
+							}
+						},
+						{
 							"name": "meta.commant.set.print.gdb",
 							"begin": "\\b(p(?:r(?:i(?:nt?)?)?)?)\\b[ \t]+",
 							"beginCaptures": { "1": { "name": "support.function.option.gdb" } },

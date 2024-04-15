@@ -1,0 +1,9 @@
+set follow-f child
+set follow-fo child
+set follow-for child
+set follow-fork child
+set follow-fork- child
+set follow-fork-m child
+set follow-fork-mo child
+set follow-fork-mod child
+set follow-fork-mode child

@@ -1,0 +1,12 @@
+set det on
+set deta on
+set detac on
+set detach on
+set detach- on
+set detach-o on
+set detach-on on
+set detach-on- on
+set detach-on-f on
+set detach-on-fo on
+set detach-on-for on
+set detach-on-fork on
