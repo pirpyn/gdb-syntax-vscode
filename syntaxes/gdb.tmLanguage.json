@@ -737,6 +737,16 @@
 							],
 							"end": "$"
 						},
+						{
+							"name": "meta.command.set.disassemble-next-line.gdb",
+							"begin": "\\b(disassemble-(?:n(?:e(?:x(?:t(?:-(?:l(?:i(?:ne?)?)?)?)?)?)?)?)?)\\b",
+							"beginCaptures": { "1": { "name": "support.function.option.gdb" } },
+							"patterns": [
+								{ "include": "#on_off" },
+								{ "include": "#auto" }
+							],
+							"end": "$"
+						},
 						{ "include": "#expression" }
 					],
 					"end": "$"

@@ -1,0 +1,9 @@
+set disassemble-n auto
+set disassemble-ne auto
+set disassemble-nex auto
+set disassemble-next auto
+set disassemble-next- auto
+set disassemble-next-l auto
+set disassemble-next-li auto
+set disassemble-next-lin auto
+set disassemble-next-line auto
