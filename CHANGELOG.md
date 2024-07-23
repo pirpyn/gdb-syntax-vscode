@@ -8,6 +8,12 @@ Check [Keep a Changelog](http://keepachangelog.com/) for recommendations on how 
 Disclaimer: for the moment, all the commands that I use are rendered.
 Commits will slow down. May not update at all.
 
+## [0.5.7] 2024-07-23
+### added
+ * set disable-randomization
+ * set disassemble-next-line
+ * set disassembly-flavor
+
 ## [0.5.6] 2024-04-15
 ### added
  * set detach-on-fork

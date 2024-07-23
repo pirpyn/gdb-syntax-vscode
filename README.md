@@ -7,16 +7,11 @@
 
 VSCode grammar extension to color higlight scripts for GDB
 
-## [0.5.6] 2024-04-15
+## [0.5.7] 2024-07-23
 ### added
- * set detach-on-fork
- * set follow-fork-mode
- * set demangle-style
- * set print
-   * demangle
-   * object
-   * sevenbit-strings
-   * static-members
+ * set disable-randomization
+ * set disassemble-next-line
+ * set disassembly-flavor
 
 Disclaimer: for the moment, all the commands that I use are rendered.
 Commits will slow down. May not update at all.
