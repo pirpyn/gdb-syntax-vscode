@@ -728,6 +728,15 @@
 							],
 							"end": "$"
 						},
+						{
+							"name": "meta.command.set.disable-randomization.gdb",
+							"begin": "\\b(disab(?:l(?:e(?:-(?:r(?:a(?:n(?:d(?:o(?:m(?:i(?:z(?:a(?:t(?:i(?:on?)?)?)?)?)?)?)?)?)?)?)?)?)?)?)?)\\b",
+							"beginCaptures": { "1": { "name": "support.function.option.gdb" } },
+							"patterns": [
+								{ "include": "#on_off" }
+							],
+							"end": "$"
+						},
 						{ "include": "#expression" }
 					],
 					"end": "$"
