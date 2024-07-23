@@ -1,0 +1,9 @@
+set disassembly att
+set disassembly- att
+set disassembly-f att
+set disassembly-fl att
+set disassembly-fla att
+set disassembly-flav att
+set disassembly-flavo att
+set disassembly-flavor att
+set disassembly-flavor intel

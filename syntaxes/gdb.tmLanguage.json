@@ -747,6 +747,14 @@
 							],
 							"end": "$"
 						},
+						{
+							"name": "meta.command.set.disassembly-flavor.gdb",
+							"match": "\\b(disassembly(?:-(?:f(?:l(?:a(?:v(?:or?)?)?)?)?)?)?)[ \t]+(at{0,2}|i(?:n(?:t(?:el?)?)?)?)[ \t]*$",
+							"captures": {
+								"1": { "name": "support.function.option.gdb" },
+								"2": { "name": "variable.other.suboption.gdb" }
+							}
+						},
 						{ "include": "#expression" }
 					],
 					"end": "$"
