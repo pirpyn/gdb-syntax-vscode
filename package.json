@@ -1,34 +1,53 @@
 {
-    "name": "gdb-syntax",
-    "publisher": "pierre-payen",
-    "displayName": "GDB syntax",
-    "description": "Syntax color for GDB command",
-    "repository": "https://github.com/pirpyn/gdb-syntax-vscode",
-    "icon" : "images/archer.png",
-    "version": "0.5.7",
-    "engines": {
-        "vscode": "^1.45.0"
-    },
-    "categories": [
-        "Programming Languages"
-    ],
-    "license": "GNU GPLv3",
-    "contributes": {
-        "languages": [{
-            "id": "gdb",
-            "extensions": [".gdb",".gdbinit"],
-            "configuration": "./language-configuration.json"
-        }],
-        "grammars": [
-            {
-                "language": "gdb",
-                "scopeName": "source.gdb",
-                "path": "./syntaxes/gdb.tmLanguage.json",
-                "embeddedLanguages": {
-                    "meta.block.python.gdb": "python",
-                    "meta.line.python.gdb": "python"
-                }
-            }
-        ]
-    }
+	"name": "gdb-syntax",
+	"publisher": "pierre-payen",
+	"displayName": "GDB syntax",
+	"description": "Syntax color for GDB command",
+	"repository": "https://github.com/pirpyn/gdb-syntax-vscode",
+	"icon" : "images/archer.png",
+	"version": "0.6.1",
+	"engines": {
+		"vscode": "^1.45.0"
+	},
+	"categories": [
+		"Programming Languages"
+	],
+	"license": "GNU GPLv3",
+	"contributes": {
+		"languages": [
+				{
+					"id": "gdb",
+					"extensions": [
+						".gdb",
+						".gdbinit"
+					],
+					"configuration": "./language-configuration.json"
+				},
+				{
+					"id": "gdb-log",
+					"extensions": [
+						".gdb-log",
+						".gdb.log",
+						".gdblog"
+					],
+					"configuration": "./language-configuration.json"
+				}
+		],
+		"grammars": [
+			{
+				"language": "gdb",
+				"scopeName": "source.gdb",
+				"path": "./syntaxes/gdb.tmLanguage.json",
+				"embeddedLanguages": {
+					"meta.block.python.gdb": "python",
+					"meta.line.python.gdb": "python"
+				}
+			},
+			{
+				"language": "gdb-log",
+				"scopeName": "source.gdb.log",
+				"path": "./syntaxes/gdb-log.tmLanguage.json"
+			}
+		]
+	}
 }

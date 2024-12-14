@@ -8,7 +8,7 @@ Check [Keep a Changelog](http://keepachangelog.com/) for recommendations on how 
 Disclaimer: for the moment, all the commands that I use are rendered.
 Commits will slow down. May not update at all.
 
-## [0.6.0] 2024-12-14
+## [0.6.1] 2024-12-14
 ### modified
  * rendering on option starting with '-' like for dissably-flavor
 ### added

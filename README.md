@@ -7,7 +7,7 @@
 
 VSCode grammar extension to color higlight scripts for GDB
 
-## [0.6.0] 2024-12-14
+## [0.6.1] 2024-12-14
 ### modified
  * rendering on option starting with '-' like for dissably-flavor
 ### added
