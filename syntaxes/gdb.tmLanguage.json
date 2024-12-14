@@ -49,28 +49,28 @@
 					"beginCaptures": { "1": { "name": "keyword.control.command.gdb" } },
 					"patterns": [
 						{
-							"match": "\\b(-rfu(?:nction)?)\\b[ \t]+([^[ \t]]+)",
+							"match": "(-rfu(?:nction)?)\\b[ \t]+([^[ \t]]+)",
 							"captures": {
 								"1": { "name": "support.function.option.gdb" },
 								"2": { "name": "string.regexp.gdb" }
 							}
 						},
 						{
-							"match": "\\b(-fu(?:nction)?)\\b[ \t]+([^[ \t]]+)",
+							"match": "(-fu(?:nction)?)\\b[ \t]+([^[ \t]]+)",
 							"captures": {
 								"1": { "name": "support.function.option.gdb" },
 								"2": { "patterns": [ { "include": "#location"} ] }
 							}
 						},
 						{
-							"match": "\\b(-fi(?:le)?)\\b[ \t]+([^[ \t]]+)",
+							"match": "(-fi(?:le)?)\\b[ \t]+([^[ \t]]+)",
 							"captures": {
 								"1": { "name": "support.function.option.gdb" },
 								"2": { "name": "markup.underline.link.filename.gdb" }
 							}
 						},
 						{
-							"match": "\\b(-gf(?:ile)?)\\b[ \t]+([^[ \t]]+)",
+							"match": "(-gf(?:ile)?)\\b[ \t]+([^[ \t]]+)",
 							"captures": {
 								"1": { "name": "support.function.option.gdb" },
 								"2": { "name": "string.regexp.gdb" }
@@ -1061,21 +1061,21 @@
 					"beginCaptures": { "1": { "name": "keyword.control.command.gdb" } },
 					"patterns": [
 						{
-							"match": "\\b(-copies)\\b[ \t]+(\\d+)",
+							"match": "(-copies)\\b[ \t]+(\\d+)",
 							"captures": {
 								"1": { "name": "support.function.copies.gdb" },
 								"2": { "name": "variable.other.gdb" }
 							}
 						},
 						{
-							"match": "\\b(-exec)\\b[ \t]+(\\w+)",
+							"match": "(-exec)\\b[ \t]+(\\w+)",
 							"captures": {
 								"1": { "name": "support.function.copies.gdb" },
 								"2": { "name": "markup.underline.link.gdb" }
 							}
 						},
 						{
-							"match": "\\b(-no-connection)\\b",
+							"match": "(-no-connection)\\b",
 							"captures": { "1": { "name": "support.function.copies.gdb" } }
 						}
 					],
