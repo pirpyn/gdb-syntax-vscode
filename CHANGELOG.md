@@ -8,6 +8,12 @@ Check [Keep a Changelog](http://keepachangelog.com/) for recommendations on how 
 Disclaimer: for the moment, all the commands that I use are rendered.
 Commits will slow down. May not update at all.
 
+## [0.6.0] 2024-12-14
+### modified
+ * rendering on option starting with '-' like for dissably-flavor
+### added
+ * GDB output logs will now be supported. For now this is experimental
+
 ## [0.5.7] 2024-07-23
 ### added
  * set disable-randomization

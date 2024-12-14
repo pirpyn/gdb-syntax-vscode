@@ -7,11 +7,11 @@
 
 VSCode grammar extension to color higlight scripts for GDB
 
-## [0.5.7] 2024-07-23
+## [0.6.0] 2024-12-14
+### modified
+ * rendering on option starting with '-' like for dissably-flavor
 ### added
- * set disable-randomization
- * set disassemble-next-line
- * set disassembly-flavor
+ * GDB output logs will now be supported. For now this is experimental
 
 Disclaimer: for the moment, all the commands that I use are rendered.
 Commits will slow down. May not update at all.
