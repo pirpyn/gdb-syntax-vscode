@@ -1,0 +1,38 @@
+(gdb) p ptr
+$2 = (struct cob_frame *) 0x7fffffd758
+
+(gdb) p ptr2
+$3 = {return_address_ptr = 0x555555a800 <prog_+1100>, perform_through = 6, return_address_num = 0}
+
+(gdb) print frame_ptr
+
+#0  0x0000007fb8d01338 in fdsan_error(char const*, ...) () from /apex/com.android.runtime/lib64/bionic/libc.so
+#1  0x0000007fb8d01048 in android_fdsan_close_with_tag () from /apex/com.android.runtime/lib64/bionic/libc.so
+#2  0x0000007fb8d017a4 in close () from /apex/com.android.runtime/lib64/bionic/libc.so
+#3  0x0000007fbe16a5a0 in open_next (f=0xb400007fb8876000) at ../../libcob/fileio.c:2232
+#4  0x0000007fbe16a984 in lineseq_read (f=0xb400007fb8876000, read_opts=1) at ../../libcob/fileio.c:2590
+#5  0x0000007fbe15f544 in cob_read_next (f=0xb400007fb8876000, fnstatus=0x5555564640 <prog_.f_26>, read_opts=1) at ../../libcob/fileio.c:6662
+#6  0x000000555555addc in prog_ (entry=0) at prog.c:368
+#7  0x000000555555a3ac in prog () at prog.c:51
+#8  0x000000555555a370 in main (argc=1, argv=0x7fffffe8c8) at prog.c:33
+
+(gdb) bt
+#0  __strncmp_avx2 () at ../sysdeps/x86_64/multiarch/strcmp-avx2.S:291
+#1  0x00007ffff7d61020 in __GI_getenv (name=0x7ffff7faa181 "LOCALEDIR") at ./stdlib/getenv.c:32
+#2  0x00007ffff7f51ca7 in cob_common_init (setptr=0x0) at /home/me/gnucobol-3.x/libcob/common.c:10054
+#3  0x00007ffff7fa1d4d in _getopt_initialize (optstring=0x555555652ea0 <short_options> "hVivqECScbmxjdFOgwo:P:t:T:I:L:l:D:K:k:") at /home/me/gnucobol-3.x/libcob/cobgetopt.c:448
+#4  0x00007ffff7fa1e6e in cob_getopt_long_long (argc=2, argv=0x7fffffffd4d8, optstring=0x555555652ea0 <short_options> "hVivqECScbmxjdFOgwo:P:t:T:I:L:l:D:K:k:", longopts=0x5555556ddae0 <long_options>, longind=0x7fffffffd24c, long_only=1)
+    at /home/me/gnucobol-3.x/libcob/cobgetopt.c:550
+#5  0x000055555557d71a in process_command_line (argc=2, argv=0x7fffffffd4d8) at /home/me/gnucobol-3.x/cobc/cobc.c:3038
+#6  0x000055555558bac1 in main (argc=2, argv=0x7fffffffd4d8) at /home/me/gnucobol-3.x/cobc/cobc.c:9288
+(gdb) skip file
+File ./string/../sysdeps/x86_64/multiarch/strcmp-avx2.S will be skipped when stepping.
+(gdb) fin
+Run till exit from #0  __strncmp_avx2 () at ../sysdeps/x86_64/multiarch/strcmp-avx2.S:291
+0x00007ffff7d61020 in __GI_getenv (name=0x7ffff7faa181 "LOCALEDIR") at ./stdlib/getenv.c:32
+warning: 32     ./stdlib/getenv.c: File or Folder not found
+(gdb) skip file
+File ./stdlib/./stdlib/getenv.c will be skipped when stepping.
+(gdb) fin
+Run till exit from #0  0x00007ffff7d61020 in __GI_getenv (name=0x7ffff7faa181 "LOCALEDIR") at ./stdlib/getenv.c:32
+0x00007ffff7f51ca7 in cob_common_init (setptr=0x0) at /home/me/gnucobol-3.x/libcob/common.c:10054

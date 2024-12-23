@@ -10,7 +10,10 @@
 		"expression": {
 			"patterns": [
 				{ "include": "#prompt" },
-				{ "include": "#frame" }
+				{ "include": "#frame" },
+				{ "include": "#at_location" },
+				{ "include": "#in_function" },
+				{ "include": "#filepath" }
 			]
 		},
 		"prompt": {
@@ -28,15 +31,62 @@
 			"patterns": [
 				{
 					"name": "frame.gdb",
-					"match": "^[ \t]*(#\\d+)[ \t]+(0x[a-f0-9]+)[ \t]+(in)[ \t]+(\\w+)[ \t]*\\((.*)\\)[ \t]+(at|from)[ \t]+(.+)[ \t]*$",
-					"captures": {
+					"begin": ".*(#\\d+)[ \t]+",
+					"beginCaptures": {
 						"1": { "name": "entity.name.type.framenumber.gdb" },
-						"2": { "patterns": [ { "include": "source.gdb#numeric" } ] },
-						"3": { "name": "markup.bold.in.gdb" },
-						"4": { "name": "support.function.gdb" },
-						"5": { "patterns": [ { "include": "source.gdb"} ] },
 						"6": { "name": "markup.bold.at.gdb" },
 						"7": { "name": "markup.underline.link.filename.gdb" }
+					},
+					"patterns": [
+						{ "include": "#at_location" },
+						{ "include": "#in_function" },
+						{
+							"match": "\\b(?:(0x[a-f0-9]+)[ \t]+(in)[ \t]+(\\w+)|(\\w+))[ \t]*\\((.*)\\)[ \t]*",
+							"captures": {
+								"1": { "patterns": [ { "include": "source.gdb#numeric" } ] },
+								"2": { "name": "markup.bold.in.gdb" },
+								"3": { "name": "support.function.gdb" },
+								"4": { "name": "support.function.gdb" },
+								"5": { "patterns": [ { "include": "source.gdb"} ] }
+							}
+						}
+					],
+					"end" : "$"
+				}
+			]
+		},
+		"in_function": {
+			"patterns": [
+				{
+					"name": "in_function.gdb",
+					"match": "(0x[a-f0-9]+)[ \t]+(in)[ \t]+(\\w+)",
+					"captures": {
+						"1": { "patterns": [ { "include": "source.gdb#numeric" } ] },
+						"2": { "name": "markup.bold.in.gdb" },
+						"3": { "name": "support.function.gdb" }
+					}
+				}
+			]
+		},
+		"at_location": {
+			"patterns": [
+				{
+					"name": "at_location.gdb",
+					"match": "\\b(at|from)[ \t]+([^ \t]+)",
+					"captures": {
+						"1": { "name": "markup.bold.at.gdb" },
+						"2": { "name": "markup.underline.link.filename.gdb" }
+					}
+				}
+			]
+		},
+		"filepath": {
+			"patterns": [
+				{
+					"name": "filepath.gdb",
+					"match": "((?:[/.]?\\w*[/.])*\\w+\\.\\w+)",
+					"captures": {
+						"1": { "name": "markup.underline.link.filename.gdb" }
 					}
 				}
 			]
