@@ -5,13 +5,12 @@
 
 [![Open VSX Version](https://img.shields.io/open-vsx/v/pierre-payen/gdb-syntax?label=Open%20VSX) ![Open VSX Downloads](https://img.shields.io/open-vsx/dt/pierre-payen/gdb-syntax)](https://open-vsx.org/extension/pierre-payen/gdb-syntax)
 
-VSCode grammar extension to color higlight scripts for GDB
+VSCode grammar extension to color higlight scripts for GDB and GDB outputs logs.
 
-## [0.6.1] 2024-12-14
+## [0.6.2] 2024-12-23
 ### modified
- * rendering on option starting with '-' like for dissably-flavor
-### added
- * GDB output logs will now be supported. For now this is experimental
+ * Rendering of frame items in gdb-log
+ * Rendering of file locations, experimental
 
 Disclaimer: for the moment, all the commands that I use are rendered.
 Commits will slow down. May not update at all.
@@ -19,8 +18,13 @@ Commits will slow down. May not update at all.
 ## Features
 
 This extension provides a grammar file to parse and color GDB command files.
+* `file.gdb` will be treated as gdb source files
 
-![Color highlight](images/basic.png)
+![Color highlight for GDB source file](images/basic.png)
+
+* **EXPERIMENTAL** `file.gdb-log`, `file.gdblog`, `file.gdb.log` will be treated as gdb output logs.
+
+![Color highlight for GDB output file](images/gdb-log.png)
 
 Unlike other languague, GDB will accept incomplete word when there's no ambiguity, 
 so `set loggging overwrite off` is as valid as `set lo ov of`.
