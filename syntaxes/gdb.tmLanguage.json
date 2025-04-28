@@ -1353,7 +1353,7 @@
 					"patterns": [ { "include": "#frame-spec" } ],
 					"end": "$"
 				},
-						{
+				{
 					"name": "meta.command.select-frame.gdb",
 					"begin": "(?:^|\\G)[ \t]*\\b(sele(?:c(?:t(?:-(?:f(?:r(?:a(?:me?)?)?)?)?)?)?)?)[ \t]*",
 					"beginCaptures": { "1": { "name": "keyword.control.command.gdb" } },
@@ -1368,6 +1368,13 @@
 						"2": { "patterns": [ { "include": "#numeric"} ] }
 					}
 				},
+				{
+					"name": "meta.command.do.gdb",
+					"match": "(?:^|\\G)[ \t]*\\b(do(?:w(?:n(?:-(?:s(?:i(?:l(?:e(?:n(?:t(?:ly?)?)?)?)?)?)?)?)?)?)?)(?:[ \t]+([0-9]+))?[ \t]*$",
+					"captures": {
+						"1": { "name": "keyword.control.command.gdb" },
+						"2": { "patterns": [ { "include": "#numeric"} ] }
+					}
 				}
 			]
 		},
