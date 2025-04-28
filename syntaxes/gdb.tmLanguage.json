@@ -1359,6 +1359,15 @@
 					"beginCaptures": { "1": { "name": "keyword.control.command.gdb" } },
 					"patterns": [ { "include": "#frame-spec" } ],
 					"end": "$"
+				},
+				{
+					"name": "meta.command.up.gdb",
+					"match": "(?:^|\\G)[ \t]*\\b(up(?:-(?:s(?:i(?:l(?:e(?:n(?:t(?:ly?)?)?)?)?)?)?)?)?)(?:[ \t]+([0-9]+))?[ \t]*$",
+					"captures": {
+						"1": { "name": "keyword.control.command.gdb" },
+						"2": { "patterns": [ { "include": "#numeric"} ] }
+					}
+				},
 				}
 			]
 		},

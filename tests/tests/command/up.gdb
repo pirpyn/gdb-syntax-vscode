@@ -1,0 +1,10 @@
+up 1
+up- 1
+up-s 1
+up-si 1
+up-sil 1
+up-sile 1
+up-silen 1
+up-silent 1
+up-silentl 1
+up-silently 1
