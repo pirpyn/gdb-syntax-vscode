@@ -7,10 +7,11 @@
 
 VSCode grammar extension to color higlight scripts for GDB and GDB outputs logs.
 
-## [0.6.2] 2024-12-23
-### modified
- * Rendering of frame items in gdb-log
- * Rendering of file locations, experimental
+## [0.6.3] 2025-04-28
+### added
+ * frame, select-frame
+ * up, up-silently
+ * down, down-silently
 
 Disclaimer: for the moment, all the commands that I use are rendered.
 Commits will slow down. May not update at all.

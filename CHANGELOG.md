@@ -8,6 +8,12 @@ Check [Keep a Changelog](http://keepachangelog.com/) for recommendations on how 
 Disclaimer: for the moment, all the commands that I use are rendered.
 Commits will slow down. May not update at all.
 
+## [0.6.3] 2025-04-28
+### added
+ * frame, select-frame
+ * up, up-silently
+ * down, down-silently
+
 ## [0.6.2] 2024-12-23
 ### modified
  * Rendering of frame items in gdb-log
