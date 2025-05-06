@@ -185,7 +185,7 @@
 					"patterns": [
 						{
 							"name": "breakpoints.gdb",
-							"match": "\\b(\\d+|\\$\\w+)\\b[ \t]*",
+							"match": "(\\d+|\\$\\w+)\\b[ \t]*",
 							"captures": { "1": { "name": "entity.name.tag.breakpoint.gdb" } }
 						}
 					],
@@ -202,7 +202,7 @@
 					"patterns": [
 						{
 							"name": "breakpoints.gdb",
-							"match": "\\b(\\d+|\\$\\w+)\\b[ \t]*",
+							"match": "(\\d+|\\$\\w+)\\b[ \t]*",
 							"captures": { "1": { "name": "entity.name.tag.breakpoint.gdb" } }
 						}
 					],
@@ -219,7 +219,7 @@
 					"patterns": [
 						{
 							"name": "breakpoints.gdb",
-							"match": "\\b(\\d+|\\$\\w+)",
+							"match": "(\\d+|\\$\\w+)",
 							"captures": { "1": { "name": "entity.name.tag.breakpoint.gdb" } }
 						}
 					],
@@ -262,7 +262,7 @@
 					"beginCaptures": { "1": { "name": "keyword.control.command.gdb" } },
 					"patterns": [
 						{
-							"match": "\\b(\\$\\w+|\\d+(?:-\\d+)*|all|SIG[A-Z]+)",
+							"match": "(\\$\\w+|\\d+(?:-\\d+)*|all|SIG[A-Z]+)\\b",
 							"captures": { "1": { "name": "support.class.signals.gdb" } }
 						},
 						{
