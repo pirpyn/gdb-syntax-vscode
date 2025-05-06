@@ -1375,6 +1375,11 @@
 						"1": { "name": "keyword.control.command.gdb" },
 						"2": { "patterns": [ { "include": "#numeric"} ] }
 					}
+				},
+				{
+					"name": "meta.command.silent.gdb",
+					"match": "(?:^|\\G)(silent)[ \t]*$",
+					"captures": { "1": { "name": "keyword.control.command.gdb" } }
 				}
 			]
 		},
@@ -1387,15 +1392,28 @@
 						"1": { "name": "keyword.control.command.gdb" },
 						"2": { "name": "entity.name.tag.breakpoint.gdb" }
 					},
-					"end": "^[ \t]*(end)[ \t]*$",
 					"patterns": [
 						{
-							"match": "^[ \t]*(silent)[ \t]*$",
-							"captures": { "1": { "name": "keyword.control.command.gdb" } }
+							"begin": "(?:^|\\G)(>)",
+							"beginCaptures": { "1": { "name" : "support.class.carret.gdb" }},
+							"patterns": [ { "include": "#expression"} ],
+							"end": "$"
+						},
+						{
+							"match": "^[ \t]*(Type commands for breakpoint\\(s\\) \\d+, one per line.)$",
+							"captures": { "1": { "name": "comment.line.gdb" } }
+						},
+						{
+							"match": "^[ \t]*(End with a line saying just \"end\".)$",
+							"captures": { "1": { "name": "comment.line.gdb" } }
 						},
 						{ "include": "#expression" }
 					],
-					"endCaptures": { "1": { "name": "keyword.control.end.commands.gdb" } }
+					"end": "^[ \t]*(>?)(end)[ \t]*$",
+					"endCaptures": {
+						"1": { "name": "support.class.carret.gdb" },
+						"2": { "name": "keyword.control.end.commands.gdb" }
+					}
 				},
 				{
 					"name": "meta.block.conditional.gdb",

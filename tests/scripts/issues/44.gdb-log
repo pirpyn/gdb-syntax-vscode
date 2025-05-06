@@ -1,0 +1,15 @@
+(gdb) continue
+Continuing.
+^C
+Program received signal SIGINT, Interrupt.
+0x9affb062b0f7 in testme () from /some/lib.so
+(gdb) commands
+Type commands for breakpoint(s) 4, one per line.
+End with a line saying just "end".
+>silent
+>break somefunc
+>end
+(gdb) break test.c:1098
+Breakpoint 5 at 0x7fffb062b0f7: file /tmp/test.c, line 1098.
+(gdb) c
+Continuing.

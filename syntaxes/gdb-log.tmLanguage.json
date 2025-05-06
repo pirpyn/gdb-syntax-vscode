@@ -10,6 +10,7 @@
 		"expression": {
 			"patterns": [
 				{ "include": "#prompt" },
+				{ "include": "#carret" },
 				{ "include": "#frame" },
 				{ "include": "#at_location" },
 				{ "include": "#in_function" },
@@ -22,6 +23,16 @@
 					"name": "prompt.gdb",
 					"begin": "^[ \t]*(\\(\\w+\\))[ \t]+",
 					"beginCaptures": { "1": { "name": "support.class.prompt.gdb" } },
+					"patterns": [ { "include": "source.gdb" } ],
+					"end": "$"
+				}
+			]
+		},
+		"carret": {
+			"patterns": [
+				{
+					"name": "carret.gdb",
+					"begin": "(?:^|\\G)>",
 					"patterns": [ { "include": "source.gdb" } ],
 					"end": "$"
 				}
